@@ -1,9 +1,11 @@
 {
   "version": "1.0",
-  "actualizado": "2026-04-23",
+  "actualizado": "2026-04-24",
   "entidad": "GADM Riobamba",
   "obras": [
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL COLECTOR BOSQUE TUBASEC ALCANTARILLADO PLUVIAL, CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO",
       "codigo": "LICO-GADMR-2025-001",
       "entidad": "GADM Riobamba",
@@ -19,8 +21,6 @@
       "utm_zona": "17M",
       "utm_e": "763832.67",
       "utm_n": "9812601.53",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -30,6 +30,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE BÓVEDAS EN EL CEMENTERIO GENERAL DE RIOBAMBA",
       "codigo": "LICO-GADMR-2025-002",
       "entidad": "GADM Riobamba",
@@ -45,8 +47,6 @@
       "utm_zona": "17M",
       "utm_e": "760522.77",
       "utm_n": "9814188.35",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -56,6 +56,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISIÓN DE TAPAS DE ALCANTARILLADO PARA LA CIUDAD DE RIOBAMBA",
       "codigo": "CCE-GADMR-2025-020",
       "entidad": "GADM Riobamba",
@@ -71,8 +73,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -82,6 +82,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "READECUACIÓN DEL MERCADO GENERAL JUAN BERNARDO DAVALOS",
       "codigo": "LICO-GADMR-2025-003",
       "entidad": "GADM Riobamba",
@@ -97,8 +99,6 @@
       "utm_zona": "17M",
       "utm_e": "761655.1",
       "utm_n": "9815730.52",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -108,6 +108,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "REHABILITACIÓN Y REESTRUCTURACIÓN DEL MERCADO MARIANO BORJA “LA MERCED\"",
       "codigo": "LICO-GADMR-2025-008",
       "entidad": "GADM Riobamba",
@@ -123,8 +125,6 @@
       "utm_zona": "17M",
       "utm_e": "761450.47",
       "utm_n": "9814823.73",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -134,11 +134,13 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISICIÓN DE CEMENTO PARA EL ALCANTARILLADO SANITARIO PARA LA COMUNIDAD CUNCUN CACHIPATA",
       "codigo": "SIE-GADMR-2025-068",
       "entidad": "GADM Riobamba",
       "proc": "Subasta inversa electrónica",
-      "presupuesto": 15730.0,
+      "presupuesto": 15730,
       "fase": 3,
       "inicio": "",
       "fin": "",
@@ -149,8 +151,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -160,6 +160,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCION DE BÓVEDAS PARA EL CEMENTERIO DE LA CABECERA PARROQUIAL DE SAN LUIS",
       "codigo": "LICO-GADMR-2025-009",
       "entidad": "GADM Riobamba",
@@ -175,8 +177,6 @@
       "utm_zona": "17M",
       "utm_e": "761984.26",
       "utm_n": "9810580.56",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -186,11 +186,13 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISIÓN DE MEZCLA ASFALTICA EN CALIENTE Y EMULSIÓN INCLUYE TRANSPORTE",
       "codigo": "SIE-GADMR-2025-067",
       "entidad": "GADM Riobamba",
       "proc": "Subasta inversa electrónica",
-      "presupuesto": 608060.0,
+      "presupuesto": 608060,
       "fase": 3,
       "inicio": "",
       "fin": "",
@@ -201,8 +203,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -212,6 +212,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CERRAMIENTO DE LA PLAZA DE RASTRO DE LICTO",
       "codigo": "LICO-GADMR-2025-010",
       "entidad": "GADM Riobamba",
@@ -227,8 +229,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -238,11 +238,13 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISICIÓN DE MATERIALES PÉTREOS",
       "codigo": "SIE-GADMR-2025-071",
       "entidad": "GADM Riobamba",
       "proc": "Subasta inversa electrónica",
-      "presupuesto": 158000.0,
+      "presupuesto": 158000,
       "fase": 2,
       "inicio": "",
       "fin": "",
@@ -253,8 +255,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -264,6 +264,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE MÓDULOS ARTESANALES EN LA PARROQUIA YARUQUÍES",
       "codigo": "LICO-GADMR-2025-006",
       "entidad": "GADM Riobamba",
@@ -279,8 +281,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -290,6 +290,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL CERRAMIENTO LOURDES MACAJÍ ETAPA II",
       "codigo": "LICO-GADMR-2025-005",
       "entidad": "GADM Riobamba",
@@ -305,8 +307,6 @@
       "utm_zona": "17M",
       "utm_e": "759436.67",
       "utm_n": "9815485.3",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -316,11 +316,13 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "FISCALIZACIÓN PARA LA CONSTRUCCIÓN DEL COLECTOR BOSQUE TUBASEC (ALCANTARILLADO PLUVIAL) DEL CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO",
       "codigo": "CPC-GADMR-2025-002",
       "entidad": "GADM Riobamba",
       "proc": "Concurso público",
-      "presupuesto": 91020.0,
+      "presupuesto": 91020,
       "fase": 3,
       "inicio": "",
       "fin": "",
@@ -331,8 +333,6 @@
       "utm_zona": "17M",
       "utm_e": "763832.67",
       "utm_n": "9812601.53",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -342,6 +342,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONTRATACIÓN DE UNA CONSULTORÍA PARA LOS ESTUDIOS DE EVALUACIÓN, DIAGNOSTICO Y DISEÑOS DEFINITIVOS DEL SISTEMA DE AGUA POTABLE DE LA CABECERA PARROQUIAL DE LICÁN",
       "codigo": "CPC-GADMR-2025-001",
       "entidad": "GADM Riobamba",
@@ -357,8 +359,6 @@
       "utm_zona": "17M",
       "utm_e": "755175.69",
       "utm_n": "9817324.28",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -368,6 +368,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL CENTRO DE CAPACITACIÓN EN LA COMUNIDAD ALAO SAN ANTONIO, PARROQUIA PUNGALÁ",
       "codigo": "LICO-GADMR-2025-015",
       "entidad": "GADM Riobamba",
@@ -383,8 +385,6 @@
       "utm_zona": "17M",
       "utm_e": "776389.36",
       "utm_n": "9792015.11",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -394,6 +394,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "MEJORAMIENTO DEL SISTEMA DE AGUA DE CONSUMO HUMANO DE LA CABECERA PARROQUIAL, PARROQUIA QUIMIAG FASE 1",
       "codigo": "LICO-GADMR-2025-013",
       "entidad": "GADM Riobamba",
@@ -409,8 +411,6 @@
       "utm_zona": "17M",
       "utm_e": "770677.5",
       "utm_n": "9816567.08",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -420,6 +420,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "MEJORAMIENTO DE LA INFRAESTRUCTURA BÁSICA DE USO PÚBLICO-COLISEO DEL GAD PARROQUIAL DE PUNÍN",
       "codigo": "LICO-GADMR-2025-012",
       "entidad": "GADM Riobamba",
@@ -435,8 +437,6 @@
       "utm_zona": "17M",
       "utm_e": "760657.29",
       "utm_n": "9804596.76",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -446,6 +446,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISICION DE TUBERIA DE ALCANTARILLADO SANITARIO PARA LA COMUNIDAD TUNSHI SAN JAVIER PARROQUIA LICTO",
       "codigo": "SIE-GADMR-2025-073",
       "entidad": "GADM Riobamba",
@@ -461,8 +463,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -472,6 +472,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "READECUACION DEL PARQUE DE LA COMUNIDAD CUNDUANA, LICAN",
       "codigo": "LICO-GADMR-2025-016",
       "entidad": "GADM Riobamba",
@@ -487,8 +489,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -498,6 +498,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL BOULEVARD TURÍSTICO DE LA CABECERA PARROQUIAL DE FLORES",
       "codigo": "LICO-GADMR-2025-019",
       "entidad": "GADM Riobamba",
@@ -513,8 +515,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -524,6 +524,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL ESTADIO DE LA CABECERA PARROQUIAL DE CALPI – FASE 2",
       "codigo": "LICO-GADMR-2025-011",
       "entidad": "GADM Riobamba",
@@ -539,8 +541,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -550,6 +550,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL CERRAMIENTO Y GRADERIO DEL ESTADIO COMUNIDAD BAYUSHI SAN VICENTE, PARROQUIA CALPI",
       "codigo": "LICO-GADMR-2025-018",
       "entidad": "GADM Riobamba",
@@ -565,8 +567,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -576,6 +576,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCION DE UNA BATERIA SANITARIA EN LA COMUNIDAD TAMBO GUASHA, PARROQUIA SAN JUAN",
       "codigo": "LICO-GADMR-2025-017",
       "entidad": "GADM Riobamba",
@@ -591,8 +593,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -602,6 +602,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "READECUACIÓN DE LA PISCINA DE LA CABECERA PARROQUIAL DE CUBIJÍES",
       "codigo": "LICO-GADMR-2025-022",
       "entidad": "GADM Riobamba",
@@ -617,8 +619,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -628,6 +628,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCION DE UN CUERPO DE BOVEDAS Y CERRAMIETO PARA EL CEMENTERIO DE LA PARROQUIA FLORES",
       "codigo": "LICO-GADMR-2025-024",
       "entidad": "GADM Riobamba",
@@ -643,8 +645,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -654,6 +654,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE UNA BATERÍA SANITARIA EN EL ESTADIO DE LA CABECERA PARROQUIAL DE CUBIJÍES",
       "codigo": "LICO-GADMR-2025-020",
       "entidad": "GADM Riobamba",
@@ -669,8 +671,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -680,6 +680,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "REACONDICIONAMIENTO DEL ESTADIO DE LA COMUNIDAD BASHALAN DE LA PARROQUIA PUNIN",
       "codigo": "LICO-GADMR-2025-023",
       "entidad": "GADM Riobamba",
@@ -695,8 +697,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -706,6 +706,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISICIÓN DE ADOQUINES PARA LA CABECERA PARROQUIAL DE SAN LUIS",
       "codigo": "CDI-GADMR-2025-013",
       "entidad": "GADM Riobamba",
@@ -721,8 +723,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -732,6 +732,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISICION DE ADOQUINES PARA VIAS DE VARIAS COMUNIDADES DE LA PARROQUIA DE CUBIJIES",
       "codigo": "CDI-GADMR-2025-014",
       "entidad": "GADM Riobamba",
@@ -747,8 +749,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -758,6 +758,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "IMPLEMENTACIÓN DE JUEGOS INFANTILES Y GIMNASIOS AL AIRE LIBRE PARA LAS PARROQUIAS RURALES DEL CANTÓN RIOBAMBA",
       "codigo": "LICO-GADMR-2025-025",
       "entidad": "GADM Riobamba",
@@ -773,8 +775,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -784,6 +784,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADQUISIÓN DE MATERIALES DE FERRETERÍA PARA VARIAS OBRAS DEL CANTÓN RIOBAMBA",
       "codigo": "SIE-GADMR-2025-080",
       "entidad": "GADM Riobamba",
@@ -799,8 +801,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -810,6 +810,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "REASFALTADO DE VARIAS VÍAS CONECTORAS DE LA CIUDAD DE RIOBAMBA",
       "codigo": "COTO-GADMR-2024-002",
       "entidad": "GADM Riobamba",
@@ -825,8 +827,6 @@
       "utm_zona": "17S",
       "utm_e": "762385.59",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -836,11 +836,13 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSULTORÍA PARA REALIZAR EL ESTUDIO DE REFORZAMIENTO ESTRUCTURAL Y EVALUACIÓN DE DAÑOS CAUSADOS POR HUMEDAD Y ASENTAMIENTOS DIFERENCIALES EN EL EDIFICIO DE LA DIRECCIÓN DE GESTIÓN DE DESARROLLO SOCIAL Y HUMANO DEL GOBIERNO AUTÓNOMO DESCENTRALIZADO DEL CANTÓN RIOBAMBA",
       "codigo": "CDC-GADMR-2024-006",
       "entidad": "GADM Riobamba",
       "proc": "Consultoria Contratacion Directa",
-      "presupuesto": 19500.0,
+      "presupuesto": 19500,
       "fase": 4,
       "inicio": "02/08/2024",
       "fin": "30/06/2025",
@@ -851,8 +853,6 @@
       "utm_zona": "17S",
       "utm_e": "760090.18",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -862,6 +862,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"ASFALTADO DE LA AVENIDA MONSEÑOR LEONIDAS PROAÑO DESDE LA AVENIDA LIZARZABURU HASTA LA AVENIDA BICENTENARIO\",",
       "codigo": "LICO-GADMR-001-2022",
       "entidad": "GADM Riobamba",
@@ -877,8 +879,6 @@
       "utm_zona": "17S",
       "utm_e": "759301.56",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -888,6 +888,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "“CONSTRUCCIÓN DEL PARQUE DE LA CIUDADELA DE LAS ACACIAS FASE 2”,",
       "codigo": "COTO-GADMR-025-2022",
       "entidad": "GADM Riobamba",
@@ -903,8 +905,6 @@
       "utm_zona": "17S",
       "utm_e": "758577.41",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -914,6 +914,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "“MEJORAMIENTO DE LAS PLATAFORMAS MERCADO LA ESPERANZA Y MEJORAMIENTO DE LAS PLATAFORMAS DE LA PLAZA DE LAS HIERBAS”,",
       "codigo": "COTO-GADMR-010-2022",
       "entidad": "GADM Riobamba",
@@ -929,8 +931,6 @@
       "utm_zona": "17S",
       "utm_e": "762520.33",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -940,6 +940,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DEL CERRAMIENTO FRONTAL Y UN CUERPO DE BÓVEDAS CEMENTERIO DE LA PARROQUIA FLORES-COMUNIDAD GUANTUL CENTRAL\",",
       "codigo": "MCO-GADMR-2024-009",
       "entidad": "GADM Riobamba",
@@ -955,8 +957,6 @@
       "utm_zona": "17S",
       "utm_e": "759666.04",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -966,6 +966,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DEL SISTEMA DE ALCANTARILLADO PARA VARIOS BARRIOS DE LA PARROQUIA DE YARUQUIES\",",
       "codigo": "MCO-GADMR-032-2022",
       "entidad": "GADM Riobamba",
@@ -981,8 +983,6 @@
       "utm_zona": "17S",
       "utm_e": "758161.69",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -992,6 +992,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "“INTERVENCIÓN DE OBRAS DEL ENTORNO DEL PROYECTO PARQUES INCLUSIVOS INTEGRALES, “PARQUE SESQUICENTENARIO” DEL GAD DE RIOBAMBA, EN LA PROVINCIA DE CHIMBORAZO”,",
       "codigo": "MCO-GADMR-2024-012",
       "entidad": "GADM Riobamba",
@@ -1007,8 +1009,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1018,6 +1018,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DEL CENTRO DE INVESTIGACIÓN DE CIENCIAS FORENSES SAN PEDRO DE RIOBAMBA\",",
       "codigo": "LICO-GADMR-003-2022",
       "entidad": "GADM Riobamba",
@@ -1033,8 +1035,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1044,6 +1044,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DEL CENTRO MUNICIPAL DE PREVENCIÓN INTEGRAL DE ENFERMEDADES CRÓNICAS, CATASTRÓFICAS Y DISCAPACIDADES\",",
       "codigo": "LICO-GADMR-004-2022",
       "entidad": "GADM Riobamba",
@@ -1059,8 +1061,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1070,6 +1070,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"MANTENIMIENTO DEL PARQUE LA LIBERTAD, MANTENIMIENTO DEL PARQUE YARUQUÍES Y READECUACIÓN DEL PARQUE LA MADRE DEL CANTÓN\n RIOBAMBA”,",
       "codigo": "COTO-GADMR-020-2022",
       "entidad": "GADM Riobamba",
@@ -1085,8 +1087,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1096,6 +1096,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DE LA PLAZOLETA BICENTENARIO Y REGENERACIÓN URBANA DE LA VÍA 5 DE JUNIO\",",
       "codigo": "COTO-GADMR-024-2022",
       "entidad": "GADM Riobamba",
@@ -1111,8 +1113,6 @@
       "utm_zona": "17S",
       "utm_e": "751581.04",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1122,6 +1122,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"EJECUCIÓN DEL SISTEMA DE AGUA POTABLE DE LA COMUNIDAD SHOBOL LLIN LLIN, PARROQUIA SAN JUAN\",",
       "codigo": "MCO-GADMR-2023-007",
       "entidad": "GADM Riobamba",
@@ -1137,8 +1139,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1148,6 +1148,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"AMPLIACIÓN DEL CEMENTERIO DE LA CABECERA PARROQUIAL DE CALPI\",",
       "codigo": "MCO-GADMR-2023-008",
       "entidad": "GADM Riobamba",
@@ -1163,8 +1165,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1174,6 +1174,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DE ESTADIO DE LA CABECERA PARROQUIAL DE PUNÍN\",",
       "codigo": "MCO-GADMR-2023-009",
       "entidad": "GADM Riobamba",
@@ -1189,8 +1191,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1200,6 +1200,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"READECUACIÓN DEL CEMENTERIO COMUNIDAD SHANAICUN DE LA PARROQUIA PUNGALÁ\",",
       "codigo": "MCO-GADMR-2023-010",
       "entidad": "GADM Riobamba",
@@ -1215,8 +1217,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1226,6 +1226,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"READECUACIÓN DEL PARQUE 9 DE OCTUBRE\",",
       "codigo": "MCO-GADMR-2023-011",
       "entidad": "GADM Riobamba",
@@ -1241,8 +1243,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1252,11 +1252,13 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DEL CERRAMIENTO SECTOR LOURDES MACAJI\",",
       "codigo": "MCO-GADMR-2024-004",
       "entidad": "GADM Riobamba",
       "proc": "Menor Cuantia",
-      "presupuesto": 100000.0,
+      "presupuesto": 100000,
       "fase": 1,
       "inicio": "",
       "fin": "",
@@ -1267,8 +1269,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1278,6 +1278,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"MEJORAMIENTO DE LA CONDUCCIÓN E IMPLEMENTACIÓN DEL TANQUE DE RESERVA DEL SISTEMA DE AGUA POTABLE DE LA CABECERA PARROQUIAL DE SAN LUIS CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO\",",
       "codigo": "MCO-GADMR-2024-010",
       "entidad": "GADM Riobamba",
@@ -1293,8 +1295,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1304,6 +1304,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DEL CERRAMIENTO DEL ESTADIO COMUNIDAD ALAO LLACTAPAMBA, PARROQUIA PUNGALÁ\",",
       "codigo": "MCO-GADMR-2024-013",
       "entidad": "GADM Riobamba",
@@ -1319,8 +1321,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1330,6 +1330,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DE LA BATERIA SANITARIA PARA EL ESTADIO CRUZADA HUALIQUIS - PARROQUIA CACHA – COMUNIDAD CRUZADA HUALIQUIS\",",
       "codigo": "MCO-GADMR-2024-014",
       "entidad": "GADM Riobamba",
@@ -1345,8 +1347,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1356,6 +1356,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"EJECUCIÓN DEL SISTEMA DE AGUA POTABLE PARA LA JUNTA DE AGUA POTABLE DE TZALARON Y LA JUNTA DE AGUA POTABLE YANACOCHA DE LA PARROQUIA PUNÍN, CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO\",",
       "codigo": "MCO-GADMR-2024-018",
       "entidad": "GADM Riobamba",
@@ -1371,8 +1373,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1382,6 +1382,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"READECUACIÓN DE ÁREAS RECREATIVAS EN LAS PARROQUIAS DE LICAN, FLORES Y CALPI\",",
       "codigo": "MCO-GADMR-2023-005",
       "entidad": "GADM Riobamba",
@@ -1397,8 +1399,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1408,6 +1408,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"CONSTRUCCIÓN DE UNIDADES BÁSICAS SANITARIAS PARA LAS COMUNIDADES DE PUESETUS CHICO, EL OBRAJE DE LA PARROQUIA FLORES, Y DAL DAL DE LA PARROQUIA PUNGALÁ CANTÓN RIOBAMBA PROVINCIA DE CHIMBORAZO\",",
       "codigo": "MCO-GADMR-2023-006",
       "entidad": "GADM Riobamba",
@@ -1423,8 +1425,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1434,6 +1434,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"EJECUCIÓN DEL SISTEMA DE AGUA POTABLE DE CALERA GRANDE POMALO DE LA PARROQUIA SAN JUAN\",",
       "codigo": "COTO-GADMR-2024-001",
       "entidad": "GADM Riobamba",
@@ -1449,8 +1451,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1460,6 +1460,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"REGENERACIÓN URBANA DE LA AV, CARLOS ZAMBRANO Y PREDIOS ALEDAÑOS AL ESTADIO OLÍMPICO FERNANDO GUERRERO DE LA CIUDAD DE RIOBAMBA, PROVINCIA DE CHIMBORAZO\",",
       "codigo": "COTO-GADMR-2024-003",
       "entidad": "GADM Riobamba",
@@ -1475,8 +1477,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1486,6 +1486,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"FASE 1 DEL MANTENIMIENTO A LA INFRAESTRUCTURA DEL CENTRO COMERCIAL POPULAR LA CONDAMINE\",",
       "codigo": "COTO-GADMR-2024-004",
       "entidad": "GADM Riobamba",
@@ -1501,8 +1503,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1512,6 +1512,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "\"REHABILITACIÓN DE ZONAS INTERNAS DEL PARQUE GUAYAQUIL DE LA CIUDAD DE RIOBAMBA PROVINCIA DE CHIMBORAZO\",",
       "codigo": "COTO-GADMR-2024-005",
       "entidad": "GADM Riobamba",
@@ -1527,8 +1529,6 @@
       "utm_zona": "",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1538,6 +1538,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "BACHEO DE VARIAS VÍAS DE LA CIUDAD DE RIOBAMBA",
       "codigo": "COTO-GADMR-2023-004",
       "entidad": "GADM Riobamba",
@@ -1553,8 +1555,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1564,6 +1564,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "READECUACIÓN DEL PARQUE QUINTA LA ROSITA",
       "codigo": "COTO-GADMR-012-2022",
       "entidad": "GADM Riobamba",
@@ -1579,8 +1581,6 @@
       "utm_zona": "17S",
       "utm_e": "761732.69",
       "utm_n": "9814021.23",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1590,6 +1590,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN Y EQUIPAMIENTO DEL CENTRO DE REVISIÓN TÉCNICA VEHICULAR DE RIOBAMBA - PRIMERA ETAPA",
       "codigo": "LICO-GADMR-006-2022",
       "entidad": "GADM Riobamba",
@@ -1605,8 +1607,6 @@
       "utm_zona": "17S",
       "utm_e": "763460.28",
       "utm_n": "9813575.27",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1616,6 +1616,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "MEJORAMIENTO DE ESPACIOS RECREATIVOS EN DIFERENTES PARQUES DEL\nCANTÓN RIOBAMBA Y MEJORAMIENTO DE LA CANCHA DEL BARRIO SANTA ROSA Y\nCONSTRUCCIÓN DEL ÁREA RECREATIVA DEL BARRIO CORAZÓN DE RIOBAMBA",
       "codigo": "COTO-GADMR-013-2022",
       "entidad": "GADM Riobamba",
@@ -1631,8 +1633,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1642,6 +1642,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DEL ALCANTARILLADO SANITARIO DE LA COMUNIDAD SAN\nMARTÍN DE VERANILLO ETAPA 1 – TRAMO DE INTERÉS",
       "codigo": "MCO-GADMR-2024-011",
       "entidad": "GADM Riobamba",
@@ -1657,8 +1659,6 @@
       "utm_zona": "17S",
       "utm_e": "763527.43",
       "utm_n": "9816082.5",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1668,6 +1668,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ADECUACIÓN Y MANTENIMIENTO DEL CENTRO DE\nDESARROLLO INFANTIL WAWA WASI GUARDIANES DE LA PAZ – SECTOR 9 DE\nOCTUBRE",
       "codigo": "MCO-GADMR-2024-008",
       "entidad": "GADM Riobamba",
@@ -1683,8 +1685,6 @@
       "utm_zona": "17S",
       "utm_e": "760627.18",
       "utm_n": "9814326.66",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1694,6 +1694,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE BÓVEDAS EN EL CEMENTERIO PARROQUIAL FLORES – COMUNIDAD NAUBUG",
       "codigo": "MCO-GADMR-2023-012",
       "entidad": "GADM Riobamba",
@@ -1709,8 +1711,6 @@
       "utm_zona": "17S",
       "utm_e": "761898.79",
       "utm_n": "9798917.19",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1720,6 +1720,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE LA PLANTA DE TRATAMIENTO EN LA ZONA RURAL DE LA COMUNIDAD TUNSHI SAN JAVIER DE LA PARROQUIA LICT",
       "codigo": "MCO-GADMR-013-2022",
       "entidad": "GADM Riobamba",
@@ -1735,8 +1737,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1746,6 +1746,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE LA INFRAESTRUCTURA DE LA JEFATURA ZONAL AEROPOLICIAL RIOBAMBA PARA EL FORTALECIMIENTO DE LA SEGURIDAD CIUDADANA EN EL CANTÓN RIOBAMBA",
       "codigo": "MCO-GADMR-2024-001",
       "entidad": "GADM Riobamba",
@@ -1761,8 +1763,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1772,6 +1772,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "CONSTRUCCIÓN DE UNIDADES BÁSICAS SANITARIAS PARA LAS COMUNIDADES DE PUESETUS CHICO, EL OBRAJE DE LA PARROQUIA FLORES, Y DAL DAL DE LA PARROQUIA PUNGALA CANTÓN RIOBAMBA PROVINCIA DE CHIMBORAZO",
       "codigo": "COTO-GADMR-2023-006",
       "entidad": "GADM Riobamba",
@@ -1787,8 +1789,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1798,6 +1798,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "REHABILITACIÓN DE VARIAS VÍAS ASFALTADAS DE LA CIUDAD DE RIOBAMBA",
       "codigo": "COTO-GADMR-019-2022",
       "entidad": "GADM Riobamba",
@@ -1813,8 +1815,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
@@ -1824,6 +1824,8 @@
       ]
     },
     {
+      "ejecutado": 0,
+      "estado": "normal",
       "nombre": "ÁREA RECREATIVA DEL CENTRO INFANTIL MUNDO DE ILUSIONES DE LA POLICÍA NACIONAL",
       "codigo": "MCO-GADMR-005-2023",
       "entidad": "GADM Riobamba",
@@ -1839,8 +1841,6 @@
       "utm_zona": "17S",
       "utm_e": "",
       "utm_n": "",
-      "ejecutado": 0,
-      "estado": "normal",
       "historial": [
         {
           "fecha": "23/04/2026",
