@@ -1,0 +1,2306 @@
+{
+  "version": "2.0",
+  "actualizado": "2026-05-02",
+  "entidad": "GADM Riobamba",
+  "obras": [
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL COLECTOR BOSQUE TUBASEC ALCANTARILLADO PLUVIAL, CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO",
+      "codigo": "LICO-GADMR-2025-001",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 2540734.75,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "César Gutiérrez",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "763832.67",
+      "utm_n": "9812601.53",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Velasco",
+      "lat": -1.69399,
+      "lng": -78.62865
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE BÓVEDAS EN EL CEMENTERIO GENERAL DE RIOBAMBA",
+      "codigo": "LICO-GADMR-2025-002",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 279417.96,
+      "fase": 3,
+      "inicio": "08/04/2026",
+      "fin": "05/04/2026",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lorena Carrión",
+      "avance": 20,
+      "obs": "En ejecución",
+      "utm_zona": "17M",
+      "utm_e": "760522.77",
+      "utm_n": "9814188.35",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 20
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco",
+      "lat": -1.67968,
+      "lng": -78.6584
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISIÓN DE TAPAS DE ALCANTARILLADO PARA LA CIUDAD DE RIOBAMBA",
+      "codigo": "CCE-GADMR-2025-020",
+      "entidad": "GADM Riobamba",
+      "proc": "Catálogo electrónico",
+      "presupuesto": 29248.5,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "Revisada",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "READECUACIÓN DEL MERCADO GENERAL JUAN BERNARDO DAVALOS",
+      "codigo": "LICO-GADMR-2025-003",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 1432857.05,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Michelle Velásquez",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "761655.1",
+      "utm_n": "9815730.52",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Maldonado",
+      "lat": -1.66573,
+      "lng": -78.64825
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "REHABILITACIÓN Y REESTRUCTURACIÓN DEL MERCADO MARIANO BORJA “LA MERCED\"",
+      "codigo": "LICO-GADMR-2025-008",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 996517.72,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "761450.47",
+      "utm_n": "9814823.73",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Maldonado",
+      "lat": -1.67393,
+      "lng": -78.65008
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISICIÓN DE CEMENTO PARA EL ALCANTARILLADO SANITARIO PARA LA COMUNIDAD CUNCUN CACHIPATA",
+      "codigo": "SIE-GADMR-2025-068",
+      "entidad": "GADM Riobamba",
+      "proc": "Subasta inversa electrónica",
+      "presupuesto": 15730,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En ejecución",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCION DE BÓVEDAS PARA EL CEMENTERIO DE LA CABECERA PARROQUIAL DE SAN LUIS",
+      "codigo": "LICO-GADMR-2025-009",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 37209.56,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Erick Iglesias",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "761984.26",
+      "utm_n": "9810580.56",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco",
+      "lat": -1.71228,
+      "lng": -78.64524
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISIÓN DE MEZCLA ASFALTICA EN CALIENTE Y EMULSIÓN INCLUYE TRANSPORTE",
+      "codigo": "SIE-GADMR-2025-067",
+      "entidad": "GADM Riobamba",
+      "proc": "Subasta inversa electrónica",
+      "presupuesto": 608060,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En ejecución",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CERRAMIENTO DE LA PLAZA DE RASTRO DE LICTO",
+      "codigo": "LICO-GADMR-2025-010",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 114776.5404,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lorena Carrión",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISICIÓN DE MATERIALES PÉTREOS",
+      "codigo": "SIE-GADMR-2025-071",
+      "entidad": "GADM Riobamba",
+      "proc": "Subasta inversa electrónica",
+      "presupuesto": 158000,
+      "fase": 2,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "Suspendido",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE MÓDULOS ARTESANALES EN LA PARROQUIA YARUQUÍES",
+      "codigo": "LICO-GADMR-2025-006",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 29998.9,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Andrés Castillo",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Yaruquíes"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL CERRAMIENTO LOURDES MACAJÍ ETAPA II",
+      "codigo": "LICO-GADMR-2025-005",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 199700.27,
+      "fase": 3,
+      "inicio": "Sin inicio",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Jonathan Santillan",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "759436.67",
+      "utm_n": "9815485.3",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.66797,
+      "lng": -78.66817
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "FISCALIZACIÓN PARA LA CONSTRUCCIÓN DEL COLECTOR BOSQUE TUBASEC (ALCANTARILLADO PLUVIAL) DEL CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO",
+      "codigo": "CPC-GADMR-2025-002",
+      "entidad": "GADM Riobamba",
+      "proc": "Concurso público",
+      "presupuesto": 91020,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "763832.67",
+      "utm_n": "9812601.53",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Velasco",
+      "lat": -1.69399,
+      "lng": -78.62865
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONTRATACIÓN DE UNA CONSULTORÍA PARA LOS ESTUDIOS DE EVALUACIÓN, DIAGNOSTICO Y DISEÑOS DEFINITIVOS DEL SISTEMA DE AGUA POTABLE DE LA CABECERA PARROQUIAL DE LICÁN",
+      "codigo": "CPC-GADMR-2025-001",
+      "entidad": "GADM Riobamba",
+      "proc": "Concurso público",
+      "presupuesto": 131967.91,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "755175.69",
+      "utm_n": "9817324.28",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Licán",
+      "lat": -1.65139,
+      "lng": -78.70647
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL CENTRO DE CAPACITACIÓN EN LA COMUNIDAD ALAO SAN ANTONIO, PARROQUIA PUNGALÁ",
+      "codigo": "LICO-GADMR-2025-015",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 124649.22,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lissette Mena",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "776389.36",
+      "utm_n": "9792015.11",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.87992,
+      "lng": -78.51561
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "MEJORAMIENTO DEL SISTEMA DE AGUA DE CONSUMO HUMANO DE LA CABECERA PARROQUIAL, PARROQUIA QUIMIAG FASE 1",
+      "codigo": "LICO-GADMR-2025-013",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 75557.75,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Jessica Orozco",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "770677.5",
+      "utm_n": "9816567.08",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.65807,
+      "lng": -78.56721
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "MEJORAMIENTO DE LA INFRAESTRUCTURA BÁSICA DE USO PÚBLICO-COLISEO DEL GAD PARROQUIAL DE PUNÍN",
+      "codigo": "LICO-GADMR-2025-012",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 57487.23,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Andrés Castillo",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17M",
+      "utm_e": "760657.29",
+      "utm_n": "9804596.76",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.76638,
+      "lng": -78.65709
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISICION DE TUBERIA DE ALCANTARILLADO SANITARIO PARA LA COMUNIDAD TUNSHI SAN JAVIER PARROQUIA LICTO",
+      "codigo": "SIE-GADMR-2025-073",
+      "entidad": "GADM Riobamba",
+      "proc": "Subasta inversa electrónica",
+      "presupuesto": 10639.38,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En ejecución",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "READECUACION DEL PARQUE DE LA COMUNIDAD CUNDUANA, LICAN",
+      "codigo": "LICO-GADMR-2025-016",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 52905.27,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Licán"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL BOULEVARD TURÍSTICO DE LA CABECERA PARROQUIAL DE FLORES",
+      "codigo": "LICO-GADMR-2025-019",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 42171.12,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Flores"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL ESTADIO DE LA CABECERA PARROQUIAL DE CALPI – FASE 2",
+      "codigo": "LICO-GADMR-2025-011",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 121109.87,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lissette Mena",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Calpi"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL CERRAMIENTO Y GRADERIO DEL ESTADIO COMUNIDAD BAYUSHI SAN VICENTE, PARROQUIA CALPI",
+      "codigo": "LICO-GADMR-2025-018",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 39831.54,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Andres Castillo",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Calpi"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCION DE UNA BATERIA SANITARIA EN LA COMUNIDAD TAMBO GUASHA, PARROQUIA SAN JUAN",
+      "codigo": "LICO-GADMR-2025-017",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 30725.56,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "READECUACIÓN DE LA PISCINA DE LA CABECERA PARROQUIAL DE CUBIJÍES",
+      "codigo": "LICO-GADMR-2025-022",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 190221.67,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCION DE UN CUERPO DE BOVEDAS Y CERRAMIETO PARA EL CEMENTERIO DE LA PARROQUIA FLORES",
+      "codigo": "LICO-GADMR-2025-024",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 93555.63,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lissette Mena",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE UNA BATERÍA SANITARIA EN EL ESTADIO DE LA CABECERA PARROQUIAL DE CUBIJÍES",
+      "codigo": "LICO-GADMR-2025-020",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 45955.68,
+      "fase": 3,
+      "inicio": "20/04/2026",
+      "fin": "",
+      "director": "Fabián Borja",
+      "fiscal": "Julio Parra",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "REACONDICIONAMIENTO DEL ESTADIO DE LA COMUNIDAD BASHALAN DE LA PARROQUIA PUNIN",
+      "codigo": "LICO-GADMR-2025-023",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 57969.32,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Andrés Castillo",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISICIÓN DE ADOQUINES PARA LA CABECERA PARROQUIAL DE SAN LUIS",
+      "codigo": "CDI-GADMR-2025-013",
+      "entidad": "GADM Riobamba",
+      "proc": "Catálogo electrónico",
+      "presupuesto": 63314.24,
+      "fase": 2,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "Revisada",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "San Luis"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISICION DE ADOQUINES PARA VIAS DE VARIAS COMUNIDADES DE LA PARROQUIA DE CUBIJIES",
+      "codigo": "CDI-GADMR-2025-014",
+      "entidad": "GADM Riobamba",
+      "proc": "Catálogo electrónico",
+      "presupuesto": 242174.24,
+      "fase": 2,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "Revisada",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "IMPLEMENTACIÓN DE JUEGOS INFANTILES Y GIMNASIOS AL AIRE LIBRE PARA LAS PARROQUIAS RURALES DEL CANTÓN RIOBAMBA",
+      "codigo": "LICO-GADMR-2025-025",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 24559.28,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En registro de contrato",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADQUISIÓN DE MATERIALES DE FERRETERÍA PARA VARIAS OBRAS DEL CANTÓN RIOBAMBA",
+      "codigo": "SIE-GADMR-2025-080",
+      "entidad": "GADM Riobamba",
+      "proc": "Subasta inversa electrónica",
+      "presupuesto": 169967.91,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "JUAN Diego Remache",
+      "fiscal": "",
+      "avance": 0,
+      "obs": "En ejecución",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "REASFALTADO DE VARIAS VÍAS CONECTORAS DE LA CIUDAD DE RIOBAMBA",
+      "codigo": "COTO-GADMR-2024-002",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 797143.35,
+      "fase": 4,
+      "inicio": "20/12/2024",
+      "fin": "19/04/2025",
+      "director": "Mario Cordova",
+      "fiscal": "Erick Iglesias",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "17S",
+      "utm_e": "762385.59",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSULTORÍA PARA REALIZAR EL ESTUDIO DE REFORZAMIENTO ESTRUCTURAL Y EVALUACIÓN DE DAÑOS CAUSADOS POR HUMEDAD Y ASENTAMIENTOS DIFERENCIALES EN EL EDIFICIO DE LA DIRECCIÓN DE GESTIÓN DE DESARROLLO SOCIAL Y HUMANO DEL GOBIERNO AUTÓNOMO DESCENTRALIZADO DEL CANTÓN RIOBAMBA",
+      "codigo": "CDC-GADMR-2024-006",
+      "entidad": "GADM Riobamba",
+      "proc": "Consultoria Contratacion Directa",
+      "presupuesto": 19500,
+      "fase": 4,
+      "inicio": "02/08/2024",
+      "fin": "30/06/2025",
+      "director": "Mario Cordova",
+      "fiscal": "Lissette Mena",
+      "avance": 100,
+      "obs": "Recepcion unica",
+      "utm_zona": "17S",
+      "utm_e": "760090.18",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"ASFALTADO DE LA AVENIDA MONSEÑOR LEONIDAS PROAÑO DESDE LA AVENIDA LIZARZABURU HASTA LA AVENIDA BICENTENARIO\",",
+      "codigo": "LICO-GADMR-001-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 1057721.04,
+      "fase": 4,
+      "inicio": "08/08/2022",
+      "fin": "13/07/2024",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lucia Paucar",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "759301.56",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "Lizarzaburu"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "“CONSTRUCCIÓN DEL PARQUE DE LA CIUDADELA DE LAS ACACIAS FASE 2”,",
+      "codigo": "COTO-GADMR-025-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 224447.02,
+      "fase": 4,
+      "inicio": "01/10/2023",
+      "fin": "16/05/2024",
+      "director": "Fabian Borja",
+      "fiscal": "Erick Iglesias",
+      "avance": 26,
+      "obs": "Terminacion Unilateral de Contrato",
+      "utm_zona": "17S",
+      "utm_e": "758577.41",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 26
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "“MEJORAMIENTO DE LAS PLATAFORMAS MERCADO LA ESPERANZA Y MEJORAMIENTO DE LAS PLATAFORMAS DE LA PLAZA DE LAS HIERBAS”,",
+      "codigo": "COTO-GADMR-010-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 359999.92,
+      "fase": 4,
+      "inicio": "02/02/2023",
+      "fin": "24/04/2024",
+      "director": "Juan Diego Remache",
+      "fiscal": "Erick Iglesias",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "762520.33",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DEL CERRAMIENTO FRONTAL Y UN CUERPO DE BÓVEDAS CEMENTERIO DE LA PARROQUIA FLORES-COMUNIDAD GUANTUL CENTRAL\",",
+      "codigo": "MCO-GADMR-2024-009",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 24239.23,
+      "fase": 4,
+      "inicio": "19/02/2025",
+      "fin": "19/05/2025",
+      "director": "Fabian Borja",
+      "fiscal": "Lissette Mena",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "759666.04",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DEL SISTEMA DE ALCANTARILLADO PARA VARIOS BARRIOS DE LA PARROQUIA DE YARUQUIES\",",
+      "codigo": "MCO-GADMR-032-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 110098.48,
+      "fase": 4,
+      "inicio": "12/06/2023",
+      "fin": "",
+      "director": "Fabian Borja",
+      "fiscal": "Vladimir Velastegui",
+      "avance": 100,
+      "obs": "Obra Suspendida",
+      "utm_zona": "17S",
+      "utm_e": "758161.69",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Yaruquíes"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "“INTERVENCIÓN DE OBRAS DEL ENTORNO DEL PROYECTO PARQUES INCLUSIVOS INTEGRALES, “PARQUE SESQUICENTENARIO” DEL GAD DE RIOBAMBA, EN LA PROVINCIA DE CHIMBORAZO”,",
+      "codigo": "MCO-GADMR-2024-012",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 13771.06,
+      "fase": 4,
+      "inicio": "17/01/2025",
+      "fin": "31/01/2025",
+      "director": "Mario Cordova",
+      "fiscal": "Lorena Carrion",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DEL CENTRO DE INVESTIGACIÓN DE CIENCIAS FORENSES SAN PEDRO DE RIOBAMBA\",",
+      "codigo": "LICO-GADMR-003-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 1116986.729,
+      "fase": 4,
+      "inicio": "24/01/2023",
+      "fin": "05/03/2024",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lucia Paucar",
+      "avance": 100,
+      "obs": "Recepcion Presunta Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DEL CENTRO MUNICIPAL DE PREVENCIÓN INTEGRAL DE ENFERMEDADES CRÓNICAS, CATASTRÓFICAS Y DISCAPACIDADES\",",
+      "codigo": "LICO-GADMR-004-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Licitación",
+      "presupuesto": 906155.959,
+      "fase": 4,
+      "inicio": "24/05/2023",
+      "fin": "29/02/2024",
+      "director": "Juan Diego Remache",
+      "fiscal": "",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"MANTENIMIENTO DEL PARQUE LA LIBERTAD, MANTENIMIENTO DEL PARQUE YARUQUÍES Y READECUACIÓN DEL PARQUE LA MADRE DEL CANTÓN\n RIOBAMBA”,",
+      "codigo": "COTO-GADMR-020-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 391174.94,
+      "fase": 4,
+      "inicio": "29/09/2023",
+      "fin": "13/08/2024",
+      "director": "Ángel Vallejo",
+      "fiscal": "Jonathan Santillan",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Yaruquíes"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DE LA PLAZOLETA BICENTENARIO Y REGENERACIÓN URBANA DE LA VÍA 5 DE JUNIO\",",
+      "codigo": "COTO-GADMR-024-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 703127.03,
+      "fase": 4,
+      "inicio": "26/09/2023",
+      "fin": "31/04/2025",
+      "director": "Fabian Borja",
+      "fiscal": "Jonathan Santillan",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "17S",
+      "utm_e": "751581.04",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"EJECUCIÓN DEL SISTEMA DE AGUA POTABLE DE LA COMUNIDAD SHOBOL LLIN LLIN, PARROQUIA SAN JUAN\",",
+      "codigo": "MCO-GADMR-2023-007",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 145397.42,
+      "fase": 1,
+      "inicio": "22/05/2024",
+      "fin": "18/09/2024",
+      "director": "Mario Cordova",
+      "fiscal": "Ángel Enrique Veloz Lema (Externo)",
+      "avance": 100,
+      "obs": "Recepcion Definitiva",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"AMPLIACIÓN DEL CEMENTERIO DE LA CABECERA PARROQUIAL DE CALPI\",",
+      "codigo": "MCO-GADMR-2023-008",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 87957.22,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lissette Mena",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DE ESTADIO DE LA CABECERA PARROQUIAL DE PUNÍN\",",
+      "codigo": "MCO-GADMR-2023-009",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 49549.1,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lissette Mena",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"READECUACIÓN DEL CEMENTERIO COMUNIDAD SHANAICUN DE LA PARROQUIA PUNGALÁ\",",
+      "codigo": "MCO-GADMR-2023-010",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 37315.65,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Michelle Velazquez",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"READECUACIÓN DEL PARQUE 9 DE OCTUBRE\",",
+      "codigo": "MCO-GADMR-2023-011",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 135306.93,
+      "fase": 4,
+      "inicio": "16-08-2024",
+      "fin": "18/12/2024",
+      "director": "Mario Córdova",
+      "fiscal": "Julio Parra",
+      "avance": 100,
+      "obs": "Recepción definitiva",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DEL CERRAMIENTO SECTOR LOURDES MACAJI\",",
+      "codigo": "MCO-GADMR-2024-004",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 100000,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Michelle Velazquez",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"MEJORAMIENTO DE LA CONDUCCIÓN E IMPLEMENTACIÓN DEL TANQUE DE RESERVA DEL SISTEMA DE AGUA POTABLE DE LA CABECERA PARROQUIAL DE SAN LUIS CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO\",",
+      "codigo": "MCO-GADMR-2024-010",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 48838.55,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Monica Paltan",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "San Luis"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DEL CERRAMIENTO DEL ESTADIO COMUNIDAD ALAO LLACTAPAMBA, PARROQUIA PUNGALÁ\",",
+      "codigo": "MCO-GADMR-2024-013",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 69959.15,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lorena Carrion",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DE LA BATERIA SANITARIA PARA EL ESTADIO CRUZADA HUALIQUIS - PARROQUIA CACHA – COMUNIDAD CRUZADA HUALIQUIS\",",
+      "codigo": "MCO-GADMR-2024-014",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 35994.95,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Julio Parra",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Cacha"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"EJECUCIÓN DEL SISTEMA DE AGUA POTABLE PARA LA JUNTA DE AGUA POTABLE DE TZALARON Y LA JUNTA DE AGUA POTABLE YANACOCHA DE LA PARROQUIA PUNÍN, CANTÓN RIOBAMBA, PROVINCIA DE CHIMBORAZO\",",
+      "codigo": "MCO-GADMR-2024-018",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 200797.54,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Erick Iglesias",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"READECUACIÓN DE ÁREAS RECREATIVAS EN LAS PARROQUIAS DE LICAN, FLORES Y CALPI\",",
+      "codigo": "MCO-GADMR-2023-005",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 228445.46,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lissette Mena",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Licán"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"CONSTRUCCIÓN DE UNIDADES BÁSICAS SANITARIAS PARA LAS COMUNIDADES DE PUESETUS CHICO, EL OBRAJE DE LA PARROQUIA FLORES, Y DAL DAL DE LA PARROQUIA PUNGALÁ CANTÓN RIOBAMBA PROVINCIA DE CHIMBORAZO\",",
+      "codigo": "MCO-GADMR-2023-006",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 239873.14,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Erick Iglesias",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Flores"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"EJECUCIÓN DEL SISTEMA DE AGUA POTABLE DE CALERA GRANDE POMALO DE LA PARROQUIA SAN JUAN\",",
+      "codigo": "COTO-GADMR-2024-001",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 263722.07,
+      "fase": 1,
+      "inicio": "22/07/2024",
+      "fin": "23/04/2025",
+      "director": "Juan Diego Remache",
+      "fiscal": "Ángel Enrique Veloz Lema (Externo)",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"REGENERACIÓN URBANA DE LA AV, CARLOS ZAMBRANO Y PREDIOS ALEDAÑOS AL ESTADIO OLÍMPICO FERNANDO GUERRERO DE LA CIUDAD DE RIOBAMBA, PROVINCIA DE CHIMBORAZO\",",
+      "codigo": "COTO-GADMR-2024-003",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 516580.5127,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "Juan Diego Remache",
+      "fiscal": "Tatiana Orozco",
+      "avance": 0,
+      "obs": "En ejecución",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"FASE 1 DEL MANTENIMIENTO A LA INFRAESTRUCTURA DEL CENTRO COMERCIAL POPULAR LA CONDAMINE\",",
+      "codigo": "COTO-GADMR-2024-004",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 412417.009,
+      "fase": 1,
+      "inicio": "15/08/2025",
+      "fin": "30/01/2026",
+      "director": "Juan Diego Remache",
+      "fiscal": "Lissette Mena",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "\"REHABILITACIÓN DE ZONAS INTERNAS DEL PARQUE GUAYAQUIL DE LA CIUDAD DE RIOBAMBA PROVINCIA DE CHIMBORAZO\",",
+      "codigo": "COTO-GADMR-2024-005",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 412671.022,
+      "fase": 1,
+      "inicio": "16/05/2025",
+      "fin": "28/11/2025",
+      "director": "Juan Diego Remache",
+      "fiscal": "Erick Iglesias",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "BACHEO DE VARIAS VÍAS DE LA CIUDAD DE RIOBAMBA",
+      "codigo": "COTO-GADMR-2023-004",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 299587.77,
+      "fase": 4,
+      "inicio": "15/05/2024",
+      "fin": "12/09/2024",
+      "director": "Ing, Mario Adolfo Cordova Machado",
+      "fiscal": "Ing, Lorena Yolanda Carrión Erazo",
+      "avance": 100,
+      "obs": "En recepcion",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "READECUACIÓN DEL PARQUE QUINTA LA ROSITA",
+      "codigo": "COTO-GADMR-012-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 276013.91,
+      "fase": 2,
+      "inicio": "07/03/2023",
+      "fin": "2023-07-04",
+      "director": "Arq, Pablo Alfonso Romero Vásquez",
+      "fiscal": "Ing, Lorena Yolanda Carrión Erazo",
+      "avance": 100,
+      "obs": "Ejecucion del contrato",
+      "utm_zona": "17S",
+      "utm_e": "761732.69",
+      "utm_n": "9814021.23",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.68118,
+      "lng": -78.64753
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN Y EQUIPAMIENTO DEL CENTRO DE REVISIÓN TÉCNICA VEHICULAR DE RIOBAMBA - PRIMERA ETAPA",
+      "codigo": "LICO-GADMR-006-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "",
+      "presupuesto": 1145176.91,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "Crnl, (sp) Ángel Alberto Astudillo Vinueza",
+      "fiscal": "Ing, Erick Sebastián Iglesias Guevara",
+      "avance": 100,
+      "obs": "Ejecucion del contrato",
+      "utm_zona": "17S",
+      "utm_e": "763460.28",
+      "utm_n": "9813575.27",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.68519,
+      "lng": -78.63201
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "MEJORAMIENTO DE ESPACIOS RECREATIVOS EN DIFERENTES PARQUES DEL\nCANTÓN RIOBAMBA Y MEJORAMIENTO DE LA CANCHA DEL BARRIO SANTA ROSA Y\nCONSTRUCCIÓN DEL ÁREA RECREATIVA DEL BARRIO CORAZÓN DE RIOBAMBA",
+      "codigo": "COTO-GADMR-013-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 247761.58,
+      "fase": 4,
+      "inicio": "2023-03-21",
+      "fin": "19/07/2023",
+      "director": "Arq, Pablo Alfonso Romero Vásquez",
+      "fiscal": "Ing, Lorena Yolanda Carrión Erazo",
+      "avance": 100,
+      "obs": "En recepcion",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DEL ALCANTARILLADO SANITARIO DE LA COMUNIDAD SAN\nMARTÍN DE VERANILLO ETAPA 1 – TRAMO DE INTERÉS",
+      "codigo": "MCO-GADMR-2024-011",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 113203.35,
+      "fase": 2,
+      "inicio": "2026-02-03",
+      "fin": "04/04/2026",
+      "director": "Ing, Mario Adolfo Córdova Machado",
+      "fiscal": "Ing,Mario Guaman",
+      "avance": 0,
+      "obs": "En ejecucion",
+      "utm_zona": "17S",
+      "utm_e": "763527.43",
+      "utm_n": "9816082.5",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.66252,
+      "lng": -78.63143
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ADECUACIÓN Y MANTENIMIENTO DEL CENTRO DE\nDESARROLLO INFANTIL WAWA WASI GUARDIANES DE LA PAZ – SECTOR 9 DE\nOCTUBRE",
+      "codigo": "MCO-GADMR-2024-008",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 88076.87,
+      "fase": 4,
+      "inicio": "21/10/2024",
+      "fin": "05/12/2024",
+      "director": "Mgs, Estefanía Susana Camelos Pico",
+      "fiscal": "Arq, Janina Michelle Velasquez Villaquirán",
+      "avance": 100,
+      "obs": "Tiene recepcion provisional",
+      "utm_zona": "17S",
+      "utm_e": "760627.18",
+      "utm_n": "9814326.66",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba",
+      "lat": -1.67843,
+      "lng": -78.65747
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE BÓVEDAS EN EL CEMENTERIO PARROQUIAL FLORES – COMUNIDAD NAUBUG",
+      "codigo": "MCO-GADMR-2023-012",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 24997.9,
+      "fase": 4,
+      "inicio": "01/07/2024",
+      "fin": "23/0872024",
+      "director": "Ing, Mario Adolfo Cordova Machado",
+      "fiscal": "Arq, Janina Michelle Velasquez Villaquirán",
+      "avance": 100,
+      "obs": "Tiene recepcion definitiva",
+      "utm_zona": "17S",
+      "utm_e": "761898.79",
+      "utm_n": "9798917.19",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "equipamiento",
+      "foto_url": "",
+      "parroquia": "Velasco",
+      "lat": -1.81771,
+      "lng": -78.64587
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE LA PLANTA DE TRATAMIENTO EN LA ZONA RURAL DE LA COMUNIDAD TUNSHI SAN JAVIER DE LA PARROQUIA LICT",
+      "codigo": "MCO-GADMR-013-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 47381.39,
+      "fase": 3,
+      "inicio": "29/11/2022",
+      "fin": "27/02/2023",
+      "director": "Arq, Pablo Alfonso Romero Vásquez",
+      "fiscal": "Ing, Erick Sebastián Iglesias Guevara",
+      "avance": 100,
+      "obs": "En proceso de acta definitiva",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE LA INFRAESTRUCTURA DE LA JEFATURA ZONAL AEROPOLICIAL RIOBAMBA PARA EL FORTALECIMIENTO DE LA SEGURIDAD CIUDADANA EN EL CANTÓN RIOBAMBA",
+      "codigo": "MCO-GADMR-2024-001",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 52890.24,
+      "fase": 4,
+      "inicio": "20/09/2024",
+      "fin": "19/12/2024",
+      "director": "Ing, Mario Adolfo Córdova Machado",
+      "fiscal": "Ing, Erick Sebastián Iglesias Guevara",
+      "avance": 100,
+      "obs": "Tiene recepcion provisional",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "edificacion",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "CONSTRUCCIÓN DE UNIDADES BÁSICAS SANITARIAS PARA LAS COMUNIDADES DE PUESETUS CHICO, EL OBRAJE DE LA PARROQUIA FLORES, Y DAL DAL DE LA PARROQUIA PUNGALA CANTÓN RIOBAMBA PROVINCIA DE CHIMBORAZO",
+      "codigo": "COTO-GADMR-2023-006",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 239873.14,
+      "fase": 3,
+      "inicio": "",
+      "fin": "",
+      "director": "Arq, Pablo Alfonso Romero Vásquez",
+      "fiscal": "Ing, Erick Sebastián Iglesias Guevara",
+      "avance": 100,
+      "obs": "Tiene recepcion provisional",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "alcantarillado",
+      "foto_url": "",
+      "parroquia": "Flores"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "REHABILITACIÓN DE VARIAS VÍAS ASFALTADAS DE LA CIUDAD DE RIOBAMBA",
+      "codigo": "COTO-GADMR-019-2022",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 815019.43,
+      "fase": 4,
+      "inicio": "04/05/2023",
+      "fin": "2023-09-10",
+      "director": "Arq, Pablo Alfonso Romero Vásquez",
+      "fiscal": "Ing, Erick Sebastián Iglesias Guevara",
+      "avance": 100,
+      "obs": "",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 100
+        }
+      ],
+      "tipo": "vial",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "ejecutado": 0,
+      "estado": "normal",
+      "nombre": "ÁREA RECREATIVA DEL CENTRO INFANTIL MUNDO DE ILUSIONES DE LA POLICÍA NACIONAL",
+      "codigo": "MCO-GADMR-005-2023",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 18676.78,
+      "fase": 1,
+      "inicio": "",
+      "fin": "",
+      "director": "Ing, Mario Adolfo Córdova Machado",
+      "fiscal": "Ing, Lorena Yolanda Carrión Erazo",
+      "avance": 0,
+      "obs": "",
+      "utm_zona": "17S",
+      "utm_e": "",
+      "utm_n": "",
+      "historial": [
+        {
+          "fecha": "23/04/2026",
+          "nota": "Importado desde CSV GADM Riobamba",
+          "avance": 0
+        }
+      ],
+      "tipo": "espacio",
+      "foto_url": "",
+      "parroquia": "Riobamba"
+    },
+    {
+      "nombre": "CONSTRUCCIÓN DEL PARQUE DE LA CIUDADELA LUIS A, MARTÍNEZ,",
+      "codigo": "COTO-GADMR-2024-06",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 296627.8,
+      "fase": 5,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lissette Mena",
+      "avance": 100,
+      "obs": "Recepcion Provisional",
+      "utm_zona": "17M",
+      "utm_e": "763565.57",
+      "utm_n": "9814879.36",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 100
+        }
+      ],
+      "parroquia": "Riobamba",
+      "tipo": "espacio",
+      "lat": -1.6734,
+      "lng": -78.63108
+    },
+    {
+      "nombre": "REASFALTADO DE VARIAS VIAS DE LA CIUDAD DE RIOBAMBA ETAPA 1,",
+      "codigo": "COTO-GADMR-2024-007",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 910805.6,
+      "fase": 5,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Erick Iglesias",
+      "avance": 100,
+      "obs": "",
+      "utm_zona": "17M",
+      "utm_e": "",
+      "utm_n": "",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 100
+        }
+      ],
+      "parroquia": "Riobamba",
+      "tipo": "vial"
+    },
+    {
+      "nombre": "CONSTRUCCIÓN DE LA PLAZA DE RASTRO DE LA PARROQUIA LICTO, ETAPA 1,",
+      "codigo": "COTO-GADMR-2024-008",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 466039,
+      "fase": 5,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Erick Iglesias",
+      "avance": 100,
+      "obs": "",
+      "utm_zona": "17M",
+      "utm_e": "766168.4",
+      "utm_n": "9800346.3",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 100
+        }
+      ],
+      "parroquia": "Riobamba",
+      "tipo": "espacio",
+      "lat": -1.80474,
+      "lng": -78.60753
+    },
+    {
+      "nombre": "CONSTRUCCIÓN DEL CENTRO DE CAPACITACIÓN DE LA CABECERA PARROQUIAL DE SAN LUIS,",
+      "codigo": "COTO-GADMR-2024-010",
+      "entidad": "GADM Riobamba",
+      "proc": "Cotizacion",
+      "presupuesto": 311868.88,
+      "fase": 5,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lorena Carrión",
+      "avance": 100,
+      "obs": "",
+      "utm_zona": "17M",
+      "utm_e": "761782.41",
+      "utm_n": "9811139.89",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 100
+        }
+      ],
+      "parroquia": "San Luis",
+      "tipo": "equipamiento",
+      "lat": -1.70722,
+      "lng": -78.64706
+    },
+    {
+      "nombre": "MEJORA INTEGRAL DEL CENTRO COMERCIAL POPULAR LA CONDAMINE FASE II “ESTUDIOS PARA LA REMODELACION DE FACHADA, ESPACIOS INTERIORES, EXTERIORES, EVALUACIÓN DEL SISTEMA HIDROSANITARIO, SISTEMA CONTRAINCENDIOS, SISTEMA ELÉCTRICO, ELECTRÓNICO AMBIENTAL Y MECÁNICO”,",
+      "codigo": "CDC-GADMR-2024-022",
+      "entidad": "GADM Riobamba",
+      "proc": "Consultoría contratación directa",
+      "presupuesto": 66550,
+      "fase": 5,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "",
+      "avance": 100,
+      "obs": "",
+      "utm_zona": "17M",
+      "utm_e": "760755.96",
+      "utm_n": "9814910.06",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 100
+        }
+      ],
+      "parroquia": "Riobamba",
+      "tipo": "alcantarillado",
+      "lat": -1.67315,
+      "lng": -78.65632
+    },
+    {
+      "nombre": "CONSTRUCCIÓN DE LA BATERIA SANITARIA PARA  La unidad educativa camilo galllegos toledo , terminación de bloque de aulas  6a-2ph escuela german abdotouma , construcción del area recreativa y provisión e instalación de arcos metálicos para indor en la unidad educativa intercultural bilingue (SIC) sangay, rehabilitación de la cancha de cesped de la unidad educativa miguel angel león ponton,",
+      "codigo": "MCO-GADMR-004-2023",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 151359.42,
+      "fase": 5,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Lissette Mena",
+      "avance": 100,
+      "obs": "",
+      "utm_zona": "17M",
+      "utm_e": "759169.5",
+      "utm_n": "9816735.72",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 100
+        }
+      ],
+      "parroquia": "Riobamba",
+      "tipo": "alcantarillado",
+      "lat": -1.65667,
+      "lng": -78.67059
+    },
+    {
+      "nombre": "CONSTRUCCIÓN DEL CENTRO DE CAPACITACIÓN DE LA CABECERA PARROQUIAL DE PUNGALÁ",
+      "codigo": "MCO-GADMR-2025-006",
+      "entidad": "GADM Riobamba",
+      "proc": "Menor Cuantia",
+      "presupuesto": 91948.05,
+      "fase": 4,
+      "inicio": "",
+      "fin": "",
+      "director": "",
+      "fiscal": "Mónica Paltán",
+      "avance": 30,
+      "obs": "",
+      "utm_zona": "17M",
+      "utm_e": "767730.67",
+      "utm_n": "9798990.19",
+      "ejecutado": 0,
+      "estado": "normal",
+      "historial": [
+        {
+          "fecha": "02/05/2026",
+          "nota": "Importada desde CSV",
+          "avance": 30
+        }
+      ],
+      "parroquia": "Riobamba",
+      "tipo": "equipamiento",
+      "lat": -1.81698,
+      "lng": -78.59348
+    }
+  ]
+}
