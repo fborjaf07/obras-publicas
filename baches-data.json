@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "actualizado": "2026-05-02",
+  "entidad": "GADM Riobamba",
+  "total": 0,
+  "semana": 0,
+  "cronograma": [
+    {
+      "nombre": "Av. Atahualpa sentido hacia Yaruquies",
+      "estado": "programado",
+      "fecha_ini": "2026-05-04",
+      "fecha_fin": "2026-05-05",
+      "observaciones": "Lunes 4 de mayo se realiza el frezado.\nMartes 5 de mayo se realiza el bachado.",
+      "puntos": [
+        [
+          -1.682229,
+          -78.662877
+        ],
+        [
+          -1.687024,
+          -78.674223
+        ]
+      ]
+    }
+  ],
+  "baches": []
+}
