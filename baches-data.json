@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "actualizado": "2026-05-03",
+  "actualizado": "2026-05-08",
   "entidad": "GADM Riobamba",
   "total": 0,
   "semana": 0,
@@ -24,7 +24,7 @@
     },
     {
       "nombre": "Calle Santa Isabella (Alado del cementerio)",
-      "estado": "programado",
+      "estado": "ejecutado",
       "fecha_ini": "2026-05-11",
       "fecha_fin": "2026-05-12",
       "observaciones": "Trabajos realizados por las cuadrillas municipales",
@@ -45,7 +45,7 @@
     },
     {
       "nombre": "Calle Isla Fernandina (Vía a Yaruquies)",
-      "estado": "programado",
+      "estado": "ejecutado",
       "fecha_ini": "2026-05-13",
       "fecha_fin": "2026-05-14",
       "observaciones": "Trabajo realizado por cuadrillas municipales",
@@ -66,7 +66,7 @@
     },
     {
       "nombre": "Av. Atahualpa (Riobamba a Yaruquies)",
-      "estado": "programado",
+      "estado": "ejecutado",
       "fecha_ini": "2026-05-04",
       "fecha_fin": "2026-05-07",
       "observaciones": "Trabajo con cuadrillas municipales",
@@ -146,6 +146,107 @@
         [
           -1.687005,
           -78.674138
+        ]
+      ]
+    },
+    {
+      "nombre": "Calle de Isabel de Godin desde la 9 de octubre hasta la Esmeraldas",
+      "estado": "programado",
+      "fecha_ini": "2026-05-13",
+      "fecha_fin": "2026-05-14",
+      "observaciones": "Cuadrilla de GADMR y Riobamba EP",
+      "puntos": [
+        [
+          -1.672068,
+          -78.662672
+        ],
+        [
+          -1.672111,
+          -78.657619
+        ]
+      ]
+    },
+    {
+      "nombre": "Calle Bolivia desde la 9 de Octubre hasta Av. Unidad Nacional",
+      "estado": "programado",
+      "fecha_ini": "2026-05-13",
+      "fecha_fin": "2026-05-13",
+      "observaciones": "",
+      "puntos": [
+        [
+          -1.674278,
+          -78.661138
+        ],
+        [
+          -1.668854,
+          -78.656991
+        ]
+      ]
+    },
+    {
+      "nombre": "Calle Espejo desde la 9 de Octubre hasta la Olmedo",
+      "estado": "programado",
+      "fecha_ini": "2026-05-11",
+      "fecha_fin": "2026-05-12",
+      "observaciones": "Trabajo con cuadrillas del GADMR y de Riobamba EP",
+      "puntos": [
+        [
+          -1.680858,
+          -78.655467
+        ],
+        [
+          -1.674575,
+          -78.65028
+        ]
+      ]
+    },
+    {
+      "nombre": "Calle Puruha y Juan Felix Proaño desde 9 de octubre a la Primera Constituyente",
+      "estado": "programado",
+      "fecha_ini": "2026-05-14",
+      "fecha_fin": "2026-05-15",
+      "observaciones": "Trabajos de Riobamba EP y GADMR",
+      "puntos": [
+        [
+          -1.685689,
+          -78.643429
+        ],
+        [
+          -1.680158,
+          -78.642945
+        ],
+        [
+          -1.678824,
+          -78.641847
+        ]
+      ]
+    },
+    {
+      "nombre": "Puruha desde la Primera Constituyente a la Edelberto Bonilla",
+      "estado": "programado",
+      "fecha_ini": "2026-05-14",
+      "fecha_fin": "2026-05-15",
+      "observaciones": "Trabajos de Riobamba EP y GADMR",
+      "puntos": [
+        [
+          -1.678836,
+          -78.641847
+        ],
+        [
+          -1.677206,
+          -78.640453
+        ],
+        [
+          -1.676734,
+          -78.640335
+        ],
+        [
+          -1.674795,
+          -78.638644
+        ],
+        [
+          -1.671449,
+          -78.636026
         ]
       ]
     }
