@@ -2140,46 +2140,73 @@ window.setObrasBasemap=function(k,el){
   obrasMapTile=L.tileLayer(urls[k],{maxZoom:19}).addTo(obrasLeafletMap);
 };
 
+const SHEETS_ID = '1xSU32UfBtmwJeJx_Pu9lzfJJZSVHy_GMAyfMrbvtVHI';
+
+function parseSheetsCSV(csv){
+  const lines=csv.trim().split('\n'); if(!lines.length)return[];
+  const sep=lines[0].includes('\t')?'\t':',';
+  const headers=lines[0].split(sep).map(h=>h.replace(/"/g,'').trim().toLowerCase());
+  const col=names=>{for(const n of names){const i=headers.indexOf(n);if(i>=0)return i;}return -1;};
+  const iN=col(['nombre','name','obra']),iC=col(['codigo','código','code']),iE=col(['entidad','entity']),
+        iP=col(['procedimiento','proc','procedure']),iPr=col(['presupuesto','budget','monto','valor']),
+        iF=col(['fase','phase']),iIni=col(['inicio','start','fecha_inicio']),iFin=col(['fin','end','fecha_fin']),
+        iD=col(['director','director_obra']),iFisc=col(['fiscalizador','fiscal']),
+        iAv=col(['avance','progress','avance_pct']),iOb=col(['observaciones','obs','notas']),
+        iSt=col(['estado','status']),iZona=col(['utm_zona','zona']),iE2=col(['utm_este','este','utm_e']),
+        iNte=col(['utm_norte','norte','utm_n']),iLat=col(['lat','latitude']),iLng=col(['lng','lon','longitude']);
+  function cell(row,i){return i>=0&&row[i]?row[i].replace(/"/g,'').trim():''}
+  function cleanNum(s){return parseFloat((s||'0').replace('%','').replace(/[$.]/g,'').replace(',','.'))||0}
+  const result=[];
+  for(let r=1;r<lines.length;r++){
+    const row=lines[r].split(sep);
+    const nombre=cell(row,iN);if(!nombre)continue;
+    const avRaw=Math.round(cleanNum(cell(row,iAv)));
+    const faseRaw=parseInt(cell(row,iF))||0;
+    const fase=faseRaw>=1&&faseRaw<=5?faseRaw:(avRaw>=100?5:avRaw>0?4:3);
+    result.push({id:r,nombre,codigo:cell(row,iC),entidad:cell(row,iE)||'GADM Riobamba',
+      proc:cell(row,iP)||'Licitación',presupuesto:cleanNum(cell(row,iPr)),fase,
+      inicio:cell(row,iIni),fin:cell(row,iFin),director:cell(row,iD),
+      fiscalizador:cell(row,iFisc),avance:avRaw,observaciones:cell(row,iOb),
+      estado:cell(row,iSt)||'normal',utm_zona:cell(row,iZona),utm_e:cell(row,iE2),
+      utm_n:cell(row,iNte),lat:cell(row,iLat),lng:cell(row,iLng),foto_url:'',ejecutado:0,historial:[]});
+  }
+  return result;
+}
+
+async function fetchSheetCSV(url){
+  const m=url.match(/\/d\/([\.\w-]+)/);
+  const direct='https://docs.google.com/spreadsheets/d/'+(m?m[1]:SHEETS_ID)+'/export?format=csv';
+  const proxy='https://corsproxy.io/?'+encodeURIComponent(direct);
+  try{const r=await fetch(direct);if(r.ok)return await r.text();}catch(_){}
+  const r2=await fetch(proxy);if(r2.ok)return await r2.text();
+  throw new Error('No se pudo acceder al Sheet');
+}
+
+function applyObrasPublicas(){
+  const t=document.getElementById('pub-total-obras'),inv=document.getElementById('pub-inversion'),
+        cnt=document.getElementById('pub-obras-count'),tc=document.getElementById('tab-count-obras');
+  if(t)t.textContent=OBRAS_PUB.length;
+  if(inv){const tot=OBRAS_PUB.reduce((a,o)=>a+(parseFloat(o.presupuesto)||0),0);inv.textContent=fmtM(tot);}
+  if(cnt)cnt.textContent=OBRAS_PUB.length+' obras registradas';
+  if(tc)tc.textContent=OBRAS_PUB.length;
+  if(typeof renderObrasTable==='function')renderObrasTable(OBRAS_PUB);
+  if(obrasLeafletMap)renderObrasMapPins();
+  if(typeof renderResumen==='function')setTimeout(renderResumen,100);
+}
+
 function loadObrasPublicas(){
-  fetch('datos.json?v='+Date.now())
-    .then(r=>r.ok?r.json():Promise.reject())
-    .then(d=>{
-      OBRAS_PUB=(d.obras||d)||[];
-      const t=document.getElementById('pub-total-obras');
-      const inv=document.getElementById('pub-inversion');
-      const cnt=document.getElementById('pub-obras-count');
-      const tc=document.getElementById('tab-count-obras');
-      if(t)t.textContent=OBRAS_PUB.length;
-      if(inv){const tot=OBRAS_PUB.reduce((a,o)=>a+(parseFloat(o.presupuesto)||0),0);inv.textContent=fmtM(tot);}
-      if(cnt)cnt.textContent=OBRAS_PUB.length+' obras registradas';
-      if(tc)tc.textContent=OBRAS_PUB.length;
-      renderObrasTable(OBRAS_PUB);
-      if(obrasLeafletMap)renderObrasMapPins();
-      showToast(OBRAS_PUB.length+' obras cargadas');
+  const url='https://docs.google.com/spreadsheets/d/'+SHEETS_ID+'/export?format=csv';
+  fetchSheetCSV(url)
+    .then(csv=>{
+      const list=parseSheetsCSV(csv);
+      if(!list.length)throw new Error('Sheet vacío o columnas no reconocidas');
+      OBRAS_PUB=list; applyObrasPublicas();
+      showToast(OBRAS_PUB.length+' obras cargadas desde Google Sheets');
     })
-    .catch(()=>{
-      // Fallback: usar las obras admin (localStorage o OBRAS_DEFAULT) para que el Resumen
-      // siempre muestre algo, incluso al abrir el HTML directo (file://) sin servidor.
-      try {
-        const fallback = (window.obras && window.obras.length) ? window.obras
-                        : (typeof OBRAS_DEFAULT !== 'undefined' ? OBRAS_DEFAULT : []);
-        if (fallback && fallback.length) {
-          OBRAS_PUB = fallback.slice();
-          const t=document.getElementById('pub-total-obras');
-          const inv=document.getElementById('pub-inversion');
-          const cnt=document.getElementById('pub-obras-count');
-          const tc=document.getElementById('tab-count-obras');
-          if(t)t.textContent=OBRAS_PUB.length;
-          if(inv){const tot=OBRAS_PUB.reduce((a,o)=>a+(parseFloat(o.presupuesto)||0),0);inv.textContent=fmtM(tot);}
-          if(cnt)cnt.textContent=OBRAS_PUB.length+' obras (datos locales)';
-          if(tc)tc.textContent=OBRAS_PUB.length;
-          if(typeof renderObrasTable==='function')renderObrasTable(OBRAS_PUB);
-          if(obrasLeafletMap)renderObrasMapPins();
-          if(typeof renderResumen==='function')setTimeout(renderResumen,100);
-          return;
-        }
-      } catch(e){}
-      const c=document.getElementById('pub-obras-count');if(c)c.textContent='Sin datos publicados aún';
+    .catch(e=>{
+      const msg=(e&&e.message)||'Error al conectar con Google Sheets';
+      const c=document.getElementById('pub-obras-count');
+      if(c)c.textContent='⚠ '+msg;
     });
 }
 
