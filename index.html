@@ -2355,7 +2355,7 @@ function applyObrasPublicas(){
 }
 
 function loadObrasPublicas(){
-  var csvUrl='https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv';
+  var csvUrl='https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv&t='+Date.now();
   fetch(csvUrl)
     .then(function(r){if(r.ok)return r.text();throw new Error('HTTP '+r.status);})
     .then(function(csv){
