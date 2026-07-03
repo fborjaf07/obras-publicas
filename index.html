@@ -3660,6 +3660,7 @@ window.VIAS_ADQ={"type": "FeatureCollection", "features": [{"type": "Feature", "
     });
     if (name === 'resumen') {
       setTimeout(initMiniMap, 50);
+      setTimeout(function(){ if(typeof renderResumen==='function') renderResumen(); }, 150);
     } else {
       // Delegate to original logic for invalidateSize etc.
       if (typeof originalSet === 'function') {
