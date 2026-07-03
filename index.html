@@ -1354,15 +1354,15 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   <section class="charts-grid-rs">
     <div class="rs-card chart-card">
       <div class="rsc-head"><h3>Distribución por estado de avance</h3><span class="rsc-meta">Concluidas · En ejecución · Con inicio</span></div>
-      <div class="chart-wrap"><canvas id="rs-chart-fases"></canvas></div>
+      <div class="chart-wrap" style="height:280px"><canvas id="rs-chart-fases" style="display:none"></canvas><div id="css-chart-fases" style="height:100%"></div></div>
     </div>
     <div class="rs-card chart-card">
       <div class="rsc-head"><h3>Inversión por plataforma</h3><span class="rsc-meta">Presupuesto comprometido por plataforma (USD)</span></div>
-      <div class="chart-wrap"><canvas id="rs-chart-parr"></canvas></div>
+      <div class="chart-wrap" style="height:280px"><canvas id="rs-chart-parr" style="display:none"></canvas><div id="css-chart-parr" style="height:100%"></div></div>
     </div>
     <div class="rs-card chart-card">
       <div class="rsc-head"><h3>Avance por procedimiento</h3><span class="rsc-meta">Promedio de ejecución (%)</span></div>
-      <div class="chart-wrap"><canvas id="rs-chart-proc"></canvas></div>
+      <div class="chart-wrap" style="height:280px"><canvas id="rs-chart-proc" style="display:none"></canvas><div id="css-chart-proc" style="height:100%"></div></div>
     </div>
   </section>
 
@@ -2444,6 +2444,13 @@ function applyObrasPublicas(){
   if(tc)tc.textContent=OBRAS_PUB.length;
   if(typeof renderObrasTable==='function')renderObrasTable(OBRAS_PUB);
   if(obrasLeafletMap)renderObrasMapPins();
+  renderChartsCSS(OBRAS_PUB);
+  // Timestamp visible para confirmar que los datos cargaron
+  var ts = document.getElementById('sheets-load-ts');
+  if(!ts){ ts = document.createElement('div'); ts.id='sheets-load-ts';
+    ts.style.cssText='position:fixed;top:0;left:0;right:0;background:#0A6E40;color:#fff;text-align:center;font-size:12px;font-weight:600;padding:4px;z-index:99999;';
+    document.body.prepend(ts); }
+  ts.textContent = '✓ '+OBRAS_PUB.length+' obras cargadas desde Google Sheets · '+new Date().toLocaleTimeString('es-EC');
   if(typeof renderResumen==='function')setTimeout(function(){try{renderResumen();}catch(e){console.warn('renderResumen err',e);}},200);
 }
 
@@ -3642,6 +3649,89 @@ window.VIAS_ADQ={"type": "FeatureCollection", "features": [{"type": "Feature", "
 })();
 </script>
 <script>
+
+function renderChartsCSS(obras){
+  if(!obras||!obras.length) return;
+  var av=function(o){return Math.min(100,Math.max(0,parseFloat(o.avance)||0));};
+  var concl=obras.filter(function(o){return av(o)>=100;});
+  var ejec=obras.filter(function(o){return av(o)>0&&av(o)<100;});
+  var ini=obras.filter(function(o){return av(o)===0;});
+  var fmt2=function(n){return n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+Math.round(n);};
+
+  // 1. Donut estado (conic-gradient)
+  var cF=document.getElementById('css-chart-fases');
+  if(cF){
+    var tot=obras.length,cl=concl.length,ej=ejec.length,ci=ini.length;
+    var p1=Math.round(cl/tot*100),p2=Math.round(ej/tot*100),p3=100-p1-p2;
+    var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #5B6BBF '+(p1+p2)+'% 100%)';
+    cF.innerHTML='<div style="display:flex;align-items:center;gap:20px;padding:16px 20px;height:100%">'
+      +'<div style="width:120px;height:120px;border-radius:50%;background:'+grad+';flex-shrink:0;position:relative">'
+      +'<div style="position:absolute;inset:28px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#0B1F4D">'+tot+'</div>'
+      +'</div><div style="display:flex;flex-direction:column;gap:10px;font-size:12px">'
+      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#0A6E40;flex-shrink:0"></span>Concluidas <b>'+cl+'</b></div>'
+      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#1B7B4E;flex-shrink:0"></span>En ejecución <b>'+ej+'</b></div>'
+      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#5B6BBF;flex-shrink:0"></span>Con inicio <b>'+ci+'</b></div>'
+      +'</div></div>';
+  }
+
+  // 2. Barras inversión por procedimiento
+  var cP=document.getElementById('css-chart-parr');
+  if(cP){
+    var inv={};
+    obras.forEach(function(o){var k=(o.proc||'Otro').substring(0,22);inv[k]=(inv[k]||0)+(parseFloat(o.presupuesto)||0);});
+    var sorted=Object.entries(inv).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
+    var maxV=sorted[0]?sorted[0][1]:1;
+    cP.innerHTML='<div style="padding:12px 18px;display:flex;flex-direction:column;gap:9px;justify-content:center">'
+      +sorted.map(function(e){
+        var pct=Math.round(e[1]/maxV*100);
+        return '<div style="display:grid;grid-template-columns:140px 1fr 64px;align-items:center;gap:8px;font-size:11px">'
+          +'<span style="color:#4A5568;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
+          +'<div style="height:13px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
+          +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:3px"></div></div>'
+          +'<span style="font-weight:600;color:#1A1F2C;font-size:10px">'+fmt2(e[1])+'</span></div>';
+      }).join('')+'</div>';
+  }
+
+  // 3. Barras avance por procedimiento
+  var cPr=document.getElementById('css-chart-proc');
+  if(cPr){
+    var avMap={};
+    obras.forEach(function(o){var k=(o.proc||'Otro').substring(0,22);if(!avMap[k])avMap[k]={s:0,n:0};avMap[k].s+=av(o);avMap[k].n++;});
+    var avS=Object.entries(avMap).map(function(e){return[e[0],Math.round(e[1].s/e[1].n)];}).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
+    cPr.innerHTML='<div style="padding:12px 18px;display:flex;flex-direction:column;gap:9px;justify-content:center">'
+      +avS.map(function(e){
+        var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#C0392B';
+        return '<div style="display:grid;grid-template-columns:140px 1fr 44px;align-items:center;gap:8px;font-size:11px">'
+          +'<span style="color:#4A5568;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
+          +'<div style="height:13px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
+          +'<div style="height:100%;width:'+e[1]+'%;background:'+color+';border-radius:3px"></div></div>'
+          +'<span style="font-weight:600;font-size:10px">'+e[1]+'%</span></div>';
+      }).join('')+'</div>';
+  }
+
+  // 4. Top 3 obras destacadas
+  var list=document.getElementById('top-obras-list');
+  if(list){
+    var top=obras.slice().sort(function(a,b){return (parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,3);
+    var TIPO_IC={vial:'🛣️',alcantarillado:'💧',equipamiento:'🏛️',edificacion:'🏛️',espacio:'🌳',default:'🏗️'};
+    list.innerHTML=top.map(function(o){
+      var ic=TIPO_IC[o.tipo]||TIPO_IC.default;
+      var avp=av(o);
+      var pres=parseFloat(o.presupuesto)||0;
+      var presStr=pres?fmt2(pres):'—';
+      return '<div class="top-obra">'
+        +'<div class="to-thumb">'+ic+'</div>'
+        +'<div style="flex:1;min-width:0">'
+        +'<div class="to-name">'+(o.nombre||'—')+'</div>'
+        +'<div class="to-meta">📍 Riobamba · '+(o.proc||'—')+'</div>'
+        +'<div class="to-bar"><div class="to-bar-fill" style="width:'+avp+'%"></div></div>'
+        +'<div class="to-foot"><span class="to-pres">'+presStr+'</span><span class="to-av">'+avp+'%</span></div>'
+        +'</div></div>';
+    }).join('');
+  }
+}
+window.renderChartsCSS = renderChartsCSS;
+
 // ═════════ PORTAL CIUDADANO · RESUMEN ═════════
 (function(){
   // 1. Override setPortalTab to also activate panel-resumen + render mini-mapa lazy
@@ -3823,66 +3913,7 @@ const pub = window.OBRAS_PUB || [];
       set('rs-kpi-inv', inv ? fmt(inv) : '$0');
     } catch(_){}
 
-    // ─── CSS Charts (no canvas, always works) ───
-    (function(){
-      var fmt2=function(n){return n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+Math.round(n);};
-      
-      // 1. Donut por estado (conic-gradient CSS)
-      var cF=document.getElementById('rs-chart-fases');
-      if(cF&&obras.length){
-        var tot=obras.length,cl=concluidas.length,ej=enEjec.length,ci=conInicio.length;
-        var p1=Math.round(cl/tot*100),p2=Math.round(ej/tot*100),p3=100-p1-p2;
-        var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #5B6BBF '+(p1+p2)+'% 100%)';
-        cF.parentElement.innerHTML='<div style="display:flex;align-items:center;gap:20px;padding:16px 20px;height:100%">'
-          +'<div style="width:140px;height:140px;border-radius:50%;background:'+grad+';flex-shrink:0;position:relative">'
-          +'<div style="position:absolute;inset:30px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#0B1F4D">'+tot+'</div>'
-          +'</div>'
-          +'<div style="display:flex;flex-direction:column;gap:8px;font-size:12px">'
-          +'<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:#0A6E40;flex-shrink:0"></span><span>Concluidas <b>'+cl+'</b></span></div>'
-          +'<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:#1B7B4E;flex-shrink:0"></span><span>En ejecución <b>'+ej+'</b></span></div>'
-          +'<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:#5B6BBF;flex-shrink:0"></span><span>Con inicio <b>'+ci+'</b></span></div>'
-          +'</div></div>';
-      }
-
-      // 2. Barras por PROCEDIMIENTO (horizontal CSS bars)
-      var cP=document.getElementById('rs-chart-parr');
-      if(cP&&obras.length){
-        var procInv={};
-        obras.forEach(function(o){var k=o.proc||'Otro';procInv[k]=(procInv[k]||0)+(parseFloat(o.presupuesto)||0);});
-        var sorted=Object.entries(procInv).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
-        var maxV=sorted[0]?sorted[0][1]:1;
-        cP.parentElement.innerHTML='<div style="padding:12px 20px;display:flex;flex-direction:column;gap:10px;height:100%;justify-content:center">'
-          +sorted.map(function(e){
-            var pct=Math.round(e[1]/maxV*100);
-            var lbl=e[0].length>20?e[0].slice(0,18)+'…':e[0];
-            return '<div style="display:grid;grid-template-columns:130px 1fr 70px;align-items:center;gap:8px;font-size:11px">'
-              +'<span style="color:#4A5568;text-align:right;white-space:nowrap">'+lbl+'</span>'
-              +'<div style="height:14px;background:#E8ECF3;border-radius:4px;overflow:hidden">'
-              +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:4px;transition:width .4s"></div></div>'
-              +'<span style="color:#1A1F2C;font-weight:600;font-size:10px">'+fmt2(e[1])+'</span>'
-              +'</div>';
-          }).join('')+'</div>';
-      }
-
-      // 3. Barras por AVANCE promedio por procedimiento
-      var cPr=document.getElementById('rs-chart-proc');
-      if(cPr&&obras.length){
-        var procAv={};
-        obras.forEach(function(o){var k=o.proc||'Otro';if(!procAv[k])procAv[k]={s:0,n:0};procAv[k].s+=(parseFloat(o.avance)||0);procAv[k].n++;});
-        var avSorted=Object.entries(procAv).map(function(e){return[e[0],Math.round(e[1].s/e[1].n)];}).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
-        cPr.parentElement.innerHTML='<div style="padding:12px 20px;display:flex;flex-direction:column;gap:10px;height:100%;justify-content:center">'
-          +avSorted.map(function(e){
-            var lbl=e[0].length>20?e[0].slice(0,18)+'…':e[0];
-            var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#C0392B';
-            return '<div style="display:grid;grid-template-columns:130px 1fr 44px;align-items:center;gap:8px;font-size:11px">'
-              +'<span style="color:#4A5568;text-align:right;white-space:nowrap">'+lbl+'</span>'
-              +'<div style="height:14px;background:#E8ECF3;border-radius:4px;overflow:hidden">'
-              +'<div style="height:100%;width:'+e[1]+'%;background:'+color+';border-radius:4px;transition:width .4s"></div></div>'
-              +'<span style="color:#1A1F2C;font-weight:600;font-size:10px">'+e[1]+'%</span>'
-              +'</div>';
-          }).join('')+'</div>';
-      }
-    })();
+    renderChartsCSS(obras);
 
     // Top 3 obras: mayor presupuesto
     const top = obras.slice().sort((a,b)=>(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0)).slice(0,3);
