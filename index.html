@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 <script src="plataformas-data.js"></script>
 <style>
@@ -3824,107 +3823,66 @@ const pub = window.OBRAS_PUB || [];
       set('rs-kpi-inv', inv ? fmt(inv) : '$0');
     } catch(_){}
 
-    // ─── Charts ───
-    if (typeof Chart !== 'undefined') {
-    try {
-      // 1. Donut por estado de avance
-      const ESTADOS = ['Concluidas', 'En ejecución', 'Con inicio'];
-      const ESTADO_COLORS = ['#0A6E40','#1B7B4E','#5B6BBF'];
-      const dataEst = [concluidas.length, enEjec.length, conInicio.length];
-      const cF = document.getElementById('rs-chart-fases');
-      if (cF) {
-        const _ef=Chart.getChart(cF); if(_ef)_ef.destroy();
-        chartFases = new Chart(cF, {
-          type:'doughnut',
-          data:{ labels:ESTADOS, datasets:[{ data:dataEst, backgroundColor:ESTADO_COLORS, borderWidth:2, borderColor:'#fff' }] },
-          options:{
-            responsive:true, maintainAspectRatio:false, cutout:'62%',
-            plugins:{
-              legend:{ position:'bottom', labels:{ font:{family:'Inter',size:11}, padding:10, boxWidth:10 } },
-              tooltip:{ callbacks:{ label:c=>c.label+': '+c.raw+' obras' } }
-            }
-          }
-        });
+    // ─── CSS Charts (no canvas, always works) ───
+    (function(){
+      var fmt2=function(n){return n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+Math.round(n);};
+      
+      // 1. Donut por estado (conic-gradient CSS)
+      var cF=document.getElementById('rs-chart-fases');
+      if(cF&&obras.length){
+        var tot=obras.length,cl=concluidas.length,ej=enEjec.length,ci=conInicio.length;
+        var p1=Math.round(cl/tot*100),p2=Math.round(ej/tot*100),p3=100-p1-p2;
+        var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #5B6BBF '+(p1+p2)+'% 100%)';
+        cF.parentElement.innerHTML='<div style="display:flex;align-items:center;gap:20px;padding:16px 20px;height:100%">'
+          +'<div style="width:140px;height:140px;border-radius:50%;background:'+grad+';flex-shrink:0;position:relative">'
+          +'<div style="position:absolute;inset:30px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#0B1F4D">'+tot+'</div>'
+          +'</div>'
+          +'<div style="display:flex;flex-direction:column;gap:8px;font-size:12px">'
+          +'<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:#0A6E40;flex-shrink:0"></span><span>Concluidas <b>'+cl+'</b></span></div>'
+          +'<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:#1B7B4E;flex-shrink:0"></span><span>En ejecución <b>'+ej+'</b></span></div>'
+          +'<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:#5B6BBF;flex-shrink:0"></span><span>Con inicio <b>'+ci+'</b></span></div>'
+          +'</div></div>';
       }
 
-      // 2. Barras por PLATAFORMA (inversión)
-      const platInv = {};
-      obras.forEach(o=>{
-        const p = o.plataforma || 'Sin plataforma';
-        platInv[p] = (platInv[p]||0) + (parseFloat(o.presupuesto)||0);
-      });
-      const platSorted = Object.entries(platInv).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,10);
-      const cP = document.getElementById('rs-chart-parr');
-      if (cP) {
-        const _epx=Chart.getChart(cP);if(_epx)_epx.destroy();
-        if (platSorted.length) {
-          chartParr = new Chart(cP, {
-            type:'bar',
-            data:{
-              labels:platSorted.map(x=>x[0].replace('PLATAFORMA ','Plat. ')),
-              datasets:[{ data:platSorted.map(x=>x[1]), backgroundColor:'#1A4080', borderRadius:4, barThickness:18 }]
-            },
-            options:{
-              indexAxis:'y', responsive:true, maintainAspectRatio:false,
-              plugins:{
-                legend:{display:false},
-                tooltip:{ callbacks:{ label:c=>'$'+c.raw.toLocaleString('es-EC',{maximumFractionDigits:0}) } }
-              },
-              scales:{
-                x:{
-                  ticks:{ font:{family:'Inter',size:10}, color:'#6B7280',
-                    callback:v=>v>=1e6?'$'+(v/1e6).toFixed(1)+'M':v>=1e3?'$'+(v/1e3).toFixed(0)+'K':'$'+v },
-                  grid:{ color:'#F0EBE0' }
-                },
-                y:{ ticks:{ font:{family:'Inter',size:11}, color:'#3B4252' }, grid:{display:false} }
-              }
-            }
-          });
-        }
+      // 2. Barras por PROCEDIMIENTO (horizontal CSS bars)
+      var cP=document.getElementById('rs-chart-parr');
+      if(cP&&obras.length){
+        var procInv={};
+        obras.forEach(function(o){var k=o.proc||'Otro';procInv[k]=(procInv[k]||0)+(parseFloat(o.presupuesto)||0);});
+        var sorted=Object.entries(procInv).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
+        var maxV=sorted[0]?sorted[0][1]:1;
+        cP.parentElement.innerHTML='<div style="padding:12px 20px;display:flex;flex-direction:column;gap:10px;height:100%;justify-content:center">'
+          +sorted.map(function(e){
+            var pct=Math.round(e[1]/maxV*100);
+            var lbl=e[0].length>20?e[0].slice(0,18)+'…':e[0];
+            return '<div style="display:grid;grid-template-columns:130px 1fr 70px;align-items:center;gap:8px;font-size:11px">'
+              +'<span style="color:#4A5568;text-align:right;white-space:nowrap">'+lbl+'</span>'
+              +'<div style="height:14px;background:#E8ECF3;border-radius:4px;overflow:hidden">'
+              +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:4px;transition:width .4s"></div></div>'
+              +'<span style="color:#1A1F2C;font-weight:600;font-size:10px">'+fmt2(e[1])+'</span>'
+              +'</div>';
+          }).join('')+'</div>';
       }
 
-      // 3. Avance promedio por procedimiento
-      const procData = {};
-      obras.filter(o=>av(o) > 0 && av(o) < 100).forEach(o=>{
-        const k = o.proc || 'Otro';
-        if (!procData[k]) procData[k] = { sum:0, n:0 };
-        procData[k].sum += av(o);
-        procData[k].n++;
-      });
-      const procEntries = Object.entries(procData).map(([k,v])=>[k, Math.round(v.sum/v.n), v.n]);
-      const cPr = document.getElementById('rs-chart-proc');
-      if (cPr) {
-        const _eprx=Chart.getChart(cPr);if(_eprx)_eprx.destroy();
-        if (procEntries.length) {
-          chartProc = new Chart(cPr, {
-            type:'bar',
-            data:{
-              labels:procEntries.map(x=>x[0].length>22?x[0].slice(0,20)+'…':x[0]),
-              datasets:[{
-                data:procEntries.map(x=>x[1]),
-                backgroundColor:procEntries.map(x=>x[1]>=70?'#1B7B4E':x[1]>=40?'#C9A227':'#C0392B'),
-                borderRadius:4, barThickness:22
-              }]
-            },
-            options:{
-              responsive:true, maintainAspectRatio:false,
-              plugins:{
-                legend:{display:false},
-                tooltip:{ callbacks:{
-                  title:c=>procEntries[c[0].dataIndex][0],
-                  label:c=>'Avance: '+c.raw+'% · '+procEntries[c.dataIndex][2]+' obras'
-                }}
-              },
-              scales:{
-                y:{ beginAtZero:true, max:100, ticks:{ font:{family:'Inter',size:10}, color:'#6B7280', callback:v=>v+'%' }, grid:{color:'#F0EBE0'} },
-                x:{ ticks:{ font:{family:'Inter',size:10}, color:'#3B4252', maxRotation:30, minRotation:0 }, grid:{display:false} }
-              }
-            }
-          });
-        }
+      // 3. Barras por AVANCE promedio por procedimiento
+      var cPr=document.getElementById('rs-chart-proc');
+      if(cPr&&obras.length){
+        var procAv={};
+        obras.forEach(function(o){var k=o.proc||'Otro';if(!procAv[k])procAv[k]={s:0,n:0};procAv[k].s+=(parseFloat(o.avance)||0);procAv[k].n++;});
+        var avSorted=Object.entries(procAv).map(function(e){return[e[0],Math.round(e[1].s/e[1].n)];}).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
+        cPr.parentElement.innerHTML='<div style="padding:12px 20px;display:flex;flex-direction:column;gap:10px;height:100%;justify-content:center">'
+          +avSorted.map(function(e){
+            var lbl=e[0].length>20?e[0].slice(0,18)+'…':e[0];
+            var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#C0392B';
+            return '<div style="display:grid;grid-template-columns:130px 1fr 44px;align-items:center;gap:8px;font-size:11px">'
+              +'<span style="color:#4A5568;text-align:right;white-space:nowrap">'+lbl+'</span>'
+              +'<div style="height:14px;background:#E8ECF3;border-radius:4px;overflow:hidden">'
+              +'<div style="height:100%;width:'+e[1]+'%;background:'+color+';border-radius:4px;transition:width .4s"></div></div>'
+              +'<span style="color:#1A1F2C;font-weight:600;font-size:10px">'+e[1]+'%</span>'
+              +'</div>';
+          }).join('')+'</div>';
       }
-    } catch(e){ console.warn('chart err',e); }
-    } // end if Chart
+    })();
 
     // Top 3 obras: mayor presupuesto
     const top = obras.slice().sort((a,b)=>(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0)).slice(0,3);
