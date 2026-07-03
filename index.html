@@ -2450,8 +2450,92 @@ function applyObrasPublicas(){
   if(!ts){ ts = document.createElement('div'); ts.id='sheets-load-ts';
     ts.style.cssText='position:fixed;top:0;left:0;right:0;background:#0A6E40;color:#fff;text-align:center;font-size:12px;font-weight:600;padding:4px;z-index:99999;';
     document.body.prepend(ts); }
-  ts.textContent = '✓ '+OBRAS_PUB.length+' obras cargadas desde Google Sheets · '+new Date().toLocaleTimeString('es-EC');
-  if(typeof renderResumen==='function')setTimeout(function(){try{renderResumen();}catch(e){console.warn('renderResumen err',e);}},200);
+  ts.textContent = '✓ '+OBRAS_PUB.length+' obras · '+new Date().toLocaleTimeString('es-EC');
+
+  // CHARTS INLINE — no depende de funciones externas
+  (function(obras){
+    if(!obras||!obras.length)return;
+    var fmtC=function(n){return n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+Math.round(n);};
+    var av=function(o){return Math.min(100,Math.max(0,parseFloat(o.avance)||0));};
+    var concl=obras.filter(function(o){return av(o)>=100;});
+    var ejec=obras.filter(function(o){return av(o)>0&&av(o)<100;});
+    var ini=obras.filter(function(o){return av(o)===0;});
+
+    // Donut
+    var d1=document.getElementById('css-chart-fases');
+    if(d1){
+      var tot=obras.length,p1=Math.round(concl.length/tot*100),p2=Math.round(ejec.length/tot*100);
+      var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #5B6BBF '+(p1+p2)+'% 100%)';
+      d1.innerHTML='<div style="display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%">'
+        +'<div style="width:110px;height:110px;border-radius:50%;background:'+grad+';flex-shrink:0;position:relative">'
+        +'<div style="position:absolute;inset:26px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#0B1F4D">'+tot+'</div>'
+        +'</div><div style="font-size:12px;display:flex;flex-direction:column;gap:8px">'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0A6E40;margin-right:6px"></span>Concluidas <b>'+concl.length+'</b></div>'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1B7B4E;margin-right:6px"></span>En ejecución <b>'+ejec.length+'</b></div>'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#5B6BBF;margin-right:6px"></span>Con inicio <b>'+ini.length+'</b></div>'
+        +'</div></div>';
+    }
+
+    // Inversión por procedimiento
+    var d2=document.getElementById('css-chart-parr');
+    if(d2){
+      var inv={};
+      obras.forEach(function(o){var k=(o.proc||'Otro').substring(0,24);inv[k]=(inv[k]||0)+(parseFloat(o.presupuesto)||0);});
+      var sorted=Object.entries(inv).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
+      var maxV=sorted[0]?sorted[0][1]:1;
+      d2.innerHTML='<div style="padding:10px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center;height:100%">'
+        +sorted.map(function(e){
+          var pct=Math.round(e[1]/maxV*100);
+          return '<div style="display:grid;grid-template-columns:1fr 120px 64px;align-items:center;gap:8px;font-size:11px">'
+            +'<span style="color:#4A5568;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
+            +'<div style="height:12px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
+            +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:3px"></div></div>'
+            +'<span style="font-weight:600;font-size:10px;text-align:right">'+fmtC(e[1])+'</span></div>';
+        }).join('')+'</div>';
+    }
+
+    // Avance por procedimiento
+    var d3=document.getElementById('css-chart-proc');
+    if(d3){
+      var avMap={};
+      obras.forEach(function(o){var k=(o.proc||'Otro').substring(0,24);if(!avMap[k])avMap[k]={s:0,n:0};avMap[k].s+=av(o);avMap[k].n++;});
+      var avS=Object.entries(avMap).map(function(e){return[e[0],Math.round(e[1].s/e[1].n)];}).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
+      d3.innerHTML='<div style="padding:10px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center;height:100%">'
+        +avS.map(function(e){
+          var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#C0392B';
+          return '<div style="display:grid;grid-template-columns:1fr 120px 40px;align-items:center;gap:8px;font-size:11px">'
+            +'<span style="color:#4A5568;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
+            +'<div style="height:12px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
+            +'<div style="height:100%;width:'+e[1]+'%;background:'+color+';border-radius:3px"></div></div>'
+            +'<span style="font-weight:600;font-size:10px;text-align:right">'+e[1]+'%</span></div>';
+        }).join('')+'</div>';
+    }
+
+    // Top 3 obras
+    var tl=document.getElementById('top-obras-list');
+    if(tl){
+      var top=obras.slice().sort(function(a,b){return(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,3);
+      tl.innerHTML=top.map(function(o){
+        var avp=av(o);
+        return '<div class="top-obra">'
+          +'<div class="to-thumb">🏗️</div>'
+          +'<div style="flex:1;min-width:0">'
+          +'<div class="to-name">'+(o.nombre||'—')+'</div>'
+          +'<div class="to-meta">Riobamba · '+(o.proc||'—')+'</div>'
+          +'<div class="to-bar"><div class="to-bar-fill" style="width:'+avp+'%"></div></div>'
+          +'<div class="to-foot"><span class="to-pres">'+fmtC(parseFloat(o.presupuesto)||0)+'</span><span class="to-av">'+avp+'%</span></div>'
+          +'</div></div>';
+      }).join('');
+    }
+  })(OBRAS_PUB);
+
+  // Mapa: inicializar si no está listo, luego pines
+  if(!obrasLeafletMap){ initObrasMap(); }
+  setTimeout(function(){
+    if(obrasLeafletMap) renderObrasMapPins();
+  }, 600);
+
+  if(typeof renderResumen==='function')setTimeout(function(){try{renderResumen();}catch(e){}},400);
 }
 
 
