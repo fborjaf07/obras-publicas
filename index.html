@@ -2313,8 +2313,16 @@ function parseSheetsCSV(csv){
   function get(row,f){return f&&row[f]!=null?(row[f]+'').trim():'';}
   function num(s){
     var v=(s||'').replace(/[^0-9.,]/g,'');
-    if(/,\d{1,2}$/.test(v))v=v.replace(/\./g,'').replace(',','.');
-    else v=v.replace(/,/g,'');
+    var nc=(v.match(/,/g)||[]).length;
+    if(nc>=2){
+      // Multiple commas: thousands=comma, decimal=last comma (European)
+      var li=v.lastIndexOf(','),dec=v.substring(li+1);
+      if(dec.length<=2) v=v.substring(0,li).replace(/,/g,'')+'.'+dec;
+      else v=v.replace(/,/g,'');
+    } else if(nc===1){
+      if(/,\d{1,2}$/.test(v)) v=v.replace(/\./g,'').replace(',','.');
+      else v=v.replace(/,/g,'');
+    }
     return parseFloat(v)||0;
   }
   return res.data.map((row,i)=>{
@@ -2385,6 +2393,42 @@ function updateKPIsFromSheets(obras){
 window.updateKPIsFromSheets=updateKPIsFromSheets;
 function applyObrasPublicas(){
   window.OBRAS_PUB = OBRAS_PUB; // expose to renderResumen
+  // Convert UTM coords to lat/lng for map pins
+  OBRAS_PUB.forEach(function(o){
+    if(o.lat&&o.lng) return;
+    if(!o.utm_e||!o.utm_n) return;
+    try{
+      var e=parseFloat((o.utm_e+'').replace(',','.'));
+      var n=parseFloat((o.utm_n+'').replace(',','.'));
+      var zona=o.utm_zona||'17M';
+      // UTM to LatLng (Ecuador hemisphere south, zone 17)
+      var k0=0.9996,a=6378137,ecc=0.0818191908,e1sq=ecc*ecc;
+      var zn=parseInt(zona)||17;
+      var lon0=(zn-1)*6-180+3;
+      var isSouth=n>5e6;
+      var N=isSouth?n-1e7:n;
+      var T1,C1,R1,D,M;
+      var mu=N/(a*(1-e1sq/4-3*e1sq*e1sq/64));
+      var phi1=mu+(3/2*ecc/2-27/32*Math.pow(ecc/2,3))*Math.sin(2*mu)
+        +(21/16*Math.pow(ecc/2,2)-55/32*Math.pow(ecc/2,4))*Math.sin(4*mu)
+        +(151/96*Math.pow(ecc/2,3))*Math.sin(6*mu)
+        +(1097/512*Math.pow(ecc/2,4))*Math.sin(8*mu);
+      var N1=a/Math.sqrt(1-e1sq*Math.pow(Math.sin(phi1),2));
+      var T1v=Math.pow(Math.tan(phi1),2);
+      var C1v=e1sq/(1-e1sq)*Math.pow(Math.cos(phi1),2);
+      var R1v=a*(1-e1sq)/Math.pow(1-e1sq*Math.pow(Math.sin(phi1),2),1.5);
+      var Dv=(e-500000)/(N1*k0);
+      var lat=phi1-(N1*Math.tan(phi1)/R1v)*(Dv*Dv/2
+        -(5+3*T1v+10*C1v-4*C1v*C1v-9*e1sq/(1-e1sq))*Dv*Dv*Dv*Dv/24
+        +(61+90*T1v+298*C1v+45*T1v*T1v-252*e1sq/(1-e1sq)-3*C1v*C1v)*Math.pow(Dv,6)/720);
+      var lon=(Dv-(1+2*T1v+C1v)*Dv*Dv*Dv/6+(5-2*C1v+28*T1v-3*C1v*C1v+8*e1sq/(1-e1sq)+24*T1v*T1v)*Math.pow(Dv,5)/120)/Math.cos(phi1);
+      var latDeg=lat*180/Math.PI;
+      var lngDeg=lon0+lon*180/Math.PI;
+      if(latDeg>-5&&latDeg<2&&lngDeg>-80&&lngDeg<-75){
+        o.lat=latDeg; o.lng=lngDeg;
+      }
+    }catch(_){}
+  });
   updateKPIsFromSheets(OBRAS_PUB);
   const t=document.getElementById('pub-total-obras'),inv=document.getElementById('pub-inversion'),
         cnt=document.getElementById('pub-obras-count'),tc=document.getElementById('tab-count-obras');
@@ -2394,7 +2438,7 @@ function applyObrasPublicas(){
   if(tc)tc.textContent=OBRAS_PUB.length;
   if(typeof renderObrasTable==='function')renderObrasTable(OBRAS_PUB);
   if(obrasLeafletMap)renderObrasMapPins();
-  if(typeof renderResumen==='function')setTimeout(renderResumen,100);
+  if(typeof renderResumen==='function')setTimeout(function(){try{renderResumen();}catch(e){console.warn('renderResumen err',e);}},200);
 }
 
 
@@ -3955,7 +3999,7 @@ const pub = window.OBRAS_PUB || [];
     } catch(_){}
 
     // ─── Charts ───
-    if (typeof Chart !== 'undefined') { try {
+    if (typeof Chart !== 'undefined') { try { try {
       // 1. Donut por fase
       const FASES = ['Preparatoria','Precontractual','Suscripción','Contractual','Evaluación'];
       const FASE_COLORS = ['#5B6BBF','#7A4A0A','#1A4080','#1B7B4E','#0A6E40'];
