@@ -3831,7 +3831,7 @@ const pub = window.OBRAS_PUB || [];
       const dataEst = [concluidas.length, enEjec.length, conInicio.length];
       const cF = document.getElementById('rs-chart-fases');
       if (cF) {
-        if (chartFases) chartFases.destroy();
+        const _ef=Chart.getChart(cF); if(_ef)_ef.destroy();
         chartFases = new Chart(cF, {
           type:'doughnut',
           data:{ labels:ESTADOS, datasets:[{ data:dataEst, backgroundColor:ESTADO_COLORS, borderWidth:2, borderColor:'#fff' }] },
@@ -3854,7 +3854,7 @@ const pub = window.OBRAS_PUB || [];
       const platSorted = Object.entries(platInv).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,10);
       const cP = document.getElementById('rs-chart-parr');
       if (cP) {
-        if (chartParr) chartParr.destroy();
+        const _epx=Chart.getChart(cP);if(_epx)_epx.destroy();
         if (platSorted.length) {
           chartParr = new Chart(cP, {
             type:'bar',
@@ -3892,7 +3892,7 @@ const pub = window.OBRAS_PUB || [];
       const procEntries = Object.entries(procData).map(([k,v])=>[k, Math.round(v.sum/v.n), v.n]);
       const cPr = document.getElementById('rs-chart-proc');
       if (cPr) {
-        if (chartProc) chartProc.destroy();
+        const _eprx=Chart.getChart(cPr);if(_eprx)_eprx.destroy();
         if (procEntries.length) {
           chartProc = new Chart(cPr, {
             type:'bar',
@@ -4014,7 +4014,7 @@ const pub = window.OBRAS_PUB || [];
       const dataFases = [1,2,3,4,5].map(f=>obras.filter(o=>parseInt(o.fase)===f).length);
       const cF = document.getElementById('rs-chart-fases');
       if (cF) {
-        if (chartFases) chartFases.destroy();
+        const _ef=Chart.getChart(cF); if(_ef)_ef.destroy();
         chartFases = new Chart(cF, {
           type:'doughnut',
           data:{ labels:FASES, datasets:[{ data:dataFases, backgroundColor:FASE_COLORS, borderWidth:2, borderColor:'#fff' }] },
@@ -4037,7 +4037,7 @@ const pub = window.OBRAS_PUB || [];
       const parrSorted = Object.entries(parrInv).sort((a,b)=>b[1]-a[1]).slice(0,7);
       const cP = document.getElementById('rs-chart-parr');
       if (cP && parrSorted.length) {
-        if (chartParr) chartParr.destroy();
+        const _epx=Chart.getChart(cP);if(_epx)_epx.destroy();
         chartParr = new Chart(cP, {
           type:'bar',
           data:{
@@ -4073,7 +4073,7 @@ const pub = window.OBRAS_PUB || [];
       const procEntries = Object.entries(procData).map(([k,v])=>[k, Math.round(v.sum/v.n), v.n]);
       const cPr = document.getElementById('rs-chart-proc');
       if (cPr && procEntries.length) {
-        if (chartProc) chartProc.destroy();
+        const _eprx=Chart.getChart(cPr);if(_eprx)_eprx.destroy();
         chartProc = new Chart(cPr, {
           type:'bar',
           data:{
