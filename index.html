@@ -2315,15 +2315,22 @@ function parseSheetsCSV(csv){
     var v=(s||'').replace(/[^0-9.,]/g,'');
     var nc=(v.match(/,/g)||[]).length;
     if(nc>=2){
-      // Multiple commas: thousands=comma, decimal=last comma (European)
-      var li=v.lastIndexOf(','),dec=v.substring(li+1);
-      if(dec.length<=2) v=v.substring(0,li).replace(/,/g,'')+'.'+dec;
-      else v=v.replace(/,/g,'');
+      var parts=v.split(',');
+      var allThree=parts.slice(1).every(function(p){return p.length===3;});
+      if(allThree){
+        v=v.replace(/,/g,'');  // US thousands: 1,147,765,404
+      } else {
+        var li=v.lastIndexOf(',');
+        v=v.substring(0,li).replace(/,/g,'')+'.'+v.substring(li+1);
+      }
     } else if(nc===1){
       if(/,\d{1,2}$/.test(v)) v=v.replace(/\./g,'').replace(',','.');
       else v=v.replace(/,/g,'');
     }
-    return parseFloat(v)||0;
+    var r=parseFloat(v)||0;
+    // Cap: no single municipal obra > $50M — if larger, likely wrong format
+    if(r>50000000) r=r/1000;
+    return r;
   }
   return res.data.map((row,i)=>{
     const nombre=get(row,fN);if(!nombre)return null;
@@ -3744,7 +3751,7 @@ const pub = window.OBRAS_PUB || [];
 
   // 2. Render Resumen KPIs and Top obras when data loads
   let chartFases=null, chartParr=null, chartProc=null;
-  function renderResumen(){
+  function renderResumen(){ try {
     // Combine public-facing obras (datos.json) + admin obras (localStorage / DEFAULT)
     const pub = window.OBRAS_PUB || [];
     const adm = window.OBRAS_ADMIN || window.obras || [];
@@ -3945,6 +3952,7 @@ const pub = window.OBRAS_PUB || [];
       }
     }
   }
+  } catch(e){ console.warn('renderResumen error:', e); }
   // [DEPRECATED FALLBACK BLOCK BELOW — never reached, kept blank]
   function _unusedRenderResumenLegacy(){
     const obras=[], baches=[];
@@ -4092,7 +4100,7 @@ const pub = window.OBRAS_PUB || [];
           }
         });
       }
-    }
+    }  } catch(e){ console.warn('charts err',e); }
 
     // Top 3 obras: mayor presupuesto
     const top = obras.slice().sort((a,b)=>(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0)).slice(0,3);
