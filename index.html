@@ -1263,6 +1263,145 @@ footer p, footer a { font-family: 'Montserrat',sans-serif; }
 
 /* main spacing */
 main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
+
+/* ══════════════════════════════════════════
+   OPTIMIZACIÓN MÓVIL
+   ══════════════════════════════════════════ */
+
+/* ── Tablet / pantallas medianas ── */
+@media (max-width: 768px) {
+  nav.tabnav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    top: 86px;
+    padding: 0 10px;
+    scrollbar-width: none;
+  }
+  nav.tabnav::-webkit-scrollbar { display: none; }
+  nav.tabnav .tab {
+    flex-shrink: 0;
+    padding: 12px 14px 10px;
+    font-size: .72rem;
+    white-space: nowrap;
+  }
+  nav.tabnav .tab .tn { display: none; }
+  main { padding: 18px 18px 48px; }
+  .topstrip { padding: 6px 16px; }
+  .topstrip .meta { display: none; }
+  .hero-resumen { padding: 28px 22px; }
+  .hero-resumen h2 { font-size: 1.4rem; }
+  .chart-wrap { height: 200px !important; }
+  .map-body { grid-template-rows: 280px auto !important; }
+  #admin-modal { height: 100dvh; border-radius: 0; }
+}
+
+/* ── Móvil ── */
+@media (max-width: 520px) {
+  nav.tabnav { top: 86px; }
+  nav.tabnav .tab { padding: 11px 12px 9px; font-size: .68rem; gap: 5px; }
+  nav.tabnav .tab .tcount { padding: 1px 5px; font-size: .58rem; }
+  main { padding: 14px 14px 48px; }
+
+  /* Hero */
+  .hero-resumen { padding: 22px 18px; margin-bottom: 14px; border-radius: 10px; }
+  .hero-resumen h2 { font-size: 1.25rem; margin-bottom: 8px; }
+  .hero-lede { font-size: .82rem; margin-bottom: 14px; }
+  .hero-quickstats { flex-direction: column; border-radius: 10px; }
+  .qs { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.12); padding: 14px 16px; }
+  .qs:last-child { border-bottom: none; }
+  .qs .val { font-size: 1.3rem; }
+
+  /* KPI público */
+  .kpi-num { font-size: 2.4rem !important; }
+  .kpi-duo { grid-template-columns: 1fr !important; }
+  .kpi-card { padding: 18px 20px; }
+  .kpi-row-rs { grid-template-columns: 1fr 1fr !important; }
+  .kpi-row-rs.kpi-row-5 { grid-template-columns: 1fr 1fr !important; }
+  .kpi-card-rs { padding: 14px 14px; }
+  .kc-num { font-size: 1.5rem !important; }
+
+  /* Mapa público */
+  .map-body { grid-template-rows: 240px auto !important; }
+  .map-side { max-height: 260px; }
+  #obras-leaflet-map, #leaflet-map { min-height: 240px; }
+  .mc-head { padding: 12px 14px; flex-wrap: wrap; gap: 8px; }
+  .mc-head h3 { font-size: .9rem; width: 100%; }
+  .layer-toggle { margin-left: 0; width: 100%; }
+  .layer-toggle button { flex: 1; justify-content: center; }
+  .map-filters { padding: 10px 14px; gap: 6px; }
+  .map-legend { padding: 10px 14px; gap: 8px; font-size: .68rem; }
+  .map-legend .coords { display: none; }
+  #mini-mapa-resumen { height: 240px; }
+
+  /* Grids admin: pipeline y métricas */
+  .metrics-grid { grid-template-columns: 1fr 1fr !important; }
+  .pipeline { grid-template-columns: 1fr 1fr !important; }
+  .metric-value { font-size: 1.5rem !important; }
+  .proc-grid { grid-template-columns: 1fr !important; }
+
+  /* Tabla expandible */
+  .expand-grid { grid-template-columns: 1fr 1fr !important; gap: 6px 14px; }
+  .expand-inner { padding: 10px 12px 12px; }
+
+  /* Formularios */
+  .form-row, .form-row-3 { grid-template-columns: 1fr !important; }
+
+  /* Tabla obras con scroll horizontal */
+  #obrasList { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .obras-table { min-width: 540px; }
+  .search-bar { gap: 6px; }
+  .search-input { width: 100%; min-width: 0; }
+  .filter-chip { font-size: .65rem; padding: 4px 9px; }
+  .results-count { display: none; }
+
+  /* Topstrip */
+  .topstrip { padding: 5px 14px; gap: 8px; }
+  .topstrip .egov { font-size: .65rem; }
+
+  /* Accesos rápidos */
+  .qa-tile { grid-template-columns: 36px 1fr auto; gap: 8px; padding: 12px; }
+  .qa-tile .qa-ic { width: 36px; height: 36px; font-size: 17px; border-radius: 8px; }
+  .qa-tile h4 { font-size: .82rem; }
+  .qa-tile p { font-size: .7rem; }
+
+  /* Gráficos */
+  .chart-wrap { height: 170px !important; }
+  .charts-grid-rs { gap: 10px; }
+
+  /* Manifiesto */
+  .manifiesto { margin-top: 28px; }
+  .manifiesto h2 { font-size: 32px !important; }
+  .manifiesto .m-azul, .manifiesto .m-rojo { padding: 28px 18px; }
+
+  /* Footer */
+  footer { padding: 24px 16px 16px; margin-top: 32px; }
+  .foot-bottom { font-size: .62rem; gap: 8px; }
+
+  /* Hero strip admin */
+  .hero-strip { padding: 14px 16px; }
+  .hero-strip h2 { font-size: 1.1rem; }
+  .hero-badge { font-size: .65rem; padding: 3px 10px; }
+
+  /* Tabla obras públicas (panel-obras) */
+  #panel-obras [style*="padding:0 28px"] { padding: 0 14px 20px !important; }
+  #panel-obras [style*="padding:12px 28px"] { padding: 10px 14px !important; flex-wrap: wrap; }
+  #panel-obras select, #panel-obras input { font-size: .75rem !important; }
+
+  /* Fecha header */
+  #fecha-hoy { display: none; }
+}
+
+/* ── Móvil pequeño ── */
+@media (max-width: 380px) {
+  nav.tabnav .tab { font-size: .62rem; padding: 10px 9px 8px; }
+  main { padding: 10px 10px 40px; }
+  .metrics-grid { grid-template-columns: 1fr !important; }
+  .kpi-row-rs, .kpi-row-rs.kpi-row-5 { grid-template-columns: 1fr !important; }
+  .hero-resumen h2 { font-size: 1.1rem; }
+  .kc-num { font-size: 1.3rem !important; }
+  .kpi-num { font-size: 2rem !important; }
+}
 </style>
 </head>
 <body>
@@ -1529,6 +1668,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 .maq-card-head{background:#0B1F4D;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:8px}
 .maq-card-num{background:#C8102E;color:#fff;font-size:.62rem;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.08em;white-space:nowrap}
 .maq-card-title{font-weight:700;font-size:.82rem;flex:1}
+.maq-card-pedido{background:#F4F6FB;border-bottom:1px solid #E3E6EF;padding:7px 16px;font-size:.75rem;color:#4A536B;font-weight:500;font-style:italic}
 .maq-card-sector{background:#F5C518;color:#0B1F4D;font-size:.62rem;font-weight:800;padding:2px 7px;border-radius:6px;white-space:nowrap;max-width:110px;overflow:hidden;text-overflow:ellipsis}
 .maq-card-meta{display:flex;gap:0;padding:8px 16px;background:#F7F8FC;border-bottom:1px solid #E3E6EF}
 .maq-meta-item{display:flex;flex-direction:column;flex:1;gap:1px}
@@ -2267,9 +2407,19 @@ window.setObrasBasemap=function(k,el){
 const SHEETS_ID = '1xSU32UfBtmwJeJx_Pu9lzfJJZSVHy_GMAyfMrbvtVHI';
 
 // ── MAQUINARIA / ONEDRIVE ──
-const ONEDRIVE_SHARE_URL = 'https://onedrive.live.com/:x:/g/personal/c79f70c916bd5740/IQAK4dByLLIhTpxGhC73NB8nAd61oae0vGF0hayLJh2hpFI';
+const GSHEETS_MAQ_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT8KhVMKWQNLAFRTD9aQa9vhjKhFLj2quy26iKUp-NzRQPmn7X8NSBvvOvM5ykmVQsHVVEGRdPdsT19/pub?output=xlsx';
 let MAQ_DATA=null,MAQ_SEMANA=null,MAQ_LOADING=false;
 
+async function fetchGSheetsXLSX(url){
+  const proxy='https://corsproxy.io/?'+encodeURIComponent(url);
+  for(const ep of [url, proxy]){
+    try{
+      const r=await fetch(ep);
+      if(r.ok){const buf=await r.arrayBuffer();return XLSX.read(buf,{type:'array'});}
+    }catch(_){}
+  }
+  throw new Error('No se pudo descargar la planificaci\u00f3n. Verifica que el Google Sheet est\u00e9 publicado.');
+}
 async function fetchOneDriveXLSX(shareUrl){
   const b64=btoa(shareUrl).replace(/=/g,'').replace(/\+/g,'-').replace(/\//g,'_');
   const graphUrl='https://api.onedrive.com/v1.0/shares/u!'+b64+'/root/content';
@@ -2288,22 +2438,22 @@ function parseMaquinariaSheet(wb,sheetName){
     const flat=rows[i].map(c=>(c+'').trim());
     const jn=flat.join(' ').toUpperCase().replace(/\s+/g,' ');
     const fm=jn.match(/FRENTE DE EQUIPO DE MAQUINARIA\s*(\d+)/);
-    if(fm){if(cur)frentes.push(cur);cur={num:parseInt(fm[1]),sector:'',obs:'',dias:'',inicio:'',fin:'',maquinas:[]};mode='meta';continue;}
+    if(fm){if(cur)frentes.push(cur);cur={num:parseInt(fm[1]),sector:'',pedido:'',dias:'',inicio:'',fin:'',maquinas:[],tipo:'frente'};mode='meta';continue;}
+    // Sección DISPONIBLES (talleres / mantenimiento)
+    if(/^\s*DISPONIBLES\s*$/.test(jn)){if(cur)frentes.push(cur);cur={num:'T',sector:'Talleres',pedido:'',dias:'',inicio:'',fin:'',maquinas:[],tipo:'talleres'};mode='meta';continue;}
     if(!cur)continue;
     if(/MAQUINARIA ASIGNADA/.test(jn)){mode='machines';continue;}
     if(/^MAQUINA$/.test((flat[2]||'').toUpperCase()))continue;
     if(mode==='meta'){
-      const h=(flat[7]||flat[6]||'').trim();
-      if(h&&!cur.sector&&!/^\d/.test(h)&&!/MAQUINA|OBSER|FRENTE|PLACA/.test(h.toUpperCase()))cur.sector=h;
+      if(/^LUGAR$/i.test(flat[0])){cur.sector=(flat[1]||flat[2]||'').trim();continue;}
+      if(/^PEDIDO$/i.test(flat[0])&&!cur.pedido){cur.pedido=(flat[1]||flat[2]||'').trim();continue;}
       const dm=jn.match(/(\d+)\s*D[I\u00cd]AS?/);if(dm&&!cur.dias)cur.dias=dm[1];
-      for(const c of flat){if(/^\d{2}\/\d{2}\/\d{4}$/.test(c)){if(!cur.inicio)cur.inicio=c;else if(!cur.fin)cur.fin=c;}}
-      const ct=(flat[2]||flat[3]||'').trim();
-      if(ct&&!/^\d/.test(ct)&&!/^(MAQUINA|PLACA|OBSERV|FRENTE|MAQUINARIA)/i.test(ct)&&!cur.obs)cur.obs=ct;
+      for(const c of flat){if(/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(c)){if(!cur.inicio)cur.inicio=c;else if(!cur.fin)cur.fin=c;}}
     }else{
       const maquina=(flat[2]||flat[3]||'').trim();
       const placa=(flat[3]||flat[4]||'').trim();
       const obs=flat.slice(4).find(c=>c.trim())||'';
-      if(maquina&&!/^(MAQUINA|PLACA|OBSERV)/i.test(maquina))cur.maquinas.push({maquina,placa,obs});
+      if(maquina&&!/^(MAQUINA|PLACA|OBSERV|REVISADO|AUTORIZADO|POL\.|MGS\.|ING\.|DR\.|LCDO\.|LCDA\.|SR\.|SRA\.)/i.test(maquina))cur.maquinas.push({maquina,placa,obs});
     }
   }
   if(cur)frentes.push(cur);return frentes;
@@ -2317,10 +2467,17 @@ function renderMaquinaria(frentes){
   if(!frentes.length){grid.innerHTML='';stat.textContent='Sin frentes en esta semana.';return;}
   stat.textContent='';
   grid.innerHTML=frentes.map(function(f){
+    var esTalleres=f.tipo==='talleres';
+    var headBg=esTalleres?'background:#7A4A0A':'background:#0B1F4D';
+    var numBadge=esTalleres?'<span class="maq-card-num" style="background:#B8690A">TALLERES</span>':'<span class="maq-card-num">FRENTE '+f.num+'</span>';
     var maqRows=f.maquinas.length
-      ?f.maquinas.map(function(m){return '<div class="maq-maq-row"><div class="maq-maq-icon">'+maqIcon(m.maquina)+'</div><div style="flex:1"><div class="maq-maq-name">'+m.maquina.toLowerCase().replace(/_/g,' ')+'</div>'+(m.placa?'<span class="maq-maq-placa">'+m.placa+'</span>':'')+(m.obs?'<div class="maq-maq-obs">'+m.obs+'</div>':'')+'</div></div>';}).join('')
+      ?f.maquinas.map(function(m){
+          var dañada=/DA[ÑN]AD/i.test(m.obs);
+          var rowStyle=dañada?'background:#FFF4E5;border-left:3px solid #B8690A':'';
+          return '<div class="maq-maq-row" style="'+rowStyle+'"><div class="maq-maq-icon">'+maqIcon(m.maquina)+'</div><div style="flex:1"><div class="maq-maq-name">'+m.maquina.toLowerCase().replace(/_/g,' ')+'</div>'+(m.placa?'<span class="maq-maq-placa">'+m.placa+'</span>':'')+(m.obs?'<div class="maq-maq-obs" style="'+(dañada?'color:#B8690A;font-weight:600':'')+'">⚠ '+m.obs+'</div>':'')+'</div></div>';
+        }).join('')
       :'<div class="maq-empty-maq">Sin maquinaria registrada</div>';
-    return '<div class="maq-card"><div class="maq-card-head"><span class="maq-card-num">FRENTE '+f.num+'</span><span class="maq-card-title">'+(f.sector||'Sector no indicado')+'</span>'+(f.sector?'<span class="maq-card-sector">'+f.sector+'</span>':'')+'</div><div class="maq-card-meta"><div class="maq-meta-item"><span class="maq-meta-label">D\u00edas</span><span class="maq-meta-val">'+(f.dias||'\u2014')+'</span></div><div class="maq-meta-item"><span class="maq-meta-label">Inicio</span><span class="maq-meta-val">'+(f.inicio||'\u2014')+'</span></div><div class="maq-meta-item"><span class="maq-meta-label">Fin</span><span class="maq-meta-val">'+(f.fin||'\u2014')+'</span></div><div class="maq-meta-item"><span class="maq-meta-label">Equipos</span><span class="maq-meta-val">'+f.maquinas.length+'</span></div></div>'+(f.obs?'<div class="maq-obs">\uD83D\uDCCB '+f.obs+'</div>':'')+'<div class="maq-maquinas">'+maqRows+'</div></div>';
+    return '<div class="maq-card" style="'+(esTalleres?'border-color:#E8C97A':'')+'"><div class="maq-card-head" style="'+headBg+'">'+numBadge+'<span class="maq-card-title">'+(f.sector||'Sin sector')+'</span></div>'+(f.pedido&&!esTalleres?'<div class="maq-card-pedido">'+f.pedido+'</div>':'')+(esTalleres?'<div class="maq-card-pedido" style="background:#FFF8E6;color:#7A4A0A;border-bottom-color:#E8C97A">🔧 Disponibles en talleres · '+f.maquinas.length+' equipo'+(f.maquinas.length!==1?'s':'')+'</div>':'')+'<div class="maq-card-meta"><div class="maq-meta-item"><span class="maq-meta-label">Días</span><span class="maq-meta-val">'+(f.dias||'—')+'</span></div><div class="maq-meta-item"><span class="maq-meta-label">Inicio</span><span class="maq-meta-val">'+(f.inicio||'—')+'</span></div><div class="maq-meta-item"><span class="maq-meta-label">Fin</span><span class="maq-meta-val">'+(f.fin||'—')+'</span></div><div class="maq-meta-item"><span class="maq-meta-label">Equipos</span><span class="maq-meta-val">'+f.maquinas.length+'</span></div></div><div class="maq-maquinas">'+maqRows+'</div></div>';
   }).join('');
 }
 
@@ -2339,9 +2496,9 @@ window.loadMaquinariaData=async function(force){
   if(MAQ_LOADING)return;
   MAQ_LOADING=true;
   var stat=document.getElementById('maq-status'),grid=document.getElementById('maq-grid');
-  stat.textContent='\u27F3 Cargando desde OneDrive\u2026';grid.innerHTML='';
+  stat.textContent='\u27F3 Cargando planificación\u2026';grid.innerHTML='';
   try{
-    var wb=await fetchOneDriveXLSX(ONEDRIVE_SHARE_URL);
+    var wb=await fetchGSheetsXLSX(GSHEETS_MAQ_URL);
     MAQ_DATA=wb;maqLoaded=true;
     var sheets=wb.SheetNames;
     MAQ_SEMANA=MAQ_SEMANA||sheets[sheets.length-1];
