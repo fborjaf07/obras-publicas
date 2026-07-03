@@ -2374,13 +2374,50 @@ function initObrasMap(){
   }
 }
 
+function utmToLatLng(easting, northing, zone, south){
+  // WGS84 ellipsoid
+  const a=6378137,f=1/298.257223563,b=a*(1-f);
+  const e2=1-(b*b)/(a*a),ep2=e2/((b*b)/(a*a));
+  const k0=0.9996,E0=500000,N0=south?10000000:0;
+  const M0=0;
+  const lon0=((zone-1)*6-180+3)*(Math.PI/180);
+  const N=northing-N0,x=easting-E0;
+  const e1=(1-Math.sqrt(1-e2))/(1+Math.sqrt(1-e2));
+  const M1=N/k0;
+  const mu=M1/(a*(1-e2/4-3*e2*e2/64-5*e2*e2*e2/256));
+  const p1=mu+(3*e1/2-27*e1*e1*e1/32)*Math.sin(2*mu);
+  const p2=p1+(21*e1*e1/16-55*e1*e1*e1*e1/32)*Math.sin(4*mu);
+  const p3=p2+(151*e1*e1*e1/96)*Math.sin(6*mu);
+  const p4=p3+(1097*e1*e1*e1*e1/512)*Math.sin(8*mu);
+  const C1=ep2*Math.cos(p4)*Math.cos(p4);
+  const T1=Math.tan(p4)*Math.tan(p4);
+  const N1=a/Math.sqrt(1-e2*Math.sin(p4)*Math.sin(p4));
+  const R1=a*(1-e2)/Math.pow(1-e2*Math.sin(p4)*Math.sin(p4),1.5);
+  const D=x/(N1*k0);
+  const lat=p4-(N1*Math.tan(p4)/R1)*(D*D/2-(5+3*T1+10*C1-4*C1*C1-9*ep2)*D*D*D*D/24+(61+90*T1+298*C1+45*T1*T1-252*ep2-3*C1*C1)*D*D*D*D*D*D/720);
+  const lng=lon0+(D-(1+2*T1+C1)*D*D*D/6+(5-2*C1+28*T1-3*C1*C1+8*ep2+24*T1*T1)*D*D*D*D*D/120)/Math.cos(p4);
+  return[lat*(180/Math.PI),lng*(180/Math.PI)];
+}
+
+function resolveLatLng(o){
+  if(o.lat&&o.lng){const la=parseFloat(o.lat),lo=parseFloat(o.lng);if(!isNaN(la)&&!isNaN(lo))return[la,lo];}
+  if(o.utm_e&&o.utm_n){
+    const e=parseFloat((o.utm_e+'').replace(/,/g,'.')),n=parseFloat((o.utm_n+'').replace(/,/g,'.'));
+    if(!isNaN(e)&&!isNaN(n)&&e>100000&&n>100000){
+      const zone=parseInt(o.utm_zona)||17;
+      return utmToLatLng(e,n,zone,true);
+    }
+  }
+  return null;
+}
+
 function renderObrasMapPins(){
   if(!obrasLeafletMap)return;
-  const wc=OBRAS_PUB.filter(o=>o.lat&&o.lng);
+  const wc=OBRAS_PUB.map(o=>({...o,_ll:resolveLatLng(o)})).filter(o=>o._ll);
   const pl=L.layerGroup().addTo(obrasLeafletMap);
   wc.forEach(o=>{
     const c=TIPO_CLR[o.tipo]||TIPO_CLR.default;
-    L.circleMarker([o.lat,o.lng],{radius:7,fillColor:c,color:'#fff',weight:2,fillOpacity:.9})
+    L.circleMarker(o._ll,{radius:7,fillColor:c,color:'#fff',weight:2,fillOpacity:.9})
      .bindPopup(`<div style="font-family:Inter,sans-serif;min-width:180px"><div style="font-weight:600;font-size:12.5px;color:#1A1F2C;margin-bottom:3px">${o.nombre}</div><div style="font-size:11px;color:#6B7280">${fmtM(o.presupuesto)} · ${o.avance}%</div></div>`)
      .addTo(pl);
   });
@@ -2388,7 +2425,7 @@ function renderObrasMapPins(){
   if(ce)ce.textContent=wc.length+' obra'+(wc.length!==1?'s':'')+' georreferenciada'+(wc.length!==1?'s':'');
   const se=document.getElementById('obras-map-side');
   if(se){
-    if(!wc.length){se.innerHTML='<div class="empty-side"><span class="ei">Sin coordenadas</span>Las obras con coordenadas aparecer&aacute;n aquí.</div>';}
+    if(!wc.length){se.innerHTML='<div class="empty-side"><span class="ei">Sin coordenadas</span>Las obras con coordenadas aparecerán aquí.</div>';}
     else{se.innerHTML='<div class="side-hd"><strong>Obras en mapa</strong>'+wc.length+' registros</div>'+
       wc.slice(0,20).map(o=>`<div class="bache-row"><div class="br-dot" style="background:${TIPO_CLR[o.tipo]||TIPO_CLR.default}"></div><div class="br-info"><div class="br-name">${o.nombre}</div><div class="br-meta">${o.codigo||''}</div></div></div>`).join('');
     }
