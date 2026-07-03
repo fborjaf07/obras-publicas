@@ -1316,7 +1316,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
         <button class="cta-btn" onclick="setPortalTab('mapa-obras')">Ver obras en el mapa <span>→</span></button>
       </div>
     </div>
-    <div class="hero-quickstats"></div>
+    <div class="hero-quickstats">
       <div class="qs"><div class="lbl">Beneficiarios est.</div><div class="val" id="rs-benef">—</div><div class="cap">riobambeños impactados</div></div>
     </div>
   </section>
@@ -1417,42 +1417,57 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 
 
 
-<!-- TAB 2: OBRAS PÚBLICAS RESUMEN -->
+<!-- TAB 2: OBRAS PÚBLICAS -->
 <div class="tab-panel" id="panel-obras" role="tabpanel">
   <div class="section-ey">Contratos de obras · Seguimiento 2025–2026</div>
-  <div class="kpi-duo">
-    <div class="kpi-card">
-      <div class="kpi-label"><span class="kn">01</span>Total de obras registradas</div>
-      <div class="kpi-num" id="pub-total-obras">—</div>
-      <div class="kpi-caption">Contratos activos en el período de gestión 2025–2026.</div>
-    </div>
-    <div class="kpi-card k-semana">
-      <div class="kpi-label"><span class="kn">02</span>Inversión total comprometida</div>
-      <div class="kpi-num" id="pub-inversion" style="font-size:40px">—</div>
-      <div class="kpi-caption">Presupuesto contractual total en USD.</div>
-    </div>
-  </div>
   <div class="map-section">
     <div class="mc-head">
       <h3>Listado de <em>obras públicas</em></h3>
       <div class="meta"><span id="pub-obras-count">Cargando...</span></div>
     </div>
+    <div style="padding:12px 28px;display:flex;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line)">
+      <select id="filtro-tipo" onchange="aplicarFiltrosListado()" style="font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-family:var(--sans)">
+        <option value="">Todos los tipos</option>
+        <option value="vial">Vial</option>
+        <option value="alcantarillado">Alcantarillado</option>
+        <option value="equipamiento">Equipamiento</option>
+        <option value="espacio">Espacio público</option>
+        <option value="agua">Agua potable</option>
+        <option value="movilidad">Movilidad</option>
+      </select>
+      <select id="filtro-estado" onchange="aplicarFiltrosListado()" style="font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-family:var(--sans)">
+        <option value="">Todos los estados</option>
+        <option value="finalizada">Finalizada</option>
+        <option value="normal">En plazo</option>
+        <option value="alerta">Con alerta</option>
+        <option value="retraso">Retrasado</option>
+      </select>
+      <select id="filtro-avance" onchange="aplicarFiltrosListado()" style="font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-family:var(--sans)">
+        <option value="">Todo el avance</option>
+        <option value="0">Sin inicio (0%)</option>
+        <option value="1-49">Bajo (1–49%)</option>
+        <option value="50-99">Medio (50–99%)</option>
+        <option value="100">Finalizado (100%)</option>
+      </select>
+      <input id="filtro-texto-obras" oninput="aplicarFiltrosListado()" placeholder="Buscar obra..." style="font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;flex:1;min-width:160px;font-family:var(--sans)">
+    </div>
     <div style="padding:0 28px 28px;overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:14px">
         <thead><tr style="border-bottom:2px solid var(--line)">
           <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Obra</th>
-          <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Código</th>
           <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Tipo</th>
           <th style="padding:8px 12px;text-align:right;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Presupuesto</th>
-          <th style="padding:8px 12px;text-align:center;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Avance</th>
+          <th style="padding:8px 12px;text-align:center;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Avance ↑</th>
           <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Estado</th>
         </tr></thead>
         <tbody id="pub-obras-tbody">
-          <tr><td colspan="6" style="padding:40px;text-align:center;color:var(--ink-3);font-style:italic">Cargando...</td></tr>
+          <tr><td colspan="5" style="padding:40px;text-align:center;color:var(--ink-3);font-style:italic">Cargando...</td></tr>
         </tbody>
       </table>
     </div>
   </div>
+  <span id="pub-total-obras" style="display:none"></span>
+  <span id="pub-inversion" style="display:none"></span>
 </div>
 
 <!-- TAB 3: MAPA DE OBRAS -->
@@ -1468,18 +1483,30 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
         <button onclick="setObrasBasemap('satelite',this)">Satélite</button>
       </div>
     </div>
-    <div class="map-body">
-      <div id="obras-leaflet-map" style="height:520px"></div>
-      <div class="map-side" id="obras-map-side">
-        <div class="empty-side"><span class="ei">Sin registros</span>Cargando obras desde datos.json</div>
+    <div id="obras-leaflet-map" style="height:580px;width:100%"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)">
+      <div style="padding:16px 24px;border-right:1px solid var(--line)">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);font-weight:600;margin-bottom:10px">Leyenda</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--ink-2)">
+          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:4px;background:#22c55e;border-radius:2px"></span>Vías reasfaltadas</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:4px;background:#f59e0b;border-radius:2px"></span>Vías adoquinadas</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#0F3460;flex-shrink:0"></span>Obras públicas</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:0;border-top:2px dashed #0F3460"></span>Plataformas</div>
+        </div>
       </div>
-    </div>
-    <div class="map-legend">
-      <div class="item"><span class="sw" style="background:#1A5FA0"></span>Alcantarillado</div>
-      <div class="item"><span class="sw" style="background:#2E6B1A"></span>Vial</div>
-      <div class="item"><span class="sw" style="background:#7A4A0A"></span>Equipamiento</div>
-      <div class="item"><span class="sw" style="background:#4A2E8A"></span>Espacio</div>
-      <div class="coords">Coordenadas UTM · WGS84</div>
+      <div style="padding:16px 24px">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);font-weight:600;margin-bottom:12px">Intervención vial</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:8px;height:36px;background:#22c55e;border-radius:3px;flex-shrink:0"></div>
+            <div><div style="font-size:24px;font-weight:700;color:var(--ink);font-family:var(--mono)" id="km-reasf">—</div><div style="font-size:11px;color:var(--ink-3)">km reasfaltados</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:8px;height:36px;background:#f59e0b;border-radius:3px;flex-shrink:0"></div>
+            <div><div style="font-size:24px;font-weight:700;color:var(--ink);font-family:var(--mono)" id="km-adoq">—</div><div style="font-size:11px;color:var(--ink-3)">km adoquinados</div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2098,21 +2125,57 @@ function fmtM(v){if(!v&&v!==0)return'—';const n=parseFloat(v);if(n>=1e6)return
 function renderObrasTable(obras){
   const tb=document.getElementById('pub-obras-tbody');
   if(!tb)return;
-  if(!obras.length){tb.innerHTML='<tr><td colspan="6" style="padding:40px;text-align:center;color:var(--ink-3);font-style:italic">Sin datos.</td></tr>';return;}
-  tb.innerHTML=obras.map(o=>{
+  const sorted=obras.slice().sort((a,b)=>(parseInt(a.avance)||0)-(parseInt(b.avance)||0));
+  if(!sorted.length){tb.innerHTML='<tr><td colspan="5" style="padding:40px;text-align:center;color:var(--ink-3);font-style:italic">Sin datos.</td></tr>';return;}
+  tb.innerHTML=sorted.map(o=>{
     const c=TIPO_CLR[o.tipo]||TIPO_CLR.default;
-    const av=parseInt(o.avance)||0;
-    const sc=o.estado==='retraso'?'#C0392B':o.estado==='alerta'?'#B8690A':'#1B7B4E';
+    const av=Math.min(100,Math.max(0,parseInt(o.avance)||0));
+    const finalizada=av>=100;
+    const sc=finalizada?'#0A6E40':o.estado==='retraso'?'#C0392B':o.estado==='alerta'?'#B8690A':'#1B7B4E';
+    const estadoLabel=finalizada?'Finalizada':o.estado==='retraso'?'Retrasado':o.estado==='alerta'?'Con alerta':'En plazo';
     return`<tr style="border-bottom:1px solid var(--line-2)" onmouseover="this.style.background='var(--cream-2)'" onmouseout="this.style.background=''">
       <td style="padding:10px 12px;max-width:300px"><div style="font-weight:600;color:var(--ink);font-size:12.5px;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${o.nombre}</div><div style="font-size:10px;color:var(--ink-4);margin-top:2px">${o.proc||''}</div></td>
-      <td style="padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--ink-3)">${o.codigo||'—'}</td>
       <td style="padding:10px 12px"><span style="font-size:10px;padding:2px 7px;background:${c}22;color:${c};font-weight:600;border-radius:4px;text-transform:uppercase;letter-spacing:.04em">${(o.tipo||'otro').toUpperCase()}</span></td>
       <td style="padding:10px 12px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ink)">${fmtM(o.presupuesto)}</td>
-      <td style="padding:10px 12px;text-align:center"><div style="display:flex;align-items:center;gap:7px;justify-content:center"><div style="width:52px;height:5px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:${av}%;background:${c};border-radius:3px"></div></div><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${av}%</span></div></td>
-      <td style="padding:10px 12px"><div style="font-size:10px;color:${sc};font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:${sc};display:inline-block;flex-shrink:0"></span>${o.observaciones||o.obs||'—'}</div></td>
+      <td style="padding:10px 12px;text-align:center"><div style="display:flex;align-items:center;gap:7px;justify-content:center"><div style="width:52px;height:5px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:${av}%;background:${finalizada?'#0A6E40':c};border-radius:3px"></div></div><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${av}%</span></div></td>
+      <td style="padding:10px 12px"><div style="font-size:10px;color:${sc};font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:${sc};display:inline-block;flex-shrink:0"></span>${estadoLabel}</div></td>
     </tr>`;
   }).join('');
 }
+
+// Filtros listado obras
+function aplicarFiltrosListado(){
+  const tipo=(document.getElementById('filtro-tipo')||{}).value||'';
+  const estado=(document.getElementById('filtro-estado')||{}).value||'';
+  const avance=(document.getElementById('filtro-avance')||{}).value||'';
+  const texto=((document.getElementById('filtro-texto-obras')||{}).value||'').toLowerCase();
+  var obras=(window.OBRAS_PUB||[]).filter(function(o){
+    const av=Math.min(100,Math.max(0,parseInt(o.avance)||0));
+    const estadoReal=av>=100?'finalizada':(o.estado||'normal');
+    if(tipo&&(o.tipo||'')!==tipo)return false;
+    if(estado&&estadoReal!==estado)return false;
+    if(avance==='0'&&av!==0)return false;
+    if(avance==='1-49'&&(av<1||av>49))return false;
+    if(avance==='50-99'&&(av<50||av>99))return false;
+    if(avance==='100'&&av<100)return false;
+    if(texto&&!(o.nombre||'').toLowerCase().includes(texto)&&!(o.proc||'').toLowerCase().includes(texto))return false;
+    return true;
+  });
+  renderObrasTable(obras);
+  var cnt=document.getElementById('pub-obras-count');
+  if(cnt)cnt.textContent=obras.length+' obras';
+}
+window.aplicarFiltrosListado=aplicarFiltrosListado;
+
+// Calcular km de vías
+function calcularKmVias(){
+  function sumKm(g){if(!g||!g.features)return 0;return g.features.reduce(function(s,f){return s+(f.properties&&f.properties.longitud?parseFloat(f.properties.longitud):0);},0);}
+  var kmR=sumKm(window.VIAS_REASF),kmA=sumKm(window.VIAS_ADQ);
+  var er=document.getElementById('km-reasf'),ea=document.getElementById('km-adoq');
+  if(er)er.textContent=kmR>0?kmR.toFixed(2)+' km':'—';
+  if(ea)ea.textContent=kmA>0?kmA.toFixed(2)+' km':'—';
+}
+setTimeout(calcularKmVias,500);
 
 let obrasLeafletMap=null,obrasMapTile=null;
 function initObrasMap(){
@@ -2157,6 +2220,18 @@ function initObrasMap(){
     L.marker([cLat,cLng],{icon:L.divIcon({className:'',html:`<div class="parr-label" style="color:${p.color}">${p.name}</div>`,iconSize:[120,20],iconAnchor:[60,10]}),interactive:false}).addTo(pg);
   });
   renderObrasMapPins();
+
+  // ── Vías reasfaltadas y adoquinadas ──
+  if (window.VIAS_REASF) {
+    L.geoJSON(window.VIAS_REASF,{style:()=>({color:'#22c55e',weight:5,opacity:.9,lineCap:'round',lineJoin:'round'})})
+      .bindTooltip(function(l){return l.feature.properties.nombre||'Vía reasfaltada';},{sticky:true})
+      .addTo(obrasLeafletMap);
+  }
+  if (window.VIAS_ADQ) {
+    L.geoJSON(window.VIAS_ADQ,{style:()=>({color:'#f59e0b',weight:4,opacity:.85,lineCap:'round',lineJoin:'round'})})
+      .bindTooltip(function(l){return l.feature.properties.nombre||'Vía adoquinada';},{sticky:true})
+      .addTo(obrasLeafletMap);
+  }
 }
 
 function renderObrasMapPins(){
@@ -2444,7 +2519,7 @@ function applyObrasPublicas(){
   if(tc)tc.textContent=OBRAS_PUB.length;
   if(typeof renderObrasTable==='function')renderObrasTable(OBRAS_PUB);
   if(obrasLeafletMap)renderObrasMapPins();
-  renderChartsCSS(OBRAS_PUB);
+  // NO llamar renderChartsCSS aquí — la inline IIFE abajo hace el trabajo
   // Timestamp visible para confirmar que los datos cargaron
   var ts = document.getElementById('sheets-load-ts');
   if(!ts){ ts = document.createElement('div'); ts.id='sheets-load-ts';
