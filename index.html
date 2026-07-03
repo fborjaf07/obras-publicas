@@ -3825,7 +3825,8 @@ const pub = window.OBRAS_PUB || [];
     } catch(_){}
 
     // ─── Charts ───
-    if (typeof Chart !== 'undefined') { try {
+    if (typeof Chart !== 'undefined') {
+    try {
       // 1. Donut por estado de avance
       const ESTADOS = ['Concluidas', 'En ejecución', 'Con inicio'];
       const ESTADO_COLORS = ['#0A6E40','#1B7B4E','#5B6BBF'];
@@ -3922,7 +3923,8 @@ const pub = window.OBRAS_PUB || [];
           });
         }
       }
-    }
+    } catch(e){ console.warn('chart err',e); }
+    } // end if Chart
 
     // Top 3 obras: mayor presupuesto
     const top = obras.slice().sort((a,b)=>(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0)).slice(0,3);
@@ -3952,188 +3954,9 @@ const pub = window.OBRAS_PUB || [];
         }).join('');
       }
     }
-  }
   } catch(e){ console.warn('renderResumen error:', e); }
-  // [DEPRECATED FALLBACK BLOCK BELOW — never reached, kept blank]
-  function _unusedRenderResumenLegacy(){
-    const obras=[], baches=[];
-    const enEjec = obras.filter(o=>parseInt(o.fase)===4).length;
-    const concl = obras.filter(o=>parseInt(o.fase)===5).length;
-    const enPre = obras.filter(o=>{const f=parseInt(o.fase);return f===1||f===2||f===3;}).length;
-    const conRetraso = obras.filter(o=>['alerta','retraso'].includes((o.estado||'').toLowerCase())).length;
-    const conAv = obras.filter(o=>parseInt(o.fase)===4 && o.avance!=null);
-    const avg = conAv.length ? Math.round(conAv.reduce((s,o)=>s+(parseFloat(o.avance)||0),0)/conAv.length) : 0;
-
-    // Baches semana (últimos 7 días)
-    const semHace7 = Date.now() - 7*86400000;
-    const bachesSem = baches.filter(b=>{
-      if (b.semana===true) return true;
-      const f = b.fecha_iso || b.fecha;
-      if (!f) return false;
-      const t = new Date(f).getTime();
-      return !isNaN(t) && t >= semHace7;
-    }).length;
-
-    const total = obras.length;
-    const parr = new Set(obras.map(x=>x.parroquia).filter(Boolean)).size;
-    const inv = obras.reduce((s,o)=>s+(parseFloat(o.presupuesto)||0),0);
-    const benef = Math.round(inv / 800);
-
-    const fmt = n => '$' + (n/1000>=1000 ? (n/1000000).toFixed(2)+'M' : (n/1000).toFixed(0)+'K');
-    const set = (id,v) => { const el=document.getElementById(id); if(el) el.textContent=v; };
-
-    set('rs-obras', obras.length);
-    set('rs-inv', inv?fmt(inv):'—');
-    set('rs-benef', benef?benef.toLocaleString('es-EC'):'—');
-
-    set('rs-kpi-total', total);
-    set('rs-kpi-ejec', enEjec);
-    set('rs-kpi-concl', concl);
-    set('rs-kpi-pre', enPre);
-    set('rs-kpi-avg', avg+'%');
-    set('rs-kpi-ret', conRetraso);
-    set('rs-kpi-parr', parr);
-
-    // Tab counts
-    set('tab-count-resumen', total);
-    set('tab-count-obras', obras.length);
-
-    // ─── Force refresh KPIs a 2nd time after potential chart errors ───
-    try {
-      set('rs-kpi-total', total);
-      set('rs-kpi-concl', concluidas.length);
-      set('rs-kpi-ejec', enEjec.length);
-      set('rs-kpi-ini', conInicio.length);
-      set('rs-kpi-inv', inv ? fmt(inv) : '$0');
-    } catch(_){}
-
-    // ─── Charts ───
-    if (typeof Chart !== 'undefined') { try { try {
-      // 1. Donut por fase
-      const FASES = ['Preparatoria','Precontractual','Suscripción','Contractual','Evaluación'];
-      const FASE_COLORS = ['#5B6BBF','#7A4A0A','#1A4080','#1B7B4E','#0A6E40'];
-      const dataFases = [1,2,3,4,5].map(f=>obras.filter(o=>parseInt(o.fase)===f).length);
-      const cF = document.getElementById('rs-chart-fases');
-      if (cF) {
-        const _ef=Chart.getChart(cF); if(_ef)_ef.destroy();
-        chartFases = new Chart(cF, {
-          type:'doughnut',
-          data:{ labels:FASES, datasets:[{ data:dataFases, backgroundColor:FASE_COLORS, borderWidth:2, borderColor:'#fff' }] },
-          options:{
-            responsive:true, maintainAspectRatio:false, cutout:'62%',
-            plugins:{
-              legend:{ position:'bottom', labels:{ font:{family:'Inter',size:11}, padding:10, boxWidth:10 } },
-              tooltip:{ callbacks:{ label:c=>c.label+': '+c.raw+' obras' } }
-            }
-          }
-        });
-      }
-
-      // 2. Barras por parroquia (inversión)
-      const parrInv = {};
-      obras.forEach(o=>{
-        const p = o.parroquia||'Sin clasificar';
-        parrInv[p] = (parrInv[p]||0) + (parseFloat(o.presupuesto)||0);
-      });
-      const parrSorted = Object.entries(parrInv).sort((a,b)=>b[1]-a[1]).slice(0,7);
-      const cP = document.getElementById('rs-chart-parr');
-      if (cP && parrSorted.length) {
-        const _epx=Chart.getChart(cP);if(_epx)_epx.destroy();
-        chartParr = new Chart(cP, {
-          type:'bar',
-          data:{
-            labels:parrSorted.map(x=>x[0]),
-            datasets:[{ data:parrSorted.map(x=>x[1]), backgroundColor:'#1A4080', borderRadius:4, barThickness:18 }]
-          },
-          options:{
-            indexAxis:'y', responsive:true, maintainAspectRatio:false,
-            plugins:{
-              legend:{display:false},
-              tooltip:{ callbacks:{ label:c=>'$'+c.raw.toLocaleString('es-EC',{maximumFractionDigits:0}) } }
-            },
-            scales:{
-              x:{
-                ticks:{ font:{family:'Inter',size:10}, color:'#6B7280',
-                  callback:v=>v>=1e6?'$'+(v/1e6).toFixed(1)+'M':v>=1e3?'$'+(v/1e3).toFixed(0)+'K':'$'+v },
-                grid:{ color:'#F0EBE0' }
-              },
-              y:{ ticks:{ font:{family:'Inter',size:11}, color:'#3B4252' }, grid:{display:false} }
-            }
-          }
-        });
-      }
-
-      // 3. Avance promedio por procedimiento
-      const procData = {};
-      obras.filter(o=>parseInt(o.fase)===4 && o.avance!=null).forEach(o=>{
-        const k = o.proc || 'Otro';
-        if (!procData[k]) procData[k] = { sum:0, n:0 };
-        procData[k].sum += parseFloat(o.avance)||0;
-        procData[k].n++;
-      });
-      const procEntries = Object.entries(procData).map(([k,v])=>[k, Math.round(v.sum/v.n), v.n]);
-      const cPr = document.getElementById('rs-chart-proc');
-      if (cPr && procEntries.length) {
-        const _eprx=Chart.getChart(cPr);if(_eprx)_eprx.destroy();
-        chartProc = new Chart(cPr, {
-          type:'bar',
-          data:{
-            labels:procEntries.map(x=>x[0].length>22?x[0].slice(0,20)+'…':x[0]),
-            datasets:[{
-              data:procEntries.map(x=>x[1]),
-              backgroundColor:procEntries.map(x=>x[1]>=70?'#1B7B4E':x[1]>=40?'#C9A227':'#C0392B'),
-              borderRadius:4, barThickness:22
-            }]
-          },
-          options:{
-            responsive:true, maintainAspectRatio:false,
-            plugins:{
-              legend:{display:false},
-              tooltip:{ callbacks:{
-                title:c=>procEntries[c[0].dataIndex][0],
-                label:c=>'Avance: '+c.raw+'% · '+procEntries[c.dataIndex][2]+' obras'
-              }}
-            },
-            scales:{
-              y:{ beginAtZero:true, max:100, ticks:{ font:{family:'Inter',size:10}, color:'#6B7280', callback:v=>v+'%' }, grid:{color:'#F0EBE0'} },
-              x:{ ticks:{ font:{family:'Inter',size:10}, color:'#3B4252', maxRotation:30, minRotation:0 }, grid:{display:false} }
-            }
-          }
-        });
-      }
-    }  } catch(e){ console.warn('charts err',e); }
-
-    // Top 3 obras: mayor presupuesto
-    const top = obras.slice().sort((a,b)=>(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0)).slice(0,3);
-    const TIPO_IC = { vial:'🛣️', alcantarillado:'💧', equipamiento:'🏛️', edificacion:'🏛️', espacio:'🌳', movilidad:'🚦', agua:'🚰' };
-    const list = document.getElementById('top-obras-list');
-    if (list) {
-      if (top.length === 0) {
-        list.innerHTML = '<div class="loading-mini">Aún no hay obras registradas.</div>';
-      } else {
-        list.innerHTML = top.map(o=>{
-          const ic = TIPO_IC[o.tipo]||'🏗️';
-          const av = parseFloat(o.avance)||0;
-          const pres = (parseFloat(o.presupuesto)||0);
-          const presStr = pres ? ('$'+pres.toLocaleString('es-EC',{maximumFractionDigits:0})) : '—';
-          const thumb = o.foto_url
-            ? '<img src="'+o.foto_url+'" alt="" onerror="this.style.display=\'none\';this.parentElement.innerHTML=\''+ic+'\'">'
-            : ic;
-          return '<div class="top-obra">'+
-            '<div class="to-thumb">'+thumb+'</div>'+
-            '<div>'+
-              '<div class="to-name">'+(o.nombre||'—')+'</div>'+
-              '<div class="to-meta">📍 '+(o.parroquia||'Riobamba')+' · '+(o.proc||'—')+'</div>'+
-              '<div class="to-bar"><div class="to-bar-fill" style="width:'+av+'%"></div></div>'+
-              '<div class="to-foot"><span class="to-pres">'+presStr+'</span><span class="to-av">'+av+'%</span></div>'+
-            '</div>'+
-          '</div>';
-        }).join('');
-      }
-    }
-  }
-
-  // Hook into data load: poll briefly then render
+  } // close renderResumen function
+    // Hook into data load: poll briefly then render
   let polls = 0;
   const poll = setInterval(()=>{
     polls++;
