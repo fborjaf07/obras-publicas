@@ -2110,7 +2110,7 @@ function renderObrasTable(obras){
       <td style="padding:10px 12px"><span style="font-size:10px;padding:2px 7px;background:${c}22;color:${c};font-weight:600;border-radius:4px;text-transform:uppercase;letter-spacing:.04em">${(o.tipo||'otro').toUpperCase()}</span></td>
       <td style="padding:10px 12px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ink)">${fmtM(o.presupuesto)}</td>
       <td style="padding:10px 12px;text-align:center"><div style="display:flex;align-items:center;gap:7px;justify-content:center"><div style="width:52px;height:5px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:${av}%;background:${c};border-radius:3px"></div></div><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${av}%</span></div></td>
-      <td style="padding:10px 12px"><div style="font-size:10px;color:${sc};font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:${sc};display:inline-block;flex-shrink:0"></span>${o.obs||'—'}</div></td>
+      <td style="padding:10px 12px"><div style="font-size:10px;color:${sc};font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:${sc};display:inline-block;flex-shrink:0"></span>${o.observaciones||o.obs||'—'}</div></td>
     </tr>`;
   }).join('');
 }
@@ -2327,10 +2327,11 @@ function parseSheetsCSV(csv){
     var estadoVal=get(row,fSt)||'normal';
     // Derive tipo from proc for color coding
     var tipo='default';
-    if(/alcant/i.test(proc)||/sanitari/i.test(proc))tipo='alcantarillado';
-    else if(/vial|camin|carre|asf|pavi/i.test(proc)||/vial|camin/i.test(nombre))tipo='vial';
-    else if(/equip/i.test(proc))tipo='equipamiento';
-    else if(/espaci|plaza|parqu/i.test(nombre))tipo='espacio';
+    if(/alcant|sanitari|pluvial|colector/i.test(nombre+proc))tipo='alcantarillado';
+    else if(/vial|camin|carre|asf|pavi|acera|borde|calle/i.test(nombre+proc))tipo='vial';
+    else if(/equip|maquinar/i.test(nombre+proc))tipo='equipamiento';
+    else if(/espaci|plaza|parqu|jardín|verde/i.test(nombre))tipo='espacio';
+    else if(/mercado|cementerio|edific|construcci/i.test(nombre))tipo='edificacion';
     return{id:i+1,nombre,codigo:get(row,fC),entidad:get(row,fE)||'GADM Riobamba',
       proc,presupuesto:num(get(row,fPr)),fase,
       inicio:get(row,fIni),fin:get(row,fFin),director:get(row,fD),
@@ -2358,8 +2359,33 @@ async function fetchSheetCSV(url){
   throw new Error('No se pudo acceder al Sheet. Verifica que sea público.');
 }
 
+
+function updateKPIsFromSheets(obras){
+  if(!obras||!obras.length)return;
+  var av=function(o){return parseFloat(o.avance)||0;};
+  var concl=obras.filter(function(o){return av(o)>=100;}).length;
+  var ejec=obras.filter(function(o){return av(o)>0&&av(o)<100;}).length;
+  var ini=obras.filter(function(o){return av(o)===0;}).length;
+  var inv=obras.reduce(function(s,o){return s+(parseFloat(o.presupuesto)||0);},0);
+  var fmt=function(n){return n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+n.toFixed(0);};
+  var s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
+  s('rs-kpi-total',obras.length);
+  s('rs-kpi-concl',concl);
+  s('rs-kpi-ejec',ejec);
+  s('rs-kpi-ini',ini);
+  s('rs-kpi-inv',fmt(inv));
+  s('pub-total-obras',obras.length);
+  s('pub-inversion',fmt(inv));
+  s('pub-obras-count',obras.length+' obras registradas');
+  s('tab-count-obras',obras.length);
+  s('tab-count-resumen',obras.length);
+  s('rs-obras',obras.length);
+  s('rs-inv',fmt(inv));
+}
+window.updateKPIsFromSheets=updateKPIsFromSheets;
 function applyObrasPublicas(){
   window.OBRAS_PUB = OBRAS_PUB; // expose to renderResumen
+  updateKPIsFromSheets(OBRAS_PUB);
   const t=document.getElementById('pub-total-obras'),inv=document.getElementById('pub-inversion'),
         cnt=document.getElementById('pub-obras-count'),tc=document.getElementById('tab-count-obras');
   if(t)t.textContent=OBRAS_PUB.length;
@@ -2371,6 +2397,16 @@ function applyObrasPublicas(){
   if(typeof renderResumen==='function')setTimeout(renderResumen,100);
 }
 
+
+function showToast(msg, dur){
+  var t=document.getElementById('portal-toast');
+  if(!t){t=document.createElement('div');t.id='portal-toast';
+    t.style.cssText='position:fixed;bottom:24px;right:24px;z-index:9999;background:#1A1F2C;color:#fff;padding:12px 20px;border-radius:8px;font-size:12px;font-weight:500;display:none;border-left:3px solid #C9A227;box-shadow:0 4px 16px rgba(0,0,0,.3)';
+    document.body.appendChild(t);}
+  t.textContent=msg;t.style.display='block';
+  clearTimeout(t._t);t._t=setTimeout(function(){t.style.display='none';},dur||3000);
+}
+window.showToast=showToast;
 function loadObrasPublicas(){
   var csvUrl='https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv&t='+Date.now();
   fetch(csvUrl)
@@ -3727,8 +3763,17 @@ const pub = window.OBRAS_PUB || [];
     set('tab-count-resumen', total);
     set('tab-count-obras', obras.length);
 
+    // ─── Force refresh KPIs a 2nd time after potential chart errors ───
+    try {
+      set('rs-kpi-total', total);
+      set('rs-kpi-concl', concluidas.length);
+      set('rs-kpi-ejec', enEjec.length);
+      set('rs-kpi-ini', conInicio.length);
+      set('rs-kpi-inv', inv ? fmt(inv) : '$0');
+    } catch(_){}
+
     // ─── Charts ───
-    if (typeof Chart !== 'undefined') {
+    if (typeof Chart !== 'undefined') { try {
       // 1. Donut por estado de avance
       const ESTADOS = ['Concluidas', 'En ejecución', 'Con inicio'];
       const ESTADO_COLORS = ['#0A6E40','#1B7B4E','#5B6BBF'];
@@ -3900,8 +3945,17 @@ const pub = window.OBRAS_PUB || [];
     set('tab-count-resumen', total);
     set('tab-count-obras', obras.length);
 
+    // ─── Force refresh KPIs a 2nd time after potential chart errors ───
+    try {
+      set('rs-kpi-total', total);
+      set('rs-kpi-concl', concluidas.length);
+      set('rs-kpi-ejec', enEjec.length);
+      set('rs-kpi-ini', conInicio.length);
+      set('rs-kpi-inv', inv ? fmt(inv) : '$0');
+    } catch(_){}
+
     // ─── Charts ───
-    if (typeof Chart !== 'undefined') {
+    if (typeof Chart !== 'undefined') { try {
       // 1. Donut por fase
       const FASES = ['Preparatoria','Precontractual','Suscripción','Contractual','Evaluación'];
       const FASE_COLORS = ['#5B6BBF','#7A4A0A','#1A4080','#1B7B4E','#0A6E40'];
