@@ -2311,17 +2311,33 @@ function parseSheetsCSV(csv){
   const fLat=col('lat','latitude');
   const fLng=col('lng','lon','longitude');
   function get(row,f){return f&&row[f]!=null?(row[f]+'').trim():'';}
-  function num(s){return parseFloat((s||'0').replace(/[^0-9.,]/g,'').replace(',','.'))||0;}
+  function num(s){
+    var v=(s||'').replace(/[^0-9.,]/g,'');
+    if(/,\d{1,2}$/.test(v))v=v.replace(/\./g,'').replace(',','.');
+    else v=v.replace(/,/g,'');
+    return parseFloat(v)||0;
+  }
   return res.data.map((row,i)=>{
     const nombre=get(row,fN);if(!nombre)return null;
     const av=Math.min(100,Math.max(0,parseInt(get(row,fAv))||0));
     const fr=parseInt(get(row,fF))||0;
     const fase=fr>=1&&fr<=5?fr:(av>=100?5:av>0?4:3);
+    var proc=get(row,fP)||'Licitación';
+    var obsVal=get(row,fOb);
+    var estadoVal=get(row,fSt)||'normal';
+    // Derive tipo from proc for color coding
+    var tipo='default';
+    if(/alcant/i.test(proc)||/sanitari/i.test(proc))tipo='alcantarillado';
+    else if(/vial|camin|carre|asf|pavi/i.test(proc)||/vial|camin/i.test(nombre))tipo='vial';
+    else if(/equip/i.test(proc))tipo='equipamiento';
+    else if(/espaci|plaza|parqu/i.test(nombre))tipo='espacio';
     return{id:i+1,nombre,codigo:get(row,fC),entidad:get(row,fE)||'GADM Riobamba',
-      proc:get(row,fP)||'Licitación',presupuesto:num(get(row,fPr)),fase,
+      proc,presupuesto:num(get(row,fPr)),fase,
       inicio:get(row,fIni),fin:get(row,fFin),director:get(row,fD),
-      fiscalizador:get(row,fFi),avance:av,observaciones:get(row,fOb),
-      estado:get(row,fSt)||'normal',utm_zona:get(row,fZo),utm_e:get(row,fEst),
+      fiscalizador:get(row,fFi),avance:av,
+      observaciones:obsVal,obs:obsVal,
+      estado:estadoVal,tipo,
+      utm_zona:get(row,fZo),utm_e:get(row,fEst),
       utm_n:get(row,fNor),lat:get(row,fLat),lng:get(row,fLng),
       foto_url:'',ejecutado:0,historial:[]};
   }).filter(Boolean);
@@ -2343,6 +2359,7 @@ async function fetchSheetCSV(url){
 }
 
 function applyObrasPublicas(){
+  window.OBRAS_PUB = OBRAS_PUB; // expose to renderResumen
   const t=document.getElementById('pub-total-obras'),inv=document.getElementById('pub-inversion'),
         cnt=document.getElementById('pub-obras-count'),tc=document.getElementById('tab-count-obras');
   if(t)t.textContent=OBRAS_PUB.length;
