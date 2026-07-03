@@ -2355,18 +2355,18 @@ function applyObrasPublicas(){
 }
 
 function loadObrasPublicas(){
-  const url='https://docs.google.com/spreadsheets/d/'+SHEETS_ID+'/export?format=csv';
-  fetchSheetCSV(url)
-    .then(csv=>{
-      const list=parseSheetsCSV(csv);
-      if(!list.length)throw new Error('Sheet vacío o columnas no reconocidas');
-      OBRAS_PUB=list; applyObrasPublicas();
-      showToast(OBRAS_PUB.length+' obras cargadas desde Google Sheets');
+  var csvUrl='https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv';
+  fetch(csvUrl)
+    .then(function(r){if(r.ok)return r.text();throw new Error('HTTP '+r.status);})
+    .then(function(csv){
+      if(!csv.trim()||csv.trim().startsWith('<'))throw new Error('Sheet no publicado correctamente');
+      var list=parseSheetsCSV(csv);
+      if(!list.length)throw new Error('Sin filas — revisa nombres de columnas');
+      OBRAS_PUB=list;applyObrasPublicas();showToast(OBRAS_PUB.length+' obras cargadas');
     })
-    .catch(e=>{
-      const msg=(e&&e.message)||'Error al conectar con Google Sheets';
-      const c=document.getElementById('pub-obras-count');
-      if(c)c.textContent='⚠ '+msg;
+    .catch(function(e){
+      var c=document.getElementById('pub-obras-count');
+      if(c)c.textContent='⚠ '+(e&&e.message||'Error al cargar datos');
     });
 }
 
