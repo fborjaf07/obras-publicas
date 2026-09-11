@@ -12,6 +12,7 @@
 <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 <script src="plataformas-data.js"></script>
 <script src="geo-riobamba.js"></script>
+<script src="proyectos-contratacion.js"></script>
 <style>
 /* PUBLIC PORTAL CSS */
 :root{
@@ -378,7 +379,7 @@ nav.tabnav .tab .tcount{
 
 /* Charts grid */
 .charts-grid-rs{
-  display:grid; grid-template-columns:1fr 1.3fr 1.2fr; gap:14px;
+  display:grid; grid-template-columns:1fr 1fr; gap:14px;
   margin-bottom:22px;
 }
 .chart-card .chart-wrap{
@@ -1262,6 +1263,48 @@ footer p, footer a { font-family: 'Montserrat',sans-serif; }
 .adm-tab { font-family: 'Montserrat',sans-serif; }
 .adm-tab.active { border-bottom-color: #C8102E; color: #fff; }
 
+/* Obras por ejecutarse */
+.prep-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:4px}
+.prep-kpi{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.prep-kpi .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:6px}
+.prep-kpi .val{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1}
+.prep-kpi .cap{font-size:10.5px;color:var(--ink-4);margin-top:4px}
+.prep-card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px 16px;margin-bottom:10px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start}
+.prep-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#fff;background:#7A4A0A;border-radius:4px;min-width:26px;height:24px;display:inline-flex;align-items:center;justify-content:center}
+.prep-name{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:5px}
+.prep-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;color:var(--ink-3)}
+.prep-meta b{font-weight:600;color:var(--ink-2)}
+.prep-det{font-size:11px;color:var(--ink-3);margin-top:7px;line-height:1.45;padding-top:7px;border-top:1px dashed var(--line-2)}
+.prep-right{text-align:right;min-width:120px}
+.prep-monto{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--ink)}
+.prep-badge{display:inline-block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:4px;margin-top:6px}
+.prep-badge.entregado{background:#DEEADF;color:#2F5A36}
+.prep-badge.desarrollo{background:#F5EAD2;color:#7A5310}
+.prep-bar{height:4px;background:#E8ECF3;border-radius:2px;overflow:hidden;margin-top:8px}
+.prep-bar i{display:block;height:100%;background:#9A6B16;border-radius:2px}
+@media (max-width:640px){.prep-card{grid-template-columns:auto 1fr;gap:9px}.prep-right{grid-column:1/-1;text-align:left;display:flex;align-items:center;gap:10px}}
+
+.rsc-sub{padding:10px 20px 0;font-size:11.5px;color:var(--ink-3)}
+.rsc-sub em{font-style:normal;color:var(--navy);font-weight:600}
+/* Desplegables de resumen */
+.drill{border:1px solid var(--line);border-radius:8px;background:#fff;margin-top:12px;overflow:hidden}
+.drill-hd{display:flex;align-items:center;gap:10px;padding:11px 15px;background:var(--cream-2);border-bottom:1px solid var(--line)}
+.drill-hd .t{font-size:12px;font-weight:700;color:var(--ink)}
+.drill-hd .n{font-size:11px;color:var(--ink-3);margin-left:auto}
+.drill-hd .x{border:none;background:none;cursor:pointer;font-size:16px;color:var(--ink-3);line-height:1;padding:0 2px}
+.drill-body{max-height:340px;overflow-y:auto}
+.drill-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:9px 15px;border-bottom:1px solid var(--line-2);font-size:12px}
+.drill-row:last-child{border-bottom:none}
+.drill-row .nm{color:var(--ink-2);line-height:1.35}
+.drill-row .mn{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+.drill-row .av{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);min-width:38px;text-align:right}
+.drill-row .tag{font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:2px 6px;border-radius:3px;background:#F5EBC9;color:#7A4A0A;margin-left:6px}
+.drill-empty{padding:16px;font-size:12px;color:var(--ink-3)}
+.clickable{cursor:pointer;transition:border-color .12s,background .12s}
+.clickable:hover{border-color:var(--navy)!important;background:#FBFAF7}
+.plat-tile.sel{border-color:var(--navy)!important;box-shadow:0 0 0 2px rgba(15,52,96,.12)}
+.parr-bar.sel{background:#EEF1F7;box-shadow:inset 0 0 0 1px rgba(15,52,96,.25)}
+
 /* main spacing */
 main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 
@@ -1431,13 +1474,16 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     <span class="tn">01</span>Resumen<span class="tcount" id="tab-count-resumen">0</span>
   </button>
   <button class="tab" data-tab="obras" onclick="setPortalTab('obras')" role="tab">
-    <span class="tn">02</span>Obras públicas<span class="tcount" id="tab-count-obras">0</span>
+    <span class="tn">02</span>Obras en ejecución<span class="tcount" id="tab-count-obras">0</span>
+  </button>
+  <button class="tab" data-tab="preparatoria" onclick="setPortalTab('preparatoria')" role="tab">
+    <span class="tn">03</span>Obras por ejecutarse<span class="tcount" id="tab-count-prep">0</span>
   </button>
   <button class="tab" data-tab="mapa-obras" onclick="setPortalTab('mapa-obras')" role="tab">
-    <span class="tn">03</span>Mapa de obras
+    <span class="tn">04</span>Mapa de obras
   </button>
   <button class="tab" data-tab="maquinaria" onclick="setPortalTab('maquinaria');loadMaquinariaData()" role="tab">
-    <span class="tn">04</span>Maquinaria<span class="tcount" id="tab-count-maq">&mdash;</span>
+    <span class="tn">05</span>Maquinaria<span class="tcount" id="tab-count-maq">&mdash;</span>
   </button>
 </nav>
 
@@ -1466,24 +1512,24 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   <!-- KPIs · 1 fila de 5 (ciclo de vida del proyecto) -->
   <section class="kpi-row-rs kpi-row-5">
     <div class="kpi-card-rs total">
-      <div class="kc-label">Total proyectos activos</div>
+      <div class="kc-label">Total de proyectos</div>
       <div class="kc-num" id="rs-kpi-total">0</div>
-      <div class="kc-cap">obras + intervenciones viales</div>
+      <div class="kc-cap">ejecutados + en ejecución + por ejecutarse</div>
     </div>
     <div class="kpi-card-rs ph-concl">
-      <div class="kc-label">Concluidas</div>
+      <div class="kc-label">Ejecutados</div>
       <div class="kc-num" id="rs-kpi-concl">0</div>
       <div class="kc-cap">avance 100%</div>
     </div>
     <div class="kpi-card-rs ph-fase">
       <div class="kc-label">En ejecución</div>
       <div class="kc-num" id="rs-kpi-ejec">0</div>
-      <div class="kc-cap">avance 1–99%</div>
+      <div class="kc-cap">contratadas, en marcha</div>
     </div>
     <div class="kpi-card-rs ph-pre">
-      <div class="kc-label">Con inicio / firma</div>
+      <div class="kc-label">Por ejecutarse</div>
       <div class="kc-num" id="rs-kpi-ini">0</div>
-      <div class="kc-cap">avance 0% · contrato firmado</div>
+      <div class="kc-cap">previos a contratación</div>
     </div>
     <div class="kpi-card-rs ph-inv">
       <div class="kc-label">Inversión total</div>
@@ -1495,12 +1541,8 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   <!-- Gráficas -->
   <section class="charts-grid-rs">
     <div class="rs-card chart-card">
-      <div class="rsc-head"><h3>Distribución por estado de avance</h3><span class="rsc-meta">Concluidas · En ejecución · Con inicio</span></div>
+      <div class="rsc-head"><h3>Distribución por estado de avance</h3><span class="rsc-meta">Ejecutadas · En ejecución · Por ejecutarse</span></div>
       <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-fases" style="display:none"></canvas><div id="css-chart-fases" style="height:100%"></div></div>
-    </div>
-    <div class="rs-card chart-card">
-      <div class="rsc-head"><h3>Inversión por parroquia rural</h3><span class="rsc-meta">Presupuesto comprometido por parroquia (USD)</span></div>
-      <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-parr" style="display:none"></canvas><div id="css-chart-parr" style="height:100%"></div></div>
     </div>
     <div class="rs-card chart-card">
       <div class="rsc-head"><h3>Avance por procedimiento</h3><span class="rsc-meta">Promedio de ejecución (%)</span></div>
@@ -1508,10 +1550,24 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     </div>
   </section>
 
-  <!-- Resumen por plataforma -->
+  <!-- Resumen territorial -->
   <section class="rs-card" style="margin-bottom:22px">
-    <div class="rsc-head"><h3>Resumen por plataforma</h3><span class="rsc-meta">Obras, inversión e intervención vial por plataforma</span></div>
-    <div id="plat-resumen-grid" style="padding:16px 20px"></div>
+    <div class="rsc-head">
+      <h3>Resumen territorial</h3>
+      <div class="layer-toggle" id="terr-toggle" style="margin-left:auto">
+        <button class="active" onclick="setResumenTerr('plataforma',this)">Por plataforma</button>
+        <button onclick="setResumenTerr('parroquia',this)">Por parroquia rural</button>
+      </div>
+    </div>
+    <div class="rsc-sub" id="terr-sub">Obras, inversión e intervención vial por plataforma · <em>clic para ver obras</em></div>
+    <div id="terr-plataforma">
+      <div id="plat-resumen-grid" style="padding:16px 20px"></div>
+    </div>
+    <div id="terr-parroquia" style="display:none">
+      <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-parr" style="display:none"></canvas><div id="css-chart-parr" style="height:100%"></div></div>
+    </div>
+    <div id="plat-drill" style="padding:0 20px 18px"></div>
+    <div id="parr-drill" style="padding:0 20px 18px"></div>
   </section>
 
   <!-- Mini mapa + Top 3 obras -->
@@ -1520,11 +1576,13 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     <div class="rs-card mini-map-card">
       <div class="rsc-head">
         <h3>Vista general · Obras</h3>
-        <span class="rsc-meta">Toca un punto para ver más</span>
+        <span class="rsc-meta" id="mini-map-info">Toca un punto para ver más</span>
+        <button id="mini-reset-btn" onclick="resetMiniMapa()" style="display:none;margin-left:10px;font-family:var(--sans),'Inter',sans-serif;font-size:11px;padding:4px 10px;border:1px solid var(--line-strong);border-radius:4px;background:#fff;color:var(--ink-2);cursor:pointer;font-weight:600">Ver todo</button>
       </div>
       <div id="mini-mapa-resumen"></div>
       <div class="mini-legend">
         <span class="ml"><i style="background:#0F3460"></i>Obras públicas</span>
+        <span class="ml"><i style="background:#C9A227"></i>Por ejecutarse</span>
         <span class="ml-spc"></span>
         <button class="ml-cta" onclick="setPortalTab('mapa-obras')">Mapa completo de obras →</button>
       </div>
@@ -1618,7 +1676,25 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   <span id="pub-inversion" style="display:none"></span>
 </div>
 
-<!-- TAB 3: MAPA DE OBRAS -->
+<!-- TAB 3: OBRAS POR EJECUTARSE -->
+<div class="tab-panel" id="panel-preparatoria" role="tabpanel">
+  <div class="section-ey">Obras por ejecutarse · Proyectos previos a contratación</div>
+  <div class="prep-kpis" id="prep-kpis"></div>
+  <div class="map-section" style="margin-top:14px">
+    <div class="mc-head">
+      <h3>Obras <em>por ejecutarse</em></h3>
+      <div class="meta"><span id="prep-count">—</span></div>
+      <div class="layer-toggle" id="prep-filtros">
+        <button class="active" onclick="filtrarPrep('',this)">Todos</button>
+        <button onclick="filtrarPrep('Entregado para Contratación',this)">Entregados</button>
+        <button onclick="filtrarPrep('En desarrollo',this)">En desarrollo</button>
+      </div>
+    </div>
+    <div id="prep-lista" style="padding:16px 24px 24px"></div>
+  </div>
+</div>
+
+<!-- TAB 4: MAPA DE OBRAS -->
 <div class="tab-panel" id="panel-mapa-obras" role="tabpanel">
   <div class="section-ey">Georreferenciación · Obras por parroquia</div>
   <div class="map-section">
@@ -1640,6 +1716,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
         <button onclick="setObrasTema('urbano',this)">Suelo urbano</button>
         <button onclick="setObrasTema('ninguno',this)">Ninguno</button>
       </div>
+      <button id="prep-toggle-btn" class="active" onclick="togglePrepMapa(this)" style="font-family:var(--sans),'Inter',sans-serif;font-size:11px;padding:6px 12px;border:1px solid #C9A227;border-radius:4px;background:#F5EBC9;color:#7A4A0A;cursor:pointer;font-weight:600;white-space:nowrap">● Por ejecutarse</button>
       <select id="obras-zona-filtro" onchange="filtrarPorZona(this.value)" style="margin-left:auto;font-family:var(--sans),'Inter',sans-serif;font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);max-width:260px">
         <option value="">Todas las zonas</option>
       </select>
@@ -1652,6 +1729,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:4px;background:#22c55e;border-radius:2px"></span>Vías reasfaltadas</div>
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:4px;background:#f59e0b;border-radius:2px"></span>Vías adoquinadas</div>
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#0F3460;flex-shrink:0"></span>Obras públicas</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#C9A227;border:2px solid #7A4A0A;box-sizing:border-box"></span>Por ejecutarse</div>
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:0;border-top:2px dashed #0F3460"></span>Plataformas</div>
         </div>
       </div>
@@ -2215,6 +2293,7 @@ window.setPortalTab=function(name){
     p.classList.toggle('active',p.id===panelId);
   });
   setTimeout(()=>{
+    if(name==='preparatoria'){ if(typeof renderPreparatoria==='function') renderPreparatoria(); }
     if(name==='mapa-obras'){
       if(!window.obrasLeafletMap)initObrasMap();
       else window.obrasLeafletMap.invalidateSize();
@@ -2349,6 +2428,7 @@ function initObrasMap(){
 
   buildTemaLayer(OBRAS_TEMA);
   renderObrasMapPins();
+  renderPrepPins();
 
   // ── Vías reasfaltadas y adoquinadas ──
   if (window.VIAS_REASF) {
@@ -2405,7 +2485,7 @@ function renderPlataformasResumen(obras){
       var vacia=it.n===0 && it.adq===0 && it.reasf===0;
       var soloVias=it.n===0 && (it.adq>0 || it.reasf>0);
       var pct=Math.round(it.inv/maxInv*100);
-      return '<div style="border:1px '+(vacia?'dashed #C9C2AE':'solid #DCD6C8')+';border-radius:6px;padding:11px 12px;background:'+(vacia?'#FAF8F3':'#fff')+'">'
+      return '<div class="plat-tile'+(vacia?'':' clickable')+'"'+(vacia?'':' onclick="verObrasPlataforma(\''+it.name.replace(/'/g,"\\'")+'\',this)"')+' style="border:1px '+(vacia?'dashed #C9C2AE':'solid #DCD6C8')+';border-radius:6px;padding:11px 12px;background:'+(vacia?'#FAF8F3':'#fff')+'">'
         +'<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">'
         +'<span style="font-family:'+mono+';font-size:11px;font-weight:700;color:'+(vacia?'#4A5568':'#fff')+';background:'+(vacia?'#E3DFD0':'#0F3460')+';border-radius:4px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center">'+it.letra+'</span>'
         +'<span style="font-size:11px;color:'+(vacia?'#5B6472':'#6B7280')+';overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+it.n+' obra'+(it.n===1?'':'s')+'</span>'
@@ -2422,6 +2502,141 @@ function renderPlataformasResumen(obras){
   var conObra=items.filter(function(i){return i.n>0||i.adq>0||i.reasf>0;}).length;
   box.innerHTML+='<div style="margin-top:12px;font-size:11px;color:#5B6472">'+conObra+' de '+items.length+' plataformas con obra o intervención vial georreferenciada.</div>';
 }
+
+window.setResumenTerr=function(vista,el){
+  document.querySelectorAll('#terr-toggle button').forEach(function(b){b.classList.remove('active');});
+  if(el) el.classList.add('active');
+  var esPlat=vista==='plataforma';
+  document.getElementById('terr-plataforma').style.display=esPlat?'':'none';
+  document.getElementById('terr-parroquia').style.display=esPlat?'none':'';
+  var sub=document.getElementById('terr-sub');
+  if(sub) sub.innerHTML=(esPlat?'Obras, inversión e intervención vial por plataforma':'Presupuesto comprometido por parroquia rural (USD)')+' · <em>clic para ver obras</em>';
+  if(typeof cerrarDrill==='function') cerrarDrill();
+};
+
+// ── Desplegables de resumen (plataforma / parroquia) ──
+function drillHTML(titulo, filas){
+  if(!filas.length) return '<div class="drill"><div class="drill-hd"><span class="t">'+titulo+'</span><button class="x" onclick="resetMiniMapa()">×</button></div><div class="drill-empty">Sin obras registradas.</div></div>';
+  var rows=filas.map(function(f){
+    return '<div class="drill-row"><div class="nm">'+f.nombre+(f.prep?'<span class="tag">Por ejecutarse</span>':"")+'</div>'
+      +'<div class="mn">'+f.monto+'</div>'
+      +'<div class="av">'+f.avance+'</div></div>';
+  }).join("");
+  return '<div class="drill"><div class="drill-hd"><span class="t">'+titulo+'</span><span class="n">'+filas.length+' obra'+(filas.length!==1?"s":"")+'</span><button class="x" onclick="resetMiniMapa()" title="Cerrar">×</button></div><div class="drill-body">'+rows+'</div></div>';
+}
+window.cerrarDrill=function(){
+  ["plat-drill","parr-drill"].forEach(function(id){var e=document.getElementById(id);if(e)e.innerHTML="";});
+  document.querySelectorAll(".plat-tile.sel,.parr-bar.sel").forEach(function(e){e.classList.remove("sel");});
+};
+function montoTxt(n){ return n>=1e6?("$"+(n/1e6).toFixed(2)+"M"):n>=1000?("$"+Math.round(n/1000)+"K"):("$"+Math.round(n)); }
+window.verObrasPlataforma=function(nombre,el){
+  var box=document.getElementById("plat-drill"); if(!box) return;
+  var yaAbierto=el&&el.classList.contains("sel");
+  cerrarDrill();
+  if(yaAbierto) return;
+  if(el) el.classList.add("sel");
+  var obras=(window.OBRAS_PUB||[]).filter(function(o){return o.plataforma===nombre;})
+    .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", _v:parseFloat(o.presupuesto)||0, prep:false};});
+  var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;})
+    .filter(function(p){ return (p.sitios||[]).some(function(s){ var f=window.geoFind&&window.geoFind(window.PLATAFORMAS_GEO,s.lat,s.lng); return f&&f.name===nombre; }); })
+    .map(function(p){return {nombre:p.proyecto, monto:montoTxt(p.monto), avance:p.avance+"%", _v:p.monto, prep:true};});
+  var todas=obras.concat(prep).sort(function(a,b){return b._v-a._v;});
+  box.innerHTML=drillHTML(nombre, todas);
+  if(typeof enfocarMiniMapa==='function') enfocarMiniMapa('plataforma', nombre);
+};
+window.verObrasParroquia=function(nombre,el){
+  var box=document.getElementById("parr-drill"); if(!box) return;
+  var yaAbierto=el&&el.classList.contains("sel");
+  cerrarDrill();
+  if(yaAbierto) return;
+  if(el) el.classList.add("sel");
+  var norm=function(s){return String(s||"").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();};
+  var obras=(window.OBRAS_PUB||[]).filter(function(o){return o.parroquia_geo===nombre;})
+    .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", _v:parseFloat(o.presupuesto)||0, prep:false};});
+  var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && norm(p.parroquia)===norm(nombre);})
+    .map(function(p){return {nombre:p.proyecto, monto:montoTxt(p.monto), avance:p.avance+"%", _v:p.monto, prep:true};});
+  var todas=obras.concat(prep).sort(function(a,b){return b._v-a._v;});
+  box.innerHTML=drillHTML("Parroquia "+nombre, todas);
+  if(typeof enfocarMiniMapa==='function') enfocarMiniMapa('parroquia', nombre);
+};
+
+// ── Obras por ejecutarse (matriz de proyectos) ──
+var PREP_FILTRO='';
+function fmtPrep(n){ return n>=1e6?("$"+(n/1e6).toFixed(2)+"M"):n>=1000?("$"+Math.round(n/1000)+"K"):("$"+Math.round(n)); }
+document.addEventListener('DOMContentLoaded',function(){ setTimeout(function(){ try{ renderPreparatoria(); }catch(_){} },400); });
+function renderPreparatoria(){
+  var box=document.getElementById("prep-lista"); if(!box) return;
+  var todos=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+  var lista=PREP_FILTRO?todos.filter(function(p){return p.estado===PREP_FILTRO;}):todos;
+  lista=lista.slice().sort(function(a,b){return b.monto-a.monto;});
+  var k=document.getElementById("prep-kpis");
+  if(k){
+    var inv=todos.reduce(function(s,p){return s+p.monto;},0);
+    var ent=todos.filter(function(p){return /Entregado/i.test(p.estado);}).length;
+    var des=todos.length-ent;
+    var pac=todos.filter(function(p){return p.categoria==="PAC";}).length;
+    k.innerHTML=[
+      ["Proyectos",todos.length,"por ejecutarse"],
+      ["Inversión prevista",fmtPrep(inv),"presupuesto referencial"],
+      ["Entregados",ent,"a contratación"],
+      ["En desarrollo",des,"estudios en curso"],
+      ["Dentro del PAC",pac+" de "+todos.length,"plan anual de contratación"]
+    ].map(function(r){return '<div class="prep-kpi"><div class="lbl">'+r[0]+'</div><div class="val">'+r[1]+'</div><div class="cap">'+r[2]+'</div></div>';}).join("");
+  }
+  var c=document.getElementById("prep-count");
+  if(c) c.textContent=lista.length+" proyecto"+(lista.length!==1?"s":"")+(PREP_FILTRO?" · "+PREP_FILTRO:"");
+  if(!lista.length){ box.innerHTML='<div style="font-size:12px;color:#6B7280;padding:12px">Sin proyectos en este estado.</div>'; return; }
+  box.innerHTML=lista.map(function(p){
+    var ent=/Entregado/i.test(p.estado);
+    var meta=[];
+    meta.push("<span><b>"+p.parroquia+"</b></span>");
+    if(p.tramite) meta.push("<span>"+(p.tramiteTipo==="Trámite"?"Trámite N.º "+p.tramite:"Memorando interno")+"</span>");
+    if(p.fechaEntrega) meta.push("<span>Entrega: "+p.fechaEntrega+"</span>");
+    if(p.cronograma) meta.push("<span>Plazo: "+p.cronograma+"</span>");
+    if(p.area) meta.push("<span>"+p.area+"</span>");
+    if(p.categoria!=="PAC") meta.push('<span style="color:#9A6B16">Fuera del PAC</span>');
+    return '<div class="prep-card">'
+      +'<span class="prep-num">'+(p.item||"")+'</span>'
+      +'<div><div class="prep-name">'+p.proyecto+'</div>'
+      +'<div class="prep-meta">'+meta.join("")+'</div>'
+      +(p.estadoDetalle?'<div class="prep-det">'+p.estadoDetalle+'</div>':"")
+      +'</div>'
+      +'<div class="prep-right"><div class="prep-monto">'+fmtPrep(p.monto)+'</div>'
+      +'<span class="prep-badge '+(ent?"entregado":"desarrollo")+'">'+(ent?"Entregado":"En desarrollo")+'</span>'
+      +'<div class="prep-bar"><i style="width:'+p.avance+'%"></i></div>'
+      +'<div style="font-size:10px;color:#9AA1AD;margin-top:4px">'+p.avance+'% preparación</div>'
+      +'</div></div>';
+  }).join("");
+}
+window.filtrarPrep=function(estado,el){
+  PREP_FILTRO=estado||"";
+  document.querySelectorAll("#prep-filtros button").forEach(function(b){b.classList.remove("active");});
+  if(el) el.classList.add("active");
+  renderPreparatoria();
+};
+
+// pines de fase preparatoria en el mapa
+var prepPinLayer=null, PREP_EN_MAPA=true;
+function renderPrepPins(){
+  if(!obrasLeafletMap) return;
+  if(prepPinLayer){ obrasLeafletMap.removeLayer(prepPinLayer); prepPinLayer=null; }
+  if(!PREP_EN_MAPA) return;
+  var ps=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+  var lg=L.layerGroup().addTo(obrasLeafletMap);
+  prepPinLayer=lg;
+  ps.forEach(function(p){
+    (p.sitios||[]).forEach(function(s){
+      L.circleMarker([s.lat,s.lng],{radius:6,fillColor:"#C9A227",color:"#7A4A0A",weight:2,fillOpacity:.85,dashArray:"3 2"})
+       .bindPopup('<div style="font-family:Inter,sans-serif;min-width:190px"><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A4A0A;font-weight:700;margin-bottom:4px">Por ejecutarse</div><div style="font-weight:600;font-size:12.5px;color:#1A1F2C;margin-bottom:3px">'+p.proyecto+(s.sitio?" — "+s.sitio:"")+'</div><div style="font-size:11px;color:#6B7280">'+fmtPrep(p.monto)+" · "+p.avance+'% preparación</div><div style="font-size:10.5px;color:#7A4A0A;margin-top:4px;font-weight:600">'+p.estado+'</div></div>')
+       .addTo(lg);
+    });
+  });
+}
+window.togglePrepMapa=function(el){
+  PREP_EN_MAPA=!PREP_EN_MAPA;
+  if(el){ el.style.opacity=PREP_EN_MAPA?'1':'.45'; el.textContent=(PREP_EN_MAPA?'● ':'○ ')+'Por ejecutarse'; }
+  renderPrepPins();
+};
 
 // ── Temas geográficos del mapa (shapefiles oficiales) ──
 let OBRAS_TEMA='plataformas', temaLayer=null, obrasPinLayer=null, zonaFiltro='';
@@ -2487,6 +2702,7 @@ window.filtrarPorZona=function(valor){
   zonaFiltro=valor||'';
   buildTemaLayer(OBRAS_TEMA);
   renderObrasMapPins();
+  renderPrepPins();
   if(zonaFiltro){
     const def=TEMA_DEFS[OBRAS_TEMA];
     const feats=(def&&def.layer&&def.layer())||[];
@@ -2760,16 +2976,20 @@ function updateKPIsFromSheets(obras){
   var inv=obras.reduce(function(s,o){return s+(parseFloat(o.presupuesto)||0);},0);
   var fmt=function(n){return n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+n.toFixed(0);};
   var s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
-  s('rs-kpi-total',obras.length);
+  var _pr=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+  var _invPr=_pr.reduce(function(s,p){return s+(parseFloat(p.monto)||0);},0);
+  s('rs-kpi-total',obras.length+_pr.length);
   s('rs-kpi-concl',concl);
   s('rs-kpi-ejec',ejec);
-  s('rs-kpi-ini',ini);
-  s('rs-kpi-inv',fmt(inv));
+  s('rs-kpi-ini',_pr.length);
+  s('rs-kpi-inv',fmt(inv+_invPr));
   s('pub-total-obras',obras.length);
   s('pub-inversion',fmt(inv));
   s('pub-obras-count',obras.length+' obras registradas');
   s('tab-count-obras',obras.length);
-  s('tab-count-resumen',obras.length);
+  var _prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+  s('tab-count-prep',_prep.length);
+  s('tab-count-resumen',obras.length+_prep.length);
   s('rs-obras',obras.length);
   s('rs-inv',fmt(inv));
 }
@@ -2826,15 +3046,17 @@ function applyObrasPublicas(){
     // Donut
     var d1=document.getElementById('css-chart-fases');
     if(d1){
-      var tot=obras.length,p1=Math.round(concl.length/tot*100),p2=Math.round(ejec.length/tot*100);
-      var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #5B6BBF '+(p1+p2)+'% 100%)';
+      var _pe=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;}).length;
+      var _enEj=ejec.length+ini.length;
+      var tot=obras.length+_pe,p1=Math.round(concl.length/tot*100),p2=Math.round(_enEj/tot*100);
+      var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #C9A227 '+(p1+p2)+'% 100%)';
       d1.innerHTML='<div style="display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%">'
         +'<div style="width:110px;height:110px;border-radius:50%;background:'+grad+';flex-shrink:0;position:relative">'
         +'<div style="position:absolute;inset:26px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#0B1F4D">'+tot+'</div>'
         +'</div><div style="font-size:12px;display:flex;flex-direction:column;gap:8px">'
-        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0A6E40;margin-right:6px"></span>Concluidas <b>'+concl.length+'</b></div>'
-        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1B7B4E;margin-right:6px"></span>En ejecución <b>'+ejec.length+'</b></div>'
-        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#5B6BBF;margin-right:6px"></span>Con inicio <b>'+ini.length+'</b></div>'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0A6E40;margin-right:6px"></span>Ejecutadas <b>'+concl.length+'</b></div>'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1B7B4E;margin-right:6px"></span>En ejecución <b>'+_enEj+'</b></div>'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#C9A227;margin-right:6px"></span>Por ejecutarse <b>'+_pe+'</b></div>'
         +'</div></div>';
     }
 
@@ -2858,6 +3080,7 @@ function applyObrasPublicas(){
     }
 
     renderPlataformasResumen(obras);
+    if(typeof refrescarMiniMapa==='function') try{ refrescarMiniMapa(); }catch(_){}
 
     // Avance por procedimiento
     var d3=document.getElementById('css-chart-proc');
@@ -4099,16 +4322,17 @@ function renderChartsCSS(obras){
   // 1. Donut estado (conic-gradient)
   var cF=document.getElementById('css-chart-fases');
   if(cF){
-    var tot=obras.length,cl=concl.length,ej=ejec.length,ci=ini.length;
-    var p1=Math.round(cl/tot*100),p2=Math.round(ej/tot*100),p3=100-p1-p2;
-    var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #5B6BBF '+(p1+p2)+'% 100%)';
+    var pe=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;}).length;
+    var cl=concl.length,ej=ejec.length+ini.length,tot=obras.length+pe;
+    var p1=Math.round(cl/tot*100),p2=Math.round(ej/tot*100);
+    var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #C9A227 '+(p1+p2)+'% 100%)';
     cF.innerHTML='<div style="display:flex;align-items:center;gap:20px;padding:16px 20px;height:100%">'
       +'<div style="width:120px;height:120px;border-radius:50%;background:'+grad+';flex-shrink:0;position:relative">'
       +'<div style="position:absolute;inset:28px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#0B1F4D">'+tot+'</div>'
       +'</div><div style="display:flex;flex-direction:column;gap:10px;font-size:12px">'
-      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#0A6E40;flex-shrink:0"></span>Concluidas <b>'+cl+'</b></div>'
+      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#0A6E40;flex-shrink:0"></span>Ejecutadas <b>'+cl+'</b></div>'
       +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#1B7B4E;flex-shrink:0"></span>En ejecución <b>'+ej+'</b></div>'
-      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#5B6BBF;flex-shrink:0"></span>Con inicio <b>'+ci+'</b></div>'
+      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#C9A227;flex-shrink:0"></span>Por ejecutarse <b>'+pe+'</b></div>'
       +'</div></div>';
   }
 
@@ -4123,7 +4347,7 @@ function renderChartsCSS(obras){
     cP.innerHTML='<div style="padding:12px 18px;display:flex;flex-direction:column;gap:9px;justify-content:center">'
       +sorted.map(function(e){
         var pct=Math.round(e[1]/maxV*100);
-        return '<div style="display:grid;grid-template-columns:140px 1fr 64px;align-items:center;gap:8px;font-size:11px">'
+        return '<div class="parr-bar clickable" onclick="verObrasParroquia(\''+e[0].replace(/'/g,"\\'")+'\',this)" style="display:grid;grid-template-columns:140px 1fr 64px;align-items:center;gap:8px;font-size:11px;border-radius:4px;padding:1px 3px">'
           +'<span style="color:#4A5568;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
           +'<div style="height:13px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
           +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:3px"></div></div>'
@@ -4213,24 +4437,15 @@ window.renderChartsCSS = renderChartsCSS;
       maxZoom:19, subdomains:'abcd'
     }).addTo(miniMapLeaflet);
 
-    // Add obras pins
-const pub = window.OBRAS_PUB || [];
-    const adm = window.OBRAS_ADMIN || window.obras || [];
-    const def = window.OBRAS_DEFAULT || [];
-    const allObras = pub.length ? pub : (adm.length ? adm : def);
-    const allBaches = window.BACHES_ADMIN || window.BACHES || window.baches || [];
-    const obras = allObras.filter(o=>o&&(o.lat||o.utm_e||o.coords));
-    const baches = allBaches.filter(b=>b&&(b._lat||b.lat));
-
     const obraIco = L.divIcon({
       className:'mini-pin obra',
       html:'<div style="width:14px;height:14px;border-radius:50%;background:#0F2D6E;border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>',
       iconSize:[14,14], iconAnchor:[7,7]
     });
-    const bacheIco = L.divIcon({
-      className:'mini-pin bache',
-      html:'<div style="width:11px;height:11px;border-radius:50%;background:#C0392B;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.3)"></div>',
-      iconSize:[11,11], iconAnchor:[5,5]
+    const prepIco = L.divIcon({
+      className:'mini-pin prep',
+      html:'<div style="width:13px;height:13px;border-radius:50%;background:#C9A227;border:2.5px solid #7A4A0A;box-shadow:0 2px 6px rgba(0,0,0,0.25)"></div>',
+      iconSize:[13,13], iconAnchor:[6,6]
     });
 
     function resolveMiniLatLng(o){
@@ -4244,12 +4459,72 @@ const pub = window.OBRAS_PUB || [];
       return null;
     }
 
-    obras.forEach(o=>{
-      const ll = resolveMiniLatLng(o);
-      if (!ll) return;
-      L.marker(ll,{icon:obraIco}).addTo(miniMapLeaflet)
-        .bindPopup('<strong>'+(o.nombre||'Obra')+'</strong><br><span style="font-size:11px;color:#666">'+(o.parroquia||'')+'</span>');
-    });
+    window.miniPinLayer = null;
+    window.MINI_SEL = null; // {tipo:'plataforma'|'parroquia', nombre:''}
+
+    window.refrescarMiniMapa = function(){
+      if(!miniMapLeaflet) return;
+      if(window.miniPinLayer){ miniMapLeaflet.removeLayer(window.miniPinLayer); }
+      const lg = L.layerGroup().addTo(miniMapLeaflet);
+      window.miniPinLayer = lg;
+      const sel = window.MINI_SEL;
+      const norm = s => String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+      const pts = [];
+
+      (window.OBRAS_PUB||[]).forEach(o=>{
+        const ll = resolveMiniLatLng(o);
+        if(!ll) return;
+        if(sel){
+          const campo = sel.tipo==='plataforma' ? o.plataforma : o.parroquia_geo;
+          if(campo !== sel.nombre) return;
+        }
+        pts.push(ll);
+        L.marker(ll,{icon:obraIco}).addTo(lg)
+          .bindPopup('<strong>'+(o.nombre||'Obra')+'</strong><br><span style="font-size:11px;color:#666">'+(o.parroquia_geo||o.parroquia||'')+'</span>');
+      });
+
+      ((window.PROYECTOS_CONTRATACION)||[]).filter(p=>(parseFloat(p.monto)||0)>0).forEach(p=>{
+        (p.sitios||[]).forEach(s=>{
+          if(sel){
+            if(sel.tipo==='plataforma'){
+              const f = window.geoFind && window.geoFind(window.PLATAFORMAS_GEO, s.lat, s.lng);
+              if(!f || f.name !== sel.nombre) return;
+            } else if(norm(p.parroquia) !== norm(sel.nombre)) return;
+          }
+          pts.push([s.lat,s.lng]);
+          L.marker([s.lat,s.lng],{icon:prepIco}).addTo(lg)
+            .bindPopup('<div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A4A0A;font-weight:700;margin-bottom:3px">Por ejecutarse</div><strong>'+p.proyecto+(s.sitio?' — '+s.sitio:'')+'</strong>');
+        });
+      });
+
+      const info = document.getElementById('mini-map-info');
+      if(info) info.textContent = sel
+        ? pts.length+' obra'+(pts.length!==1?'s':'')+' · '+sel.nombre
+        : 'Toca un punto para ver más';
+      const btn = document.getElementById('mini-reset-btn');
+      if(btn) btn.style.display = sel ? '' : 'none';
+
+      if(sel && pts.length){
+        try{ miniMapLeaflet.fitBounds(L.latLngBounds(pts).pad(0.25), {maxZoom:16}); }catch(_){}
+      }
+    };
+
+    window.enfocarMiniMapa = function(tipo, nombre){
+      window.MINI_SEL = nombre ? {tipo:tipo, nombre:nombre} : null;
+      if(!miniMapInit){ initMiniMap(); }
+      window.refrescarMiniMapa();
+      if(!nombre && miniMapLeaflet) miniMapLeaflet.setView([-1.6745,-78.6480],13);
+    };
+
+    window.resetMiniMapa = function(){
+      window.MINI_SEL = null;
+      if(typeof cerrarDrill==='function') cerrarDrill();
+      window.refrescarMiniMapa();
+      if(miniMapLeaflet) miniMapLeaflet.setView([-1.6745,-78.6480],13);
+    };
+
+    refrescarMiniMapa();
+
     // ── Plataformas overlay ──
     if (window.PLATAFORMAS_GEO && window.PLATAFORMAS_GEO.length) {
       const plg = L.layerGroup().addTo(miniMapLeaflet);
@@ -4327,11 +4602,13 @@ const pub = window.OBRAS_PUB || [];
     //   0% (con contrato firmado) → Con inicio / firma
     const av = o => parseFloat(o.avance) || 0;
     const concluidas = obras.filter(o => av(o) >= 100);
-    const enEjec     = obras.filter(o => av(o) > 0 && av(o) < 100);
+    const enEjec     = obras.filter(o => av(o) < 100);
     const conInicio  = obras.filter(o => av(o) === 0);
 
-    const total = obras.length;
-    const inv = obras.reduce((s,o)=>s+(parseFloat(o.presupuesto)||0),0);
+    const prep = ((window.PROYECTOS_CONTRATACION)||[]).filter(p=>(parseFloat(p.monto)||0)>0);
+    const invPrep = prep.reduce((s,p)=>s+(parseFloat(p.monto)||0),0);
+    const total = obras.length + prep.length;
+    const inv = obras.reduce((s,o)=>s+(parseFloat(o.presupuesto)||0),0) + invPrep;
     const benef = Math.round(inv / 800);
 
     const fmt = n => '$' + (n/1000>=1000 ? (n/1000000).toFixed(2)+'M' : (n/1000).toFixed(0)+'K');
@@ -4347,19 +4624,22 @@ const pub = window.OBRAS_PUB || [];
     set('rs-kpi-total', total);
     set('rs-kpi-concl', concluidas.length);
     set('rs-kpi-ejec', enEjec.length);
-    set('rs-kpi-ini', conInicio.length);
+    set('rs-kpi-ini', prep.length);
     set('rs-kpi-inv', inv ? fmt(inv) : '$0');
 
     // Tab counts
     set('tab-count-resumen', total);
     set('tab-count-obras', obras.length);
+    var _prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+    set('tab-count-prep', _prep.length);
+    set('tab-count-resumen', obras.length + _prep.length);
 
     // ─── Force refresh KPIs a 2nd time after potential chart errors ───
     try {
       set('rs-kpi-total', total);
       set('rs-kpi-concl', concluidas.length);
       set('rs-kpi-ejec', enEjec.length);
-      set('rs-kpi-ini', conInicio.length);
+      set('rs-kpi-ini', prep.length);
       set('rs-kpi-inv', inv ? fmt(inv) : '$0');
     } catch(_){}
 
