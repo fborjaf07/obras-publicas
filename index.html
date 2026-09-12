@@ -1633,7 +1633,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     <div class="rs-card top-obras-card">
       <div class="rsc-head">
         <h3>Obras destacadas</h3>
-        <span class="rsc-meta">Mayor inversión + avance</span>
+        <span class="rsc-meta" id="top-obras-meta">Mayor inversión + avance</span>
       </div>
       <div class="top-obras-list" id="top-obras-list">
         <div class="loading-mini">Cargando obras…</div>
@@ -4416,10 +4416,23 @@ function renderChartsCSS(obras){
       }).join('')+'</div>';
   }
 
-  // 4. Top 3 obras destacadas
+  // 4. Top 3 obras destacadas (respeta la zona seleccionada)
   var list=document.getElementById('top-obras-list');
   if(list){
-    var top=obras.slice().sort(function(a,b){return (parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,3);
+    var _sel=window.MINI_SEL;
+    var _base=obras;
+    if(_sel){
+      _base=obras.filter(function(o){
+        return (_sel.tipo==='plataforma'?o.plataforma:o.parroquia_geo)===_sel.nombre;
+      });
+    }
+    var _meta=document.getElementById('top-obras-meta');
+    if(_meta) _meta.textContent=_sel?('Mayor inversión · '+_sel.nombre):'Mayor inversión + avance';
+    if(!_base.length){
+      list.innerHTML='<div style="padding:18px 4px;font-size:12px;color:#6B7280">Sin obras en '+(_sel?_sel.nombre:'esta zona')+'.</div>';
+      return;
+    }
+    var top=_base.slice().sort(function(a,b){return (parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,3);
     var TIPO_IC={vial:'🛣️',alcantarillado:'💧',equipamiento:'🏛️',edificacion:'🏛️',espacio:'🌳',default:'🏗️'};
     list.innerHTML=top.map(function(o){
       var ic=TIPO_IC[o.tipo]||TIPO_IC.default;
@@ -4430,7 +4443,7 @@ function renderChartsCSS(obras){
         +'<div class="to-thumb">'+ic+'</div>'
         +'<div style="flex:1;min-width:0">'
         +'<div class="to-name">'+(o.nombre||'—')+'</div>'
-        +'<div class="to-meta">📍 Riobamba · '+(o.proc||'—')+'</div>'
+        +'<div class="to-meta">📍 '+(o.parroquia_geo||o.plataforma||'Riobamba')+' · '+(o.proc||'—')+'</div>'
         +'<div class="to-bar"><div class="to-bar-fill" style="width:'+avp+'%"></div></div>'
         +'<div class="to-foot"><span class="to-pres">'+presStr+'</span><span class="to-av">'+avp+'%</span></div>'
         +'</div></div>';
@@ -4555,6 +4568,7 @@ window.renderChartsCSS = renderChartsCSS;
       window.MINI_SEL = nombre ? {tipo:tipo, nombre:nombre} : null;
       if(!miniMapInit){ initMiniMap(); }
       window.refrescarMiniMapa();
+      if(typeof renderChartsCSS==='function') try{ renderChartsCSS(window.OBRAS_PUB||[]); }catch(_){}
       if(!nombre && miniMapLeaflet) miniMapLeaflet.setView([-1.6745,-78.6480],13);
     };
 
@@ -4562,6 +4576,7 @@ window.renderChartsCSS = renderChartsCSS;
       window.MINI_SEL = null;
       if(typeof cerrarDrill==='function') cerrarDrill();
       window.refrescarMiniMapa();
+      if(typeof renderChartsCSS==='function') try{ renderChartsCSS(window.OBRAS_PUB||[]); }catch(_){}
       if(miniMapLeaflet) miniMapLeaflet.setView([-1.6745,-78.6480],13);
     };
 
