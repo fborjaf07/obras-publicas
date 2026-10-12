@@ -11,14 +11,14 @@
 
 :root {
   /* Paleta principal */
-  --rojo:    #C8102E;
-  --rojo-h:  #A60D26;
-  --rojo-s:  #FDE7EA;
-  --rojo-d:  #7A0A1C;
+  --rojo:    #EA580C;
+  --rojo-h:  #C2410C;
+  --rojo-s:  #FFEDD5;
+  --rojo-d:  #9A3412;
 
   --azul:    #0B1F4D;
   --azul-h:  #081640;
-  --azul-c:  #1E3A8A;
+  --azul-c:  #0F3460;
   --azul-s:  #E4EAF6;
 
   --verde:   #1A7A4A;
@@ -35,7 +35,7 @@
   --fondo-s: #F4F6FB;
 
   /* Texto */
-  --tx:   #0B1F4D;
+  --tx:   #1F1A17;
   --tx-m: #4A536B;
   --tx-c: #7A8299;
 

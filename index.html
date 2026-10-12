@@ -13,10 +13,11 @@
 <script src="plataformas-data.js"></script>
 <script src="geo-riobamba.js"></script>
 <script src="proyectos-contratacion.js"></script>
+<script src="adquisiciones.js"></script>
 <style>
 /* PUBLIC PORTAL CSS */
 :root{
-  --navy:#0F3460;--navy-deep:#0A2447;--navy-soft:#E8ECF3;
+  --navy:#0F3460;--navy-deep:#0B1F4D;--navy-soft:#E8ECF3;
   --cream:#FAF8F3;--cream-2:#F4F0E6;--paper:#FFFFFF;
   --gold:#C9A227;--gold-soft:#F5EBC9;
   --amber:#9A6B16;--amber-soft:#F5EAD2;
@@ -56,7 +57,7 @@ a{color:var(--navy);text-decoration:none}
 .tricolor{height:4px;display:flex}
 .tricolor i{flex:1;display:block}
 .tricolor i.t-blue{background:var(--navy)}
-.tricolor i.t-red{background:#C0392B}
+.tricolor i.t-red{background:#F97316}
 .tricolor i.t-gold{background:var(--gold)}
 
 /* BLOQUE MANIFIESTO INFERIOR */
@@ -67,10 +68,10 @@ a{color:var(--navy);text-decoration:none}
 .manifiesto .m-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold);display:block}
 .manifiesto h2{font-family:var(--serif);font-size:64px;line-height:1;font-weight:300;font-style:italic;margin:0 0 18px;letter-spacing:-.025em;color:#fff}
 .manifiesto h2 em{font-style:normal;font-weight:400;color:var(--gold)}
-.manifiesto h2 .accent-red{font-style:normal;font-weight:400;color:#fff;background:#C0392B;padding:0 14px;display:inline-block;margin-left:2px}
+.manifiesto h2 .accent-red{font-style:normal;font-weight:400;color:#fff;background:#F97316;padding:0 14px;display:inline-block;margin-left:2px}
 .manifiesto .m-sub{font-size:15px;line-height:1.55;color:rgba(255,255,255,.78);max-width:46ch;font-weight:400;margin:0}
 .manifiesto .m-sub strong{color:#fff;font-weight:600}
-.manifiesto .m-rojo{background:#A4271F;color:#fff;padding:64px 48px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background-image:linear-gradient(135deg,#A4271F 0%,#8C1F18 100%)}
+.manifiesto .m-rojo{background:#C2410C;color:#fff;padding:64px 48px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background-image:linear-gradient(135deg,#C2410C 0%,#0B1F4D 100%)}
 .manifiesto .m-rojo::before{content:'';position:absolute;top:-30px;right:-30px;width:200px;height:200px;border:1px solid rgba(255,255,255,.18);border-radius:50%;pointer-events:none}
 .manifiesto .m-rojo::after{content:'';position:absolute;bottom:-50px;left:-30px;width:140px;height:140px;border:1px solid rgba(255,255,255,.12);border-radius:50%;pointer-events:none}
 .manifiesto .r-eyebrow{font-size:10.5px;text-transform:uppercase;letter-spacing:.28em;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:20px;font-family:var(--mono)}
@@ -193,7 +194,7 @@ footer p{margin:0;line-height:1.7;font-size:11.5px;color:rgba(255,255,255,.55)}
 
 /* ═════════════ OVERRIDES CIUDADANO ═════════════ */
 :root{
-  --brand:#0F2D6E; --brand-mid:#1A4080; --brand-accent:#C0392B;
+  --brand:#0F3460; --brand-mid:#EA580C; --brand-accent:#F97316;
   --gold-500:#F1C40F; --green-eco:#1B7B4E;
   --bg-card:#FFFFFF; --bg-soft:#F4F0E6; --bg-warm:#FAF8F3;
   --line:#DCD6C8; --line-strong:#B8AE98;
@@ -206,7 +207,7 @@ body{ font-family:var(--sans); }
 
 /* Topstrip e-gov */
 .topstrip{
-  background:#0A2447; color:#fff; padding:7px 28px;
+  background:#0B1F4D; color:#fff; padding:7px 28px;
   display:flex; align-items:center; gap:18px; font-size:11px;
   letter-spacing:0.06em; font-weight:500;
 }
@@ -288,7 +289,7 @@ nav.tabnav .tab .tcount{
 
 /* ═════ HERO RESUMEN ═════ */
 .hero-resumen{
-  background:linear-gradient(120deg,#0F2D6E 0%,#1A4080 60%,#C0392B 130%);
+  background:linear-gradient(120deg,#0F3460 0%,#EA580C 60%,#F97316 130%);
   color:#fff; border-radius:var(--radius-lg);
   padding:36px 40px; margin:18px 0 22px;
   display:grid; grid-template-columns:1.5fr 1fr; gap:32px;
@@ -343,7 +344,7 @@ nav.tabnav .tab .tcount{
   display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
   margin-bottom:22px;
 }
-.kpi-row-rs.kpi-row-5{ grid-template-columns:repeat(5,1fr); }
+.kpi-row-rs.kpi-row-5{ grid-template-columns:repeat(6,1fr); }
 }
 .kpi-card-rs{
   background:#fff; border:1px solid var(--line); border-radius:var(--radius);
@@ -360,7 +361,7 @@ nav.tabnav .tab .tcount{
 .kpi-card-rs.ph-avance::before{ background:var(--gold-500); }
 .kpi-card-rs.ph-retraso::before{ background:var(--brand-accent); }
 .kpi-card-rs.ph-parr::before{ background:#7A4A0A; }
-.kpi-card-rs.ph-bsem::before{ background:#C0392B; }
+.kpi-card-rs.ph-bsem::before{ background:#F97316; }
 .kpi-card-rs .kc-label{
   font-size:10.5px; text-transform:uppercase; letter-spacing:0.12em;
   color:var(--ink-3); font-weight:600; margin-bottom:6px;
@@ -490,11 +491,11 @@ nav.tabnav .tab .tcount{
 
   :root {
     /* Alcaldía Ciudadana de Riobamba */
-    --navy: #1C2B5E;      /* azul institucional oscuro */
+    --navy: #0B1F4D;      /* azul institucional oscuro */
     --navy2: #162050;
-    --red:  #C0392B;      /* rojo institucional */
+    --red:  #F97316;      /* rojo institucional */
     --red2: #E74C3C;
-    --gold: #C0392B;      /* usar rojo como acento principal */
+    --gold: #F97316;      /* usar rojo como acento principal */
     --gold-light: #E74C3C;
     --gold-pale: #FDECEA;
     --white: #FFFFFF;
@@ -509,11 +510,11 @@ nav.tabnav .tab .tcount{
     --success-bg: #E8F5EF;
     --warning: #B8690A;
     --warning-bg: #FDF3E3;
-    --danger: #C0392B;
+    --danger: #F97316;
     --danger-bg: #FDECEA;
-    --info: #1C2B5E;
+    --info: #0B1F4D;
     --info-bg: #E8EBFA;
-    --phase1: #1C2B5E; --phase1-bg: #E8EBFA;
+    --phase1: #0B1F4D; --phase1-bg: #E8EBFA;
     --phase2: #1B7B4E; --phase2-bg: #E8F5EF;
     --phase3: #B8690A; --phase3-bg: #FDF3E3;
     --phase4: #2E6B1A; --phase4-bg: #EBF5E6;
@@ -952,7 +953,7 @@ nav.tabnav .tab .tcount{
   @keyframes spin { to { transform:rotate(360deg); } }
   /* ── LOGIN ── */
   #login-overlay {
-    position:fixed;inset:0;background:linear-gradient(135deg,#1C2B5E 0%,#243580 60%,#C0392B 100%);
+    position:fixed;inset:0;background:linear-gradient(135deg,#0B1F4D 0%,#243580 60%,#F97316 100%);
     display:flex;align-items:center;justify-content:center;z-index:99999;
   }
   .login-box {
@@ -960,7 +961,7 @@ nav.tabnav .tab .tcount{
     box-shadow:0 20px 60px rgba(0,0,0,0.35);width:100%;max-width:380px;text-align:center;
   }
   .login-logo { margin-bottom:1.2rem; }
-  .login-title { font-family:'DM Serif Display',serif;font-size:1.3rem;color:#1C2B5E;margin-bottom:4px; }
+  .login-title { font-family:'DM Serif Display',serif;font-size:1.3rem;color:#0B1F4D;margin-bottom:4px; }
   .login-sub { font-size:0.75rem;color:#7A839A;margin-bottom:1.6rem; }
   .login-field { position:relative;margin-bottom:1rem; }
   .login-field input {
@@ -968,14 +969,14 @@ nav.tabnav .tab .tcount{
     font-size:0.9rem;font-family:'DM Sans',sans-serif;color:#1C2440;outline:none;
     transition:border-color 0.15s;
   }
-  .login-field input:focus { border-color:#1C2B5E; }
+  .login-field input:focus { border-color:#0B1F4D; }
   .login-btn {
-    width:100%;padding:12px;background:#C0392B;color:white;border:none;
+    width:100%;padding:12px;background:#F97316;color:white;border:none;
     border-radius:8px;font-size:0.9rem;font-weight:500;font-family:'DM Sans',sans-serif;
     cursor:pointer;transition:background 0.15s;margin-top:4px;
   }
   .login-btn:hover { background:#E74C3C; }
-  .login-error { font-size:0.75rem;color:#C0392B;margin-top:8px;min-height:18px; }
+  .login-error { font-size:0.75rem;color:#F97316;margin-top:8px;min-height:18px; }
   .login-badge { font-size:0.65rem;color:#7A839A;margin-top:1.2rem;letter-spacing:0.04em; }
   #main-content { display:none; }
   /* ── PRINT ── */
@@ -991,28 +992,28 @@ nav.tabnav .tab .tcount{
 #admin-overlay{display:none;position:fixed;inset:0;background:rgba(10,36,71,.55);backdrop-filter:blur(3px);z-index:9000;align-items:center;justify-content:center}
 #admin-overlay.open{display:flex}
 #admin-modal{background:#fff;width:100%;max-width:1360px;height:92vh;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.4);position:relative}
-.adm-hd{background:#0A2447;color:#fff;display:flex;align-items:center;gap:16px;padding:14px 22px;flex-shrink:0}
+.adm-hd{background:#0B1F4D;color:#fff;display:flex;align-items:center;gap:16px;padding:14px 22px;flex-shrink:0}
 .adm-hd h2{font-family:'Fraunces',Georgia,serif;font-size:17px;font-weight:300;font-style:italic;margin:0;flex:1}
 .adm-close{background:rgba(255,255,255,.12);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .adm-close:hover{background:rgba(255,255,255,.22)}
-.adm-tabs{background:#0A2447;border-top:1px solid rgba(255,255,255,.1);display:flex;padding:0 22px;flex-shrink:0;overflow-x:auto}
+.adm-tabs{background:#0B1F4D;border-top:1px solid rgba(255,255,255,.1);display:flex;padding:0 22px;flex-shrink:0;overflow-x:auto}
 .adm-tab{background:transparent;border:none;color:rgba(255,255,255,.6);padding:11px 18px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;font-family:'Inter',sans-serif;white-space:nowrap}
 .adm-tab:hover{color:#fff}
-.adm-tab.active{color:#fff;border-bottom-color:#C0392B}
+.adm-tab.active{color:#fff;border-bottom-color:#F97316}
 .adm-content{flex:1;overflow:auto;position:relative}
 .adm-panel{display:none;height:100%}
 .adm-panel.active{display:block}
-#adm-login{display:none;position:absolute;inset:0;background:linear-gradient(135deg,#0A2447 0%,#162050 60%,#9B2C2C 100%);align-items:center;justify-content:center;z-index:10;border-radius:14px}
+#adm-login{display:none;position:absolute;inset:0;background:linear-gradient(135deg,#0B1F4D 0%,#162050 60%,#9B2C2C 100%);align-items:center;justify-content:center;z-index:10;border-radius:14px}
 #adm-login.active{display:flex}
 .adm-lbox{background:#fff;border-radius:14px;padding:2.5rem 2.8rem;box-shadow:0 20px 60px rgba(0,0,0,.35);width:100%;max-width:360px;text-align:center}
-.adm-lbox h3{font-family:'Fraunces',Georgia,serif;font-size:1.35rem;color:#1C2B5E;margin:0 0 4px;font-style:italic}
+.adm-lbox h3{font-family:'Fraunces',Georgia,serif;font-size:1.35rem;color:#0B1F4D;margin:0 0 4px;font-style:italic}
 .adm-lbox p{font-size:.75rem;color:#7A839A;margin-bottom:1.5rem}
 .adm-lf{margin-bottom:.9rem}
 .adm-lf input{width:100%;padding:11px 14px;border:1.5px solid #D8DCE8;border-radius:8px;font-size:.9rem;font-family:inherit;color:#1A1F2C;outline:none;transition:border-color .15s;box-sizing:border-box}
-.adm-lf input:focus{border-color:#1C2B5E}
-.adm-lbtn{width:100%;padding:12px;background:#C0392B;color:white;border:none;border-radius:8px;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .15s;font-family:inherit}
+.adm-lf input:focus{border-color:#0B1F4D}
+.adm-lbtn{width:100%;padding:12px;background:#F97316;color:white;border:none;border-radius:8px;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .15s;font-family:inherit}
 .adm-lbtn:hover{background:#E74C3C}
-.adm-lerr{font-size:.73rem;color:#C0392B;margin-top:8px;min-height:18px}
+.adm-lerr{font-size:.73rem;color:#F97316;margin-top:8px;min-height:18px}
 .adm-lbadge{font-size:.62rem;color:#9AA1AD;margin-top:1.1rem;letter-spacing:.04em}
 .adm-trigger{display:inline-flex;align-items:center;gap:7px;background:#0F3460;border:1.5px solid #0F3460;color:#fff;padding:8px 16px;border-radius:8px;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
 .adm-trigger:hover{background:#1C4A8A;border-color:#1C4A8A}
@@ -1037,14 +1038,14 @@ nav.tabnav .tab .tcount{
   --cream: #F4F6FB; --cream-2: #EEF1F7; --paper: #FFFFFF;
   --gold: #E0A011; --gold-soft: #FFF4DA;
   --amber: #E0A011; --amber-soft: #FFF4DA;
-  --red: #C8102E; --red-soft: #FDE7EA;
+  --red: #EA580C; --red-soft: #FDE7EA;
   --green: #1A7A4A; --green-soft: #E8F5EE;
   --ink: #0B1F4D; --ink-2: #4A536B; --ink-3: #7A8299; --ink-4: #9AA3B5;
   --line: #E3E6EF; --line-2: #EEF1F7; --line-strong: #C8CEDF;
   --serif: 'Montserrat', system-ui, sans-serif;
   --sans:  'Montserrat', system-ui, sans-serif;
   --mono:  'Montserrat', system-ui, sans-serif;
-  --brand: #0B1F4D; --brand-mid: #1E3A8A; --brand-accent: #C8102E;
+  --brand: #0B1F4D; --brand-mid: #0F3460; --brand-accent: #EA580C;
 }
 
 html, body {
@@ -1072,13 +1073,13 @@ nav.tabnav .tab {
   transition: all .15s; cursor: pointer;
 }
 nav.tabnav .tab:hover { color: #0B1F4D; }
-nav.tabnav .tab.active { color: #C8102E; border-bottom-color: #C8102E; }
+nav.tabnav .tab.active { color: #EA580C; border-bottom-color: #EA580C; }
 nav.tabnav .tab .tn {
   font-size: .6rem; font-weight: 800; letter-spacing: .1em;
   background: #F4F6FB; color: #9AA3B5;
   padding: 1px 5px; border-radius: 4px; margin-right: 6px;
 }
-nav.tabnav .tab.active .tn { background: #FDE7EA; color: #C8102E; }
+nav.tabnav .tab.active .tn { background: #FDE7EA; color: #EA580C; }
 nav.tabnav .tab .tcount {
   font-size: .65rem; font-weight: 700;
   background: #0B1F4D; color: #fff;
@@ -1093,7 +1094,7 @@ nav.tabnav .tab .tcount {
   box-shadow: 0 4px 14px rgba(11,31,77,.06);
 }
 .kpi-card.k-total { border-color: #0B1F4D; }
-.kpi-card.k-semana { border-color: #C8102E; }
+.kpi-card.k-semana { border-color: #EA580C; }
 .kpi-card+.kpi-card { border-left: 2px solid #E3E6EF; }
 .kpi-label {
   font-size: .65rem; font-weight: 800; text-transform: uppercase;
@@ -1106,7 +1107,7 @@ nav.tabnav .tab .tcount {
   letter-spacing: -.03em; margin-bottom: 10px;
   color: #0B1F4D;
 }
-.kpi-card.k-semana .kpi-num { color: #C8102E; }
+.kpi-card.k-semana .kpi-num { color: #EA580C; }
 .kpi-caption { font-size: .8rem; color: #7A8299; line-height: 1.55; font-weight: 500; }
 
 /* ── MAP SECTION ── */
@@ -1145,7 +1146,7 @@ nav.tabnav .tab .tcount {
   letter-spacing: .14em; color: #0B1F4D;
   margin-bottom: 18px; display: flex; align-items: center; gap: 9px;
 }
-.section-ey::before { background: #C8102E; }
+.section-ey::before { background: #EA580C; }
 .section-ey::after { background: #E3E6EF; }
 
 /* ── RESUMEN HERO ── */
@@ -1158,7 +1159,7 @@ nav.tabnav .tab .tcount {
 }
 .hero-eyebrow {
   font-size: .65rem; font-weight: 800; text-transform: uppercase;
-  letter-spacing: .16em; background: #C8102E;
+  letter-spacing: .16em; background: #EA580C;
   padding: 5px 12px; border-radius: 999px; color: #fff;
   display: inline-block; margin-bottom: 14px;
   border-left: none; padding-left: 12px;
@@ -1170,13 +1171,13 @@ nav.tabnav .tab .tcount {
 }
 .hero-lede { font-size: .88rem; color: rgba(255,255,255,.8); line-height: 1.6; }
 .cta-btn {
-  background: #C8102E; color: #fff; border: none;
+  background: #EA580C; color: #fff; border: none;
   padding: 11px 22px; border-radius: 999px;
   font-family: 'Montserrat',sans-serif; font-size: .85rem; font-weight: 700;
   cursor: pointer; transition: all .15s;
   box-shadow: 0 6px 18px rgba(200,16,46,.32);
 }
-.cta-btn:hover { background: #A60D26; transform: translateY(-1px); }
+.cta-btn:hover { background: #0F3460; transform: translateY(-1px); }
 .cta-btn.ghost {
   background: rgba(255,255,255,.12); color: #fff;
   border: 1.5px solid rgba(255,255,255,.3);
@@ -1206,7 +1207,7 @@ nav.tabnav .tab .tcount {
   box-shadow: 0 2px 8px rgba(11,31,77,.05);
 }
 .kpi-card-rs.total { border-color: #0B1F4D; }
-.kpi-card-rs.ph-ejec { border-color: #1E3A8A; }
+.kpi-card-rs.ph-ejec { border-color: #0F3460; }
 .kpi-card-rs.ph-concl { border-color: #1A7A4A; }
 .kc-num { font-size: 2rem; font-weight: 800; color: #0B1F4D; line-height: 1; margin: 6px 0; }
 .kc-label { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #7A8299; }
@@ -1228,7 +1229,7 @@ nav.tabnav .tab .tcount {
   border-radius: 12px; padding: 18px;
   cursor: pointer; transition: all .15s;
 }
-.phase-card.active { border-color: #C8102E; background: #FDE7EA; }
+.phase-card.active { border-color: #EA580C; background: #FDE7EA; }
 .phase-card:hover:not(.active) { border-color: #0B1F4D; }
 .ph-num { font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #7A8299; margin-bottom: 6px; }
 .ph-name { font-size: .85rem; font-weight: 700; color: #0B1F4D; margin-bottom: 4px; }
@@ -1249,7 +1250,7 @@ nav.tabnav .tab .tcount {
 /* ── FOOTER ── */
 footer {
   background: #0B1F4D;
-  border-top: 4px solid #C8102E;
+  border-top: 4px solid #EA580C;
   margin-top: 60px;
 }
 footer h5 { color: #fff; font-family: 'Montserrat',sans-serif; }
@@ -1257,13 +1258,13 @@ footer p, footer a { font-family: 'Montserrat',sans-serif; }
 .foot-bottom { border-top: 1px solid rgba(255,255,255,.12); }
 
 /* ── ADMIN MODAL ── */
-.adm-hd { background: #0B1F4D; border-bottom: 3px solid #C8102E; }
+.adm-hd { background: #0B1F4D; border-bottom: 3px solid #EA580C; }
 .adm-hd h2 { font-family: 'Montserrat',sans-serif; font-weight: 700; }
 .adm-tabs { background: #081640; }
 .adm-tab { font-family: 'Montserrat',sans-serif; }
-.adm-tab.active { border-bottom-color: #C8102E; color: #fff; }
+.adm-tab.active { border-bottom-color: #EA580C; color: #fff; }
 
-/* Obras por ejecutarse */
+/* Obras por contratar */
 .prep-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:4px}
 .prep-kpi{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
 .prep-kpi .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:6px}
@@ -1280,6 +1281,7 @@ footer p, footer a { font-family: 'Montserrat',sans-serif; }
 .prep-badge{display:inline-block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:4px;margin-top:6px}
 .prep-badge.entregado{background:#DEEADF;color:#2F5A36}
 .prep-badge.desarrollo{background:#F5EAD2;color:#7A5310}
+.prep-badge.sercop{background:#E8ECF3;color:#0F3460}
 .prep-bar{height:4px;background:#E8ECF3;border-radius:2px;overflow:hidden;margin-top:8px}
 .prep-bar i{display:block;height:100%;background:#9A6B16;border-radius:2px}
 @media (max-width:640px){.prep-card{grid-template-columns:auto 1fr;gap:9px}.prep-right{grid-column:1/-1;text-align:left;display:flex;align-items:center;gap:10px}}
@@ -1305,6 +1307,74 @@ footer p, footer a { font-family: 'Montserrat',sans-serif; }
 .plat-tile.sel{border-color:var(--navy)!important;box-shadow:0 0 0 2px rgba(15,52,96,.12)}
 .parr-bar.sel{background:#EEF1F7;box-shadow:inset 0 0 0 1px rgba(15,52,96,.25)}
 
+.rs-tomate{align-items:stretch}
+.rs-tomate .mini-map-card{display:flex;flex-direction:column}
+.rs-tomate #mini-mapa-resumen{flex:1 1 auto;height:auto;min-height:380px}
+.rs-tomate .mini-legend{margin-top:auto}
+@media(max-width:900px){.rs-tomate #mini-mapa-resumen{flex:none;height:320px;min-height:0}}
+.rs-tomate .rs-card{border-color:#FDBA74}
+.rs-tomate .rsc-head{background:#FB923C;border-bottom-color:#F97316}
+.rs-tomate .rsc-head h3,.rs-tomate .rsc-head .rsc-meta,.rs-tomate .rsc-head span{color:#0B1F4D!important}
+.rs-tomate .to-name,.rs-tomate .to-meta,.rs-tomate .to-amt,.rs-tomate .to-pct{color:#0B1F4D}
+.metricas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px}
+.met-body{padding:16px 18px 18px}
+.met-row{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;font-size:11.5px;margin-bottom:7px}
+.met-row .l{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.met-row .b{height:9px;background:#E8ECF3;border-radius:5px;overflow:hidden}.met-row .b i{display:block;height:100%;border-radius:5px}
+.met-row .v{font-family:var(--mono);font-size:11px;text-align:right;color:var(--ink);font-weight:600}
+.met-big{font-family:var(--mono);font-size:34px;font-weight:700;color:#0B1F4D;line-height:1}
+.met-sub{font-size:12px;color:var(--ink-3);margin-top:4px}
+.met-split{display:flex;height:34px;border-radius:6px;overflow:hidden;margin:16px 0 10px}
+.met-split div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700}
+.met-leg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:11.5px;color:var(--ink-2)}
+.met-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.met-fun{display:flex;flex-direction:column;align-items:center;gap:4px}
+.met-fun div{color:#fff;font-size:11.5px;font-weight:600;padding:6px 10px;border-radius:4px;display:flex;justify-content:space-between;gap:10px;box-sizing:border-box;min-width:150px}
+@media(max-width:1100px){.metricas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.metricas-grid{grid-template-columns:1fr}.met-row{grid-template-columns:110px 1fr 60px}}
+.eje-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.eje-t{border-radius:6px;padding:9px 10px;min-height:62px;display:flex;flex-direction:column;justify-content:space-between}
+.eje-t .en{font-size:11.5px;font-weight:700;line-height:1.2}.eje-t .ev{font-family:var(--mono);font-size:15px;font-weight:700;margin-top:4px}.eje-t .ep{font-size:10.5px;opacity:.85}
+.cc-wrap{display:flex;align-items:flex-end;justify-content:center;gap:28px;flex-wrap:wrap;padding-top:6px}
+.cc-b{display:flex;flex-direction:column;align-items:center;text-align:center}
+.cc-c{border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:8px}.cc-c b{font-family:var(--mono);font-size:18px}
+.cc-l{font-size:12px;font-weight:700;color:#0B1F4D}.cc-v{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--ink)}.cc-n{font-size:11px;color:var(--ink-3)}
+#css-chart-fases{display:flex;align-items:center;justify-content:center}
+.chk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,auto);gap:5px;aspect-ratio:1/1;max-width:440px;margin:0 auto}
+.chk-c{position:relative;border-radius:4px;padding:16px 6px 7px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-width:0}
+.chk-c.x{background:#0F3460;color:#fff}
+.chk-c.c{background:#fff;border:1.5px solid #0F3460;color:#0B1F4D}
+.chk-c.tl{margin:14px 0 0 14px}.chk-c.tr{margin:14px 14px 0 0}.chk-c.bl{margin:0 0 14px 14px}.chk-c.br{margin:0 14px 14px 0}
+.chk-n{position:absolute;top:4px;left:4px;width:15px;height:15px;border-radius:3px;background:#C9A227;color:#0B1F4D;font-family:var(--mono);font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chk-t{font-size:12px;font-weight:700;line-height:1.15;text-wrap:balance}
+.chk-v{font-family:var(--mono);font-size:13px;font-weight:700;margin-top:4px}
+.chk-o{font-size:9.5px;opacity:.8}
+.chk-m{grid-row:2;grid-column:2;background:#EA580C;color:#fff;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
+.chk-mt{font-size:10.5px;font-weight:800;line-height:1.1;text-transform:uppercase;letter-spacing:.03em}
+.chk-mv{font-family:var(--mono);font-size:14px;font-weight:700;margin-top:5px}
+.metricas-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:dense}
+.metricas-grid .met-card:first-child{grid-row:span 2}
+.met-card{display:flex;flex-direction:column}
+.met-card .met-body{flex:1;display:flex;flex-direction:column;justify-content:center}
+.dist-wrap{width:100%;max-width:560px;margin:0 auto;padding:6px 4px}
+.dist-row{display:grid;grid-template-columns:150px 1fr 76px;gap:10px;align-items:center;margin-bottom:12px;font-size:12.5px}
+.dist-row .dl{color:var(--ink-2);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dist-row .db{height:16px;background:#E8ECF3;border-radius:8px;overflow:hidden}.dist-row .db i{display:block;height:100%;border-radius:8px}
+.dist-row .dv{font-family:var(--mono);font-weight:700;font-size:12px;color:#0B1F4D}
+#css-chart-fases{display:flex;align-items:center;justify-content:center}
+@media(max-width:1100px){.metricas-grid .met-card:first-child{grid-row:auto;grid-column:1/-1}}
+@media(max-width:640px){.dist-row{grid-template-columns:100px 1fr 64px}}
+.prep-kpis{grid-template-columns:1fr repeat(3,minmax(0,1.3fr))}
+.prep-et{text-align:left;cursor:pointer;font:inherit;border:1px solid var(--line);border-top:4px solid var(--c);transition:box-shadow .15s,transform .15s}
+.prep-et:hover{box-shadow:0 4px 14px rgba(15,52,96,.12);transform:translateY(-1px)}
+.prep-et.on{outline:2px solid var(--c);outline-offset:-1px;background:#FFFBF6}
+.prep-et .val{font-size:1.45rem}
+.pe-bar{height:7px;background:#E8ECF3;border-radius:4px;overflow:hidden;margin-top:10px}.pe-bar i{display:block;height:100%;background:var(--c);border-radius:4px}
+.pe-pc{font-size:10.5px;color:var(--ink-3);margin-top:4px}
+.prep-tot .val{font-size:2rem}
+.prep-badge.estudios{background:#E8ECF3;color:#0F3460}
+@media(max-width:900px){.prep-kpis{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.prep-kpis{grid-template-columns:1fr}}
 /* main spacing */
 main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 
@@ -1337,7 +1407,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   .drill-row .av { grid-column: 2; font-size: 10px; }
   .drill-hd { padding: 10px 12px; }
 
-  /* Fase / obras por ejecutarse */
+  /* Fase / obras por contratar */
   .prep-kpis { grid-template-columns: 1fr 1fr; gap: 8px; }
   .prep-kpi { padding: 11px 12px; }
   .prep-kpi .val { font-size: 1.25rem; }
@@ -1501,7 +1571,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   </div>
   <div class="ds-hdr-title">
     <h1>Rio<em>Obras</em></h1>
-    <small>GADM Riobamba · Dirección de Obras Públicas · 2026</small>
+    <small>Riobamba en construcción</small>
   </div>
   <div class="ds-hdr-action" style="display:flex;align-items:center;gap:10px">
     <span style="font-size:.6rem;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap" id="fecha-hoy"></span>
@@ -1513,19 +1583,22 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 <!-- ═════ PUBLIC TABS (5: Resumen + 4 originales) ═════ -->
 <nav class="tabnav" role="tablist">
   <button class="tab active" data-tab="resumen" onclick="setPortalTab('resumen')" role="tab">
-    <span class="tn">01</span>Resumen<span class="tcount" id="tab-count-resumen">0</span>
+    <span class="tn">01</span>Todo de un vistazo<span class="tcount" id="tab-count-resumen">0</span>
   </button>
   <button class="tab" data-tab="obras" onclick="setPortalTab('obras')" role="tab">
-    <span class="tn">02</span>Obras en ejecución<span class="tcount" id="tab-count-obras">0</span>
+    <span class="tn">02</span>Obras hechas y en marcha<span class="tcount" id="tab-count-obras">0</span>
   </button>
   <button class="tab" data-tab="preparatoria" onclick="setPortalTab('preparatoria')" role="tab">
-    <span class="tn">03</span>Obras por ejecutarse<span class="tcount" id="tab-count-prep">0</span>
+    <span class="tn">03</span>Obras que vienen<span class="tcount" id="tab-count-prep">0</span>
   </button>
   <button class="tab" data-tab="mapa-obras" onclick="setPortalTab('mapa-obras')" role="tab">
-    <span class="tn">04</span>Mapa de obras
+    <span class="tn">04</span>¿Dónde están?
+  </button>
+  <button class="tab" data-tab="adquisiciones" onclick="setPortalTab('adquisiciones')" role="tab">
+    <span class="tn">05</span>Lo que compramos<span class="tcount" id="tab-count-adq">0</span>
   </button>
   <button class="tab" data-tab="maquinaria" onclick="setPortalTab('maquinaria');loadMaquinariaData()" role="tab">
-    <span class="tn">05</span>Maquinaria<span class="tcount" id="tab-count-maq">&mdash;</span>
+    <span class="tn">06</span>Nuestras máquinas<span class="tcount" id="tab-count-maq">&mdash;</span>
   </button>
 </nav>
 
@@ -1538,7 +1611,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   <section class="hero-resumen">
     <div class="hero-text">
       <span class="hero-eyebrow">Rendición de cuentas en tiempo real</span>
-      <h2>Conoce en qué está trabajando tu Alcaldía.</h2>
+      <h2>Conoce en qué está trabajando el JohnVi.</h2>
       <p class="hero-lede">Seguimiento abierto a las obras y mantenimientos que ejecuta el GADM Riobamba en 2026. Consulta el avance, presupuesto y estado de cada proyecto — <strong>información pública, actualizada y verificable</strong>.</p>
       <div class="hero-cta">
         <button class="cta-btn" onclick="setPortalTab('mapa-obras')">Ver obras en el mapa <span>→</span></button>
@@ -1551,51 +1624,53 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     </div>
   </section>
 
+
+
   <!-- KPIs · 1 fila de 5 (ciclo de vida del proyecto) -->
   <section class="kpi-row-rs kpi-row-5">
-    <div class="kpi-card-rs total">
-      <div class="kc-label">Total de proyectos</div>
-      <div class="kc-num" id="rs-kpi-total">0</div>
-      <div class="kc-cap">ejecutados + en ejecución + por ejecutarse</div>
-    </div>
-    <div class="kpi-card-rs ph-concl">
-      <div class="kc-label">Ejecutados</div>
-      <div class="kc-num" id="rs-kpi-concl">0</div>
-      <div class="kc-cap">avance 100%</div>
-    </div>
-    <div class="kpi-card-rs ph-fase">
-      <div class="kc-label">En ejecución</div>
-      <div class="kc-num" id="rs-kpi-ejec">0</div>
-      <div class="kc-cap">contratadas, en marcha</div>
-    </div>
-    <div class="kpi-card-rs ph-pre">
-      <div class="kc-label">Por ejecutarse</div>
-      <div class="kc-num" id="rs-kpi-ini">0</div>
-      <div class="kc-cap">previos a contratación</div>
-    </div>
-    <div class="kpi-card-rs ph-inv">
-      <div class="kc-label">Inversión total</div>
-      <div class="kc-num" id="rs-kpi-inv">$0</div>
-      <div class="kc-cap">presupuesto comprometido</div>
-    </div>
+    <div class="kpi-card-rs total"><div class="kc-label">Total de proyectos</div><div class="kc-num" id="rs-k-total">—</div><div class="kc-cap" id="rs-k-total-cap">obras + adquisiciones + por contratar</div></div>
+    <div class="kpi-card-rs "><div class="kc-label">Obras</div><div class="kc-num" id="rs-k-obras">—</div><div class="kc-cap" id="rs-k-obras-cap">construcción y mantenimiento</div></div>
+    <div class="kpi-card-rs "><div class="kc-label">Adquisiciones</div><div class="kc-num" id="rs-k-adq">—</div><div class="kc-cap" id="rs-k-adq-cap">maquinaria y materiales</div></div>
+    <div class="kpi-card-rs ph-concl"><div class="kc-label">Proyectos terminados</div><div class="kc-num" id="rs-k-term">—</div><div class="kc-cap" id="rs-k-term-cap">al 100%</div></div>
+    <div class="kpi-card-rs ph-fase"><div class="kc-label">Proyectos en ejecución</div><div class="kc-num" id="rs-k-ejec">—</div><div class="kc-cap" id="rs-k-ejec-cap">contratados, en marcha</div></div>
+    <div class="kpi-card-rs ph-pre"><div class="kc-label">Por contratar</div><div class="kc-num" id="rs-k-pc">—</div><div class="kc-cap" id="rs-k-pc-cap">aún sin contrato</div></div>
   </section>
 
-  <!-- Gráficas -->
-  <section class="charts-grid-rs">
-    <div class="rs-card chart-card">
-      <div class="rsc-head"><h3>Distribución por estado de avance</h3><span class="rsc-meta">Ejecutadas · En ejecución · Por ejecutarse</span></div>
-      <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-fases" style="display:none"></canvas><div id="css-chart-fases" style="height:100%"></div></div>
+  <!-- Mini mapa + Top 3 obras -->
+  <section class="resumen-grid rs-tomate">
+
+    <div class="rs-card mini-map-card">
+      <div class="rsc-head">
+        <h3>Vista general · Obras</h3>
+        <span class="rsc-meta" id="mini-map-info">Toca un punto para ver más</span>
+        <button id="mini-reset-btn" onclick="resetMiniMapa()" style="display:none;margin-left:10px;font-family:var(--sans),'Inter',sans-serif;font-size:11px;padding:4px 10px;border:1px solid var(--line-strong);border-radius:4px;background:#fff;color:var(--ink-2);cursor:pointer;font-weight:600">Ver todo</button>
+      </div>
+      <div id="mini-mapa-resumen"></div>
+      <div class="mini-legend">
+        <span class="ml"><i style="background:#0F3460"></i>Obras públicas</span>
+        <span class="ml"><i style="background:#C9A227"></i>Por contratar</span>
+        <span class="ml-spc"></span>
+        <button class="ml-cta" onclick="setPortalTab('mapa-obras')">Mapa completo de obras →</button>
+      </div>
     </div>
-    <div class="rs-card chart-card">
-      <div class="rsc-head"><h3>Avance por procedimiento</h3><span class="rsc-meta">Promedio de ejecución (%)</span></div>
-      <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-proc" style="display:none"></canvas><div id="css-chart-proc" style="height:100%"></div></div>
+
+    <div class="rs-card top-obras-card">
+      <div class="rsc-head">
+        <h3>Obras destacadas</h3>
+        <span class="rsc-meta" id="top-obras-meta">Obras emblemáticas</span>
+      </div>
+      <div class="top-obras-list" id="top-obras-list">
+        <div class="loading-mini">Cargando obras…</div>
+      </div>
     </div>
+
   </section>
 
-  <!-- Resumen territorial -->
+
+  <!-- La obra en tu plataforma -->
   <section class="rs-card" style="margin-bottom:22px">
     <div class="rsc-head">
-      <h3>Resumen territorial</h3>
+      <h3>La obra en tu plataforma</h3>
       <div class="layer-toggle" id="terr-toggle" style="margin-left:auto">
         <button class="active" onclick="setResumenTerr('plataforma',this)">Por plataforma</button>
         <button onclick="setResumenTerr('parroquia',this)">Por parroquia rural</button>
@@ -1612,52 +1687,33 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     <div id="parr-drill" style="padding:0 20px 18px"></div>
   </section>
 
-  <!-- Mini mapa + Top 3 obras -->
-  <section class="resumen-grid">
-
-    <div class="rs-card mini-map-card">
-      <div class="rsc-head">
-        <h3>Vista general · Obras</h3>
-        <span class="rsc-meta" id="mini-map-info">Toca un punto para ver más</span>
-        <button id="mini-reset-btn" onclick="resetMiniMapa()" style="display:none;margin-left:10px;font-family:var(--sans),'Inter',sans-serif;font-size:11px;padding:4px 10px;border:1px solid var(--line-strong);border-radius:4px;background:#fff;color:var(--ink-2);cursor:pointer;font-weight:600">Ver todo</button>
-      </div>
-      <div id="mini-mapa-resumen"></div>
-      <div class="mini-legend">
-        <span class="ml"><i style="background:#0F3460"></i>Obras públicas</span>
-        <span class="ml"><i style="background:#C9A227"></i>Por ejecutarse</span>
-        <span class="ml-spc"></span>
-        <button class="ml-cta" onclick="setPortalTab('mapa-obras')">Mapa completo de obras →</button>
-      </div>
-    </div>
-
-    <div class="rs-card top-obras-card">
-      <div class="rsc-head">
-        <h3>Obras destacadas</h3>
-        <span class="rsc-meta" id="top-obras-meta">Mayor inversión + avance</span>
-      </div>
-      <div class="top-obras-list" id="top-obras-list">
-        <div class="loading-mini">Cargando obras…</div>
-      </div>
-    </div>
-
+  <!-- Métricas -->
+  <section class="metricas-grid">
+    <div class="rs-card met-card"><div class="rsc-head"><h3>La chakana de la obra</h3><span class="rsc-meta">Inversión en los 8 ejes</span></div><div class="met-body" id="m-eje"><div class="loading-mini">Cargando…</div></div></div>
+    
+    <div class="rs-card met-card"><div class="rsc-head"><h3>Tipo de obra</h3><span class="rsc-meta">Número de obras</span></div><div class="met-body" id="m-tipo"><div class="loading-mini">Cargando…</div></div></div>
+    <div class="rs-card met-card"><div class="rsc-head"><h3>Kilómetros de vías</h3><span class="rsc-meta">Reasfaltado y adoquinado</span></div><div class="met-body" id="m-vias"><div class="loading-mini">Cargando…</div></div></div>
+    <div class="rs-card met-card"><div class="rsc-head"><h3>El camino de la contratación</h3><span class="rsc-meta">Todo lo planificado en 2026</span></div><div class="met-body" id="m-embudo"><div class="loading-mini">Cargando…</div></div></div>
+    <div class="rs-card met-card"><div class="rsc-head"><h3>Obras terminadas mes a mes</h3><span class="rsc-meta">2026</span></div><div class="met-body" id="m-mes"><div class="loading-mini">Cargando…</div></div></div>
   </section>
 
-  <!-- Accesos rápidos -->
-  <section class="quick-access-rs">
-    <h3 class="qa-title">Accesos rápidos</h3>
-    <div class="qa-grid">
-      <button class="qa-tile qa-obras" onclick="setPortalTab('obras')">
-        <div class="qa-ic">🏗️</div>
-        <div class="qa-body"><h4>Obras públicas</h4><p>Listado completo con presupuesto, fases y avances.</p></div>
-        <span class="qa-arrow">→</span>
-      </button>
-      <button class="qa-tile qa-mapa" onclick="setPortalTab('mapa-obras')">
-        <div class="qa-ic">🗺️</div>
-        <div class="qa-body"><h4>Mapa de obras</h4><p>Geoportal con todas las obras georreferenciadas.</p></div>
-        <span class="qa-arrow">→</span>
-      </button>
+  <!-- Gráficas -->
+  <section class="charts-grid-rs">
+    <div class="rs-card chart-card">
+      <div class="rsc-head"><h3>Distribución por estado de avance</h3><span class="rsc-meta">Terminadas · En marcha · Obras que vienen</span></div>
+      <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-fases" style="display:none"></canvas><div id="dist-barras" style="height:100%;display:flex;align-items:center;justify-content:center"></div></div>
+    </div>
+    <div class="rs-card chart-card">
+      <div class="rsc-head"><h3>Avance por procedimiento</h3><span class="rsc-meta">Promedio de ejecución (%)</span></div>
+      <div class="chart-wrap" style="height:320px"><canvas id="rs-chart-proc" style="display:none"></canvas><div id="proc-barras" style="height:100%;display:flex;align-items:center;justify-content:center"></div></div>
     </div>
   </section>
+
+
+
+
+
+
 
 </div>
 
@@ -1677,11 +1733,12 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
       <select id="filtro-tipo" onchange="aplicarFiltrosListado()" style="font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-family:var(--sans)">
         <option value="">Todos los tipos</option>
         <option value="vial">Vial</option>
-        <option value="alcantarillado">Alcantarillado</option>
-        <option value="equipamiento">Equipamiento</option>
+        <option value="alcantarillado">Agua y saneamiento</option>
         <option value="espacio">Espacio público</option>
-        <option value="agua">Agua potable</option>
-        <option value="movilidad">Movilidad</option>
+        <option value="edificacion">Edificación</option>
+        <option value="equipamiento">Equipamiento</option>
+        <option value="adquisicion">Adquisición</option>
+        <option value="otro">Otro</option>
       </select>
       <select id="filtro-estado" onchange="aplicarFiltrosListado()" style="font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-family:var(--sans)">
         <option value="">Todos los estados</option>
@@ -1718,18 +1775,19 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   <span id="pub-inversion" style="display:none"></span>
 </div>
 
-<!-- TAB 3: OBRAS POR EJECUTARSE -->
+<!-- TAB 3: OBRAS POR CONTRATAR -->
 <div class="tab-panel" id="panel-preparatoria" role="tabpanel">
-  <div class="section-ey">Obras por ejecutarse · Proyectos previos a contratación</div>
+  <div class="section-ey">Obras por contratar · Proyectos previos a contratación</div>
   <div class="prep-kpis" id="prep-kpis"></div>
   <div class="map-section" style="margin-top:14px">
     <div class="mc-head">
-      <h3>Obras <em>por ejecutarse</em></h3>
+      <h3>Obras <em>por contratar</em></h3>
       <div class="meta"><span id="prep-count">—</span></div>
       <div class="layer-toggle" id="prep-filtros">
         <button class="active" onclick="filtrarPrep('',this)">Todos</button>
-        <button onclick="filtrarPrep('Entregado para Contratación',this)">Entregados</button>
-        <button onclick="filtrarPrep('En desarrollo',this)">En desarrollo</button>
+        <button onclick="filtrarPrep('Publicado en el SERCOP',this)">Publicados en el SERCOP</button>
+        <button onclick="filtrarPrep('Listo para contratar',this)">Fase preparatoria</button>
+        <button onclick="filtrarPrep('En estudios',this)">En estudios</button>
       </div>
     </div>
     <div id="prep-lista" style="padding:16px 24px 24px"></div>
@@ -1758,7 +1816,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
         <button onclick="setObrasTema('urbano',this)">Suelo urbano</button>
         <button onclick="setObrasTema('ninguno',this)">Ninguno</button>
       </div>
-      <button id="prep-toggle-btn" class="active" onclick="togglePrepMapa(this)" style="font-family:var(--sans),'Inter',sans-serif;font-size:11px;padding:6px 12px;border:1px solid #C9A227;border-radius:4px;background:#F5EBC9;color:#7A4A0A;cursor:pointer;font-weight:600;white-space:nowrap">● Por ejecutarse</button>
+      <button id="prep-toggle-btn" class="active" onclick="togglePrepMapa(this)" style="font-family:var(--sans),'Inter',sans-serif;font-size:11px;padding:6px 12px;border:1px solid #C9A227;border-radius:4px;background:#F5EBC9;color:#7A4A0A;cursor:pointer;font-weight:600;white-space:nowrap">● Por contratar</button>
       <select id="obras-zona-filtro" onchange="filtrarPorZona(this.value)" style="margin-left:auto;font-family:var(--sans),'Inter',sans-serif;font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);max-width:260px">
         <option value="">Todas las zonas</option>
       </select>
@@ -1771,7 +1829,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:4px;background:#22c55e;border-radius:2px"></span>Vías reasfaltadas</div>
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:4px;background:#f59e0b;border-radius:2px"></span>Vías adoquinadas</div>
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#0F3460;flex-shrink:0"></span>Obras públicas</div>
-          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#C9A227;border:2px solid #7A4A0A;box-sizing:border-box"></span>Por ejecutarse</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#C9A227;border:2px solid #7A4A0A;box-sizing:border-box"></span>Por contratar</div>
           <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:28px;height:0;border-top:2px dashed #0F3460"></span>Plataformas</div>
         </div>
       </div>
@@ -1792,13 +1850,20 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
   </div>
 </div>
 
+<!-- TAB: ADQUISICIONES -->
+<div class="tab-panel" id="panel-adquisiciones" role="tabpanel">
+  <div class="section-ey">Adquisiciones · Dirección de Obras Públicas</div>
+  <div class="adq-kpis" id="adq-kpis"></div>
+  <div id="adq-lista"></div>
+</div>
+
 <!-- TAB 4: MAQUINARIA -->
 <div class="tab-panel" id="panel-maquinaria" role="tabpanel">
 <style>
-.maq-hero{background:linear-gradient(135deg,#0B1F4D 0%,#1A3A6B 100%);color:#fff;padding:28px 48px 24px;border-bottom:4px solid #C8102E}
+.maq-hero{background:linear-gradient(135deg,#0B1F4D 0%,#C2410C 100%);color:#fff;padding:28px 48px 24px;border-bottom:4px solid #EA580C}
 .maq-hero h2{margin:0 0 4px;font-size:1.35rem;font-weight:800;letter-spacing:-.02em}.maq-hero h2 em{color:#F5C518;font-style:normal}
 .maq-hero p{margin:0;font-size:.78rem;opacity:.7}
-.maq-reload{background:#C8102E;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:700;font-size:.75rem;cursor:pointer;margin-left:auto;display:flex;align-items:center;gap:6px}
+.maq-reload{background:#EA580C;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:700;font-size:.75rem;cursor:pointer;margin-left:auto;display:flex;align-items:center;gap:6px}
 .maq-hero-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .maq-semanas{display:flex;gap:6px;flex-wrap:wrap;padding:12px 48px;background:#F7F8FC;border-bottom:1px solid #E3E6EF}
 .maq-sem-btn{background:#fff;border:1.5px solid #D1D9E6;border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .15s;color:#4A5568}
@@ -1808,7 +1873,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 .maq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .maq-card{background:#fff;border:1.5px solid #E3E6EF;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(11,31,77,.06)}
 .maq-card-head{background:#0B1F4D;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:8px}
-.maq-card-num{background:#C8102E;color:#fff;font-size:.62rem;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.08em;white-space:nowrap}
+.maq-card-num{background:#EA580C;color:#fff;font-size:.62rem;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.08em;white-space:nowrap}
 .maq-card-title{font-weight:700;font-size:.82rem;flex:1}
 .maq-card-pedido{background:#F4F6FB;border-bottom:1px solid #E3E6EF;padding:7px 16px;font-size:.75rem;color:#4A536B;font-weight:500;font-style:italic}
 .maq-card-sector{background:#F5C518;color:#0B1F4D;font-size:.62rem;font-weight:800;padding:2px 7px;border-radius:6px;white-space:nowrap;max-width:110px;overflow:hidden;text-overflow:ellipsis}
@@ -1822,10 +1887,26 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 .maq-maq-row:last-child{border-bottom:none}
 .maq-maq-icon{width:28px;height:28px;border-radius:6px;background:#E4EAF6;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;margin-top:1px}
 .maq-maq-name{font-weight:700;color:#0B1F4D;text-transform:capitalize;font-size:.74rem}
-.maq-maq-placa{background:#E4EAF6;color:#1A3A6B;font-size:.62rem;font-weight:700;padding:1px 6px;border-radius:4px;font-family:monospace}
+.maq-maq-placa{background:#E4EAF6;color:#C2410C;font-size:.62rem;font-weight:700;padding:1px 6px;border-radius:4px;font-family:monospace}
 .maq-maq-obs{color:#7A8299;font-size:.67rem;margin-top:2px;font-style:italic}
 .maq-empty-maq{color:#9AA3B5;font-size:.72rem;font-style:italic;padding:4px 0}
 @media(max-width:900px){.maq-hero,.maq-body{padding-left:22px;padding-right:22px}.maq-semanas{padding-left:22px;padding-right:22px}}
+.adq-wrap{padding:8px 48px 36px}
+.adq-hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-bottom:12px}
+.adq-hd h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0;color:var(--ink)}
+.adq-hd span{font-size:12px;color:var(--ink-3)}
+.adq-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}
+.adq-g{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-3);margin:16px 0 8px}
+.adq-row{display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:11px 14px;margin-bottom:8px}
+.adq-row .o{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35}
+.adq-row .meta{grid-column:1;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:var(--ink-3)}
+.adq-row .meta b{font-family:'JetBrains Mono',monospace;color:#0F3460}
+.adq-row .m{grid-row:1/span 2;grid-column:2;text-align:right}
+.adq-row .m .v{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--ink)}
+.adq-st{display:inline-block;margin-top:4px;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 7px;border-radius:4px}
+.adq-st.ok{background:#DEEADF;color:#2F5A36}.adq-st.pre{background:#E8ECF3;color:#0F3460}.adq-st.stop{background:#F5DDDD;color:#9B2C2C}.adq-st.lis{background:#F5EAD2;color:#7A5310}
+#panel-adquisiciones .adq-kpis{margin-top:14px}
+@media(max-width:640px){.adq-wrap{padding:8px 14px 24px}.adq-row{grid-template-columns:1fr}.adq-row .m{grid-row:auto;grid-column:1;text-align:left;display:flex;gap:10px;align-items:center}.adq-row .m .adq-st{margin-top:0}}
 </style>
   <div class="maq-hero">
     <div class="maq-hero-row">
@@ -1838,6 +1919,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     <div class="maq-status" id="maq-status">&#x27F3; Haz clic en la pestaña para cargar los datos</div>
     <div class="maq-grid" id="maq-grid"></div>
   </div>
+  <div class="adq-wrap" id="maq-adquisiciones"><div class="adq-hd"><h3>Adquisiciones de maquinaria</h3><span>Procesos en el SERCOP · 2026</span></div><div id="maq-adq-lista"></div></div>
 </div>
 
 </main>
@@ -1915,7 +1997,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
     <button class="nav-btn" onclick="setOaView('actualizar')">Actualizar</button>
     <button class="nav-btn" onclick="setOaView('procedimientos')">Procedimientos</button>
     <button class="nav-btn" onclick="setOaView('importar')">Importar</button>
-    <button class="nav-btn" onclick="setOaView('publicar')" style="color:#C0392B;font-weight:500">↑ Publicar</button>
+    <button class="nav-btn" onclick="setOaView('publicar')" style="color:#F97316;font-weight:500">↑ Publicar</button>
   </nav>
   <div class="header-date" id="oa-headerDate"></div>
 </header>
@@ -1924,12 +2006,12 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 
   <!-- ── DASHBOARD VIEW ── -->
   <div id="oa-view-dashboard">
-    <div class="hero-strip" style="background:linear-gradient(135deg,#1C2B5E 0%,#243580 60%,#C0392B 100%)">
+    <div class="hero-strip" style="background:linear-gradient(135deg,#0B1F4D 0%,#243580 60%,#F97316 100%)">
       <div>
         <h2>Estado general de obras · GADM Riobamba 2025</h2>
         <p>Normativa vigente · LOSNCP R.O. No. 140 (07-oct-2025) · Reglamento Decreto Ejecutivo No. 193 (28-oct-2025)</p>
       </div>
-      <span class="hero-badge" style="background:white;color:#1C2B5E" id="heroBadge">0 obras activas</span>
+      <span class="hero-badge" style="background:white;color:#0B1F4D" id="heroBadge">0 obras activas</span>
     </div>
 
     <div class="metrics-grid">
@@ -2241,7 +2323,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 
   <!-- ── PUBLICAR EN GITHUB ── -->
   <div id="oa-view-publicar" style="display:none">
-    <div class="hero-strip" style="background:linear-gradient(135deg,#1C2B5E 0%,#243580 60%,#C0392B 100%);margin-bottom:1.5rem">
+    <div class="hero-strip" style="background:linear-gradient(135deg,#0B1F4D 0%,#243580 60%,#F97316 100%);margin-bottom:1.5rem">
       <div>
         <h2>Publicar datos en GitHub Pages</h2>
         <p>Sube los datos actuales al repositorio para que el portal público se actualice automáticamente</p>
@@ -2302,7 +2384,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 28px 28px 60px; }
 
 </main>
 
-<footer style="background:#1C2B5E;border-top:3px solid #C0392B">
+<footer style="background:#0B1F4D;border-top:3px solid #F97316">
   <span>Alcaldía Ciudadana de Riobamba</span> · GADM Riobamba · Dirección de Gestión de Obras Públicas · LOSNCP 2025 · Decreto Ejecutivo No. 193 · SERCOP — COMPRASPÚBLICAS
 </footer>
 
@@ -2400,9 +2482,193 @@ window.setAdminTab=function(tab,el){
   document.getElementById('adm-panel-'+tab).classList.add('active');
 };
 
+// ── Clasificación de tipo de obra ──
+window.clasificarTipo=function(nombre,proc){
+  var t=String(nombre||'')+' '+String(proc||'');
+  if(/^\W*adquisi?ci?[oó]n|^\W*adquisi[oó]n/i.test(String(nombre||''))) return 'adquisicion';
+  if(/alcant|sanitari|pluvial|colector|agua potable|agua de consumo|ptar|tratamiento de agua/i.test(t)) return 'alcantarillado';
+  if(/vial|vía|vias|camin|carre|asfalt|pavi|acera|bordill|calle|adoquin|puente|bacheo|avenida/i.test(t)) return 'vial';
+  if(/maquinar|equipo/i.test(t)) return 'equipamiento';
+  if(/parque|plaza|espacio|jard|verde|boulevar|parterre|recreativ|regeneraci|juegos infantiles|gimnasio/i.test(t)) return 'espacio';
+  if(/mercado|cementerio|b[oó]veda|edific|coliseo|estadio|cancha|cubierta|cerramiento|centro|bater[ií]a|casa|museo|iglesia|arcos|patrimon|readecuaci|construcci/i.test(t)) return 'edificacion';
+  return 'otro';
+};
+window.TIPO_LBL={vial:'Vial',alcantarillado:'Agua y saneamiento',equipamiento:'Equipamiento',espacio:'Espacio público',edificacion:'Edificación',adquisicion:'Adquisición',otro:'Otro'};
+
+// ── Adjudicados en el SERCOP → obras en ejecución ──
+function agregarAdjudicados(arr){
+  if(!arr||arr.__adjOk) return arr;
+  var N=function(s){return String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();};
+  var ya=new Set(arr.map(function(o){return N(o.nombre);}));
+  var cods=new Set(arr.map(function(o){return String(o.codigo||'').trim().toUpperCase();}).filter(Boolean));
+  var pref=arr.map(function(o){return N(o.nombre).slice(0,45);});
+  ((window.PROYECTOS_CONTRATACION)||[]).forEach(function(p){var c=p.sercop&&p.sercop.codigo?p.sercop.codigo.toUpperCase():'';var k=N(p.proyecto);var faseP=(k.match(/(FASE|ETAPA)\s+[IVX0-9]+/)||[''])[0];var pi=pref.indexOf(k.slice(0,45));var prefOk=pi>=0&&((N(arr[pi].nombre).match(/(FASE|ETAPA)\s+[IVX0-9]+/)||[''])[0]===faseP);if((c&&cods.has(c))||ya.has(k)||prefOk){p.duplicado=true;}});
+  ((window.ADQUISICIONES)||[]).forEach(function(q){if(q.c&&cods.has(q.c.toUpperCase()))q.dup=true;});
+
+  ((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return p.etapa==='Adjudicado';}).forEach(function(p){
+    if(p.duplicado||ya.has(N(p.proyecto))) return;
+    var s=(p.sitios||[])[0]||{};
+    var o={nombre:p.proyecto,codigo:p.sercop?p.sercop.codigo:'',proc:p.sercop?p.sercop.tipo:'',presupuesto:p.monto,avance:0,fase:4,
+      estado:'Adjudicado',observaciones:'Adjudicado en el SERCOP ('+(p.sercop?p.sercop.codigo:'')+')',parroquia:p.parroquia,
+      lat:s.lat||null,lng:s.lng||null,tipo:window.clasificarTipo(p.proyecto),adjudicado:true};
+    if(o.lat!=null&&window.findPlataforma){var pl=window.findPlataforma(o.lat,o.lng);if(pl)o.plataforma=pl;}
+    if(o.lat!=null&&window.findParroquiaGeo){var pq=window.findParroquiaGeo(o.lat,o.lng);if(pq)o.parroquia_geo=pq;}
+    arr.push(o);
+  });
+  var L100=window.OBRAS_100||[],N2=function(s){return String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Z0-9 ]/g,' ').replace(/\s+/g,' ').trim();};
+  arr.forEach(function(o){var k=N2(o.nombre);if(L100.some(function(p){return k.indexOf(p)===0;})){o.avance=100;o.estado='finalizada';}});
+  var esAdq=function(o){var n=N(o.nombre);return /^\W*ADQUISI/.test(n)||/^SIE-/i.test(String(o.codigo||''))||/SUBASTA INVERSA/.test(N(o.proc));};
+  var adqM=[];for(var ii=arr.length-1;ii>=0;ii--){if(!arr[ii].adjudicado&&esAdq(arr[ii])){adqM.unshift(arr[ii]);arr.splice(ii,1);}}
+  window.ADQ_MATRIZ=adqM.map(function(o){if(/^\W*ADQUISICION DE MATERIALES PETREOS$/.test(N(o.nombre))&&!(parseFloat(o.avance)>0))o.observaciones=(o.observaciones||'')+' DESIERTO';var av=Math.min(100,parseFloat(o.avance)||0),des=/DESIERT/.test(N(String(o.observaciones||'')+' '+String(o.estado||''))),sus=/SUSPEN/.test(N(String(o.observaciones||'')+' '+String(o.estado||'')));return {o:o.nombre,c:o.codigo||'',m:parseFloat(o.presupuesto)||0,e:des?'Desierto':(sus?'Suspendido':(av>=100?'Adquirido · 100%':'En entrega · '+Math.round(av)+'%')),k:(des||sus)?'stop':'ok',g:/MAQUINAR|EQUIPO|VEHIC|CAMION/.test(N(o.nombre))?'Maquinaria':'Materiales',f:'',src:'matriz'};});
+  setTimeout(function(){try{var t=document.getElementById('rs-kpi-total'),r=document.querySelector('#tab-count-resumen');var pr=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0&&p.etapa!=='Adjudicado'&&p.tipo!=='Adquisición'&&!p.duplicado;}).length;var tot=arr.length+pr+window.todasAdq().length;if(t)t.textContent=tot;if(r)r.textContent=tot;}catch(_){}}, 400);
+  setTimeout(function(){try{renderKPIs();}catch(_){}},120);
+  setTimeout(function(){try{renderAdquisiciones();}catch(_){} try{renderPreparatoria();}catch(_){} try{renderMetricas();}catch(_){}},50);
+  arr.__adjOk=true;
+  return arr;
+}
+
+// ── Adquisiciones ──
+window.todasAdq=function(){var px=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return p.tipo==='Adquisición'&&(parseFloat(p.monto)||0)>0&&!p.duplicado;}).map(function(p){return {o:p.proyecto,c:p.sercop?p.sercop.codigo:'',m:p.monto,e:'Por contratar',k:'lis',g:'Materiales',f:''};});return ((window.ADQUISICIONES)||[]).filter(function(a){return !a.dup;}).concat(window.ADQ_MATRIZ||[]).concat(px);};
+function adqFmt(n){return n?'$'+Number(n).toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}):'—';}
+function adqCorto(n){return n>=1e6?'$'+(n/1e6).toFixed(2).replace('.',',')+'M':'$'+Math.round(n/1000)+'K';}
+function adqRow(a){return '<div class="adq-row"><div class="o">'+a.o+'</div><div class="m"><div class="v">'+adqFmt(a.m)+'</div><span class="adq-st '+a.k+'">'+a.e+'</span></div><div class="meta">'+(a.c?'<b>'+a.c+'</b>':'<span>Sin proceso en el SERCOP</span>')+(a.f?'<span>Publicado '+a.f.split('-').reverse().join('/')+'</span>':'')+'</div></div>';}
+function renderAdquisiciones(){
+  var A=window.todasAdq();
+  var act=A.filter(function(a){return a.k!=='stop';});
+  var inv=act.reduce(function(s,a){return s+a.m;},0);
+  var set=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v;};
+  set('tab-count-adq',A.length);
+  set('rs-kpi-adq',A.length);
+  set('rs-kpi-adq-cap',adqCorto(inv)+' activos');
+  var k=document.getElementById('adq-kpis');
+  if(k) k.innerHTML=[['Procesos',A.length,'maquinaria y materiales'],['Inversión activa',adqCorto(inv),'sin suspendidos ni desiertos'],['Adjudicados o en ejecución',A.filter(function(a){return a.k==='ok';}).length,'contrato firmado o en curso'],['En proceso o por contratar',A.filter(function(a){return a.k==='pre'||a.k==='lis';}).length,'publicados o listos']].map(function(r){return '<div class="prep-kpi"><div class="lbl">'+r[0]+'</div><div class="val">'+r[1]+'</div><div class="cap">'+r[2]+'</div></div>';}).join('');
+  var l=document.getElementById('adq-lista');
+  if(l){var gA=A.filter(function(a){return a.k==='ok';}).sort(function(x,y){return y.m-x.m;}),gP=A.filter(function(a){return a.k!=='ok';}).sort(function(x,y){return y.m-x.m;});
+    l.innerHTML='<div class="adq-g">Adquirido · '+gA.length+' · '+adqCorto(gA.reduce(function(s,a){return s+a.m;},0))+'</div>'+gA.map(adqRow).join('')+'<div class="adq-g">Por adquirir · '+gP.length+' · '+adqCorto(gP.reduce(function(s,a){return s+a.m;},0))+'</div>'+gP.map(adqRow).join('');}
+  var m=document.getElementById('maq-adq-lista');
+  if(m) m.innerHTML=A.filter(function(a){return a.g==='Maquinaria';}).map(adqRow).join('');
+}
+document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){try{renderAdquisiciones();}catch(_){}},300);});
+setInterval(function(){try{var e=document.getElementById('rs-kpi-adq');if(e&&e.textContent==='0')renderAdquisiciones();}catch(_){}},1500);
+
+// ── Obras destacadas fijas ──
+window.obrasDestacadas=function(obras){
+  var N=function(s){return String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');};
+  var pats=[/JUAN BERNARDO DAVALOS/,/MARIANO BORJA|LA MERCED/,/COLECTOR BOSQUE TUBASEC/,/BOVEDAS.*CEMENTERIO GENERAL|CEMENTERIO GENERAL/,/BOULEVARD? DE LAS ANIMAS/];
+  var out=[];
+  pats.forEach(function(p){var o=(obras||[]).filter(function(x){return p.test(N(x.nombre))&&out.indexOf(x)<0;}).sort(function(a,b){return (parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);})[0];if(o)out.push(o);});
+  return out;
+};
+
+// el mapa del resumen se ajusta al alto de "Obras destacadas"
+(function(){var t=0;function fix(){try{if(window.miniMapLeaflet)window.miniMapLeaflet.invalidateSize();}catch(_){}}
+window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fix,150);});
+var obs=new MutationObserver(function(){clearTimeout(t);t=setTimeout(fix,150);});
+document.addEventListener('DOMContentLoaded',function(){var l=document.getElementById('top-obras-list');if(l)obs.observe(l,{childList:true,subtree:true});setTimeout(fix,1500);setTimeout(fix,4000);});})();
+
+// ── Métricas del resumen ──
+(function(){
+var NAVY='#0F3460',TOM='#EA580C',VERDE='#1A7A4A',ORO='#C9A227';
+function N(s){return String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+function money(n){return n>=1e6?'$'+(n/1e6).toFixed(2).replace('.',',')+'M':n>=1e3?'$'+Math.round(n/1e3)+'K':'$'+Math.round(n);}
+function prepActivos(){return ((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0&&p.etapa!=='Adjudicado'&&p.tipo!=='Adquisición'&&!p.duplicado;});}
+var EJES=[
+ ['Así cuidamos el agua',/ALCANT|AGUA|COLECTOR|SANITARI|PTAR|TUBER|PLUVIAL|LIXIV/],
+ ['Así te acercamos a tu destino',/ASFALT|VIAL|VIAS|ADOQU|BACHE|BORDILL|PUENTE|CALLE|AVENIDA|MEZCLA|PETREO|CEMENTO PARA MEJORA/],
+ ['Así apoyamos a quienes nos alimentan',/MERCADO|RASTRO|COMERCIALI|FERIA|CONDAMINE|GANADO/],
+ ['Así jugamos y nos movemos',/ESTADIO|CANCHA|COLISEO|PISCINA|DEPORT|RECREATIV|CROSSFIT|JUEGOS|GIMNAS/],
+ ['Así honramos a nuestros seres queridos',/CEMENTERIO|BOVEDA/],
+ ['Así valoramos nuestra historia',/PATRIMON|IGLESIA|MUSEO|TEREQUE|TURIST|CULTUR|FACHADA|ARCOS|CIVICO/],
+ ['Así recuperamos nuestra ciudad',/PARQUE|PLAZ|REGENERA|BOULEVAR|PARTERRE|VELOZ|ZAMBRANO|ESPACIO/],
+ ['Así cuidamos tu bienestar',/./]
+];
+function ejeDe(nombre){var n=N(nombre);for(var i=0;i<EJES.length;i++){if(EJES[i][1].test(n))return EJES[i][0];}return EJES[7][0];}
+function bars(el,rows,color){var max=Math.max.apply(null,[1].concat(rows.map(function(r){return r[1];})));
+ el.innerHTML=rows.map(function(r){return '<div class="met-row"><span class="l" title="'+r[0]+'">'+r[0]+'</span><div class="b"><i style="width:'+Math.round(r[1]/max*100)+'%;background:'+(r[2]||color)+'"></i></div><span class="v">'+(r[3]||money(r[1]))+'</span></div>';}).join('');}
+function km(capa){var t=0;if(!capa||!capa.features)return 0;capa.features.forEach(function(f){var g=f.geometry;if(!g)return;var ls=g.type==='LineString'?[g.coordinates]:(g.type==='MultiLineString'?g.coordinates:[]);ls.forEach(function(c){for(var i=1;i<c.length;i++){var a=c[i-1],b=c[i],R=6371,dLa=(b[1]-a[1])*Math.PI/180,dLo=(b[0]-a[0])*Math.PI/180,x=Math.sin(dLa/2)*Math.sin(dLa/2)+Math.cos(a[1]*Math.PI/180)*Math.cos(b[1]*Math.PI/180)*Math.sin(dLo/2)*Math.sin(dLo/2);t+=R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}});});return t;}
+function fecha(s){s=String(s||'').trim();var m=s.match(/^(\d{4})-(\d{1,2})/);if(m)return [+m[1],+m[2]];m=s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);if(m)return [+m[3],+m[2]];return null;}
+window.renderMetricas=function(){
+ var obras=window.OBRAS_PUB||[];if(!obras.length)return false;
+ var prep=prepActivos(), adq=(window.todasAdq?window.todasAdq():[]).filter(function(a){return a.k!=='stop';});
+ var items=obras.map(function(o){return {n:o.nombre,m:parseFloat(o.presupuesto)||0,par:o.parroquia_geo||o.parroquia,t:o.tipo};})
+   .concat(prep.map(function(p){return {n:p.proyecto,m:(p.sercop&&/Suspend|Desiert/i.test(p.sercop.estado))?0:p.monto,par:p.parroquia,t:window.clasificarTipo?window.clasificarTipo(p.proyecto):'otro'};}))
+   .concat(adq.map(function(a){return {n:a.o,m:a.m,par:'Riobamba',t:'adquisicion'};}));
+ // 1 ejes (chakana)
+ var CHK_LBL={'Así cuidamos el agua':'Agua limpia','Así te acercamos a tu destino':'Calles y caminos','Así apoyamos a quienes nos alimentan':'Mercados','Así jugamos y nos movemos':'Deporte y juego','Así honramos a nuestros seres queridos':'Cementerios','Así valoramos nuestra historia':'Nuestra historia','Así recuperamos nuestra ciudad':'Parques y plazas','Así cuidamos tu bienestar':'Ayuda a la gente'};
+ var e1=document.getElementById('m-eje');if(e1){var ej={},ne={};items.forEach(function(it){var k=ejeDe(it.n);ej[k]=(ej[k]||0)+it.m;ne[k]=(ne[k]||0)+1;});
+  var orden=EJES.map(function(e){return e[0];}),tt1=orden.reduce(function(s,k){return s+(ej[k]||0);},0);
+  var pos=[[1,2,'x'],[1,3,'c tr'],[2,3,'x'],[3,3,'c br'],[3,2,'x'],[3,1,'c bl'],[2,1,'x'],[1,1,'c tl']];
+  e1.innerHTML='<div class="chk">'+orden.map(function(k,i){var p=pos[i];return '<div class="chk-c '+p[2]+'" style="grid-row:'+p[0]+';grid-column:'+p[1]+'"><span class="chk-n">'+(i+1)+'</span><div class="chk-t">'+(CHK_LBL[k]||k)+'</div><div class="chk-v">'+money(ej[k]||0)+'</div><div class="chk-o">'+(ne[k]||0)+' obras</div></div>';}).join('')+'<div class="chk-m"><div class="chk-mt">Riobamba<br>en construcción</div><div class="chk-mv">'+money(tt1)+'</div></div></div>';}
+ // 2 (retirado)
+ // 3 tipo (anillo)
+ var e3=document.getElementById('m-tipo');if(e3){var L=window.TIPO_LBL||{},cnt={};items.forEach(function(it){var k=it.t||'otro';cnt[k]=(cnt[k]||0)+1;});
+  var cols={vial:NAVY,alcantarillado:'#0E7490',espacio:VERDE,edificacion:TOM,adquisicion:ORO,equipamiento:'#6B7280',otro:'#9AA1AD'};
+  var ks=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a];}),tot=items.length,acc=0,C=2*Math.PI*42;
+  var segs=ks.map(function(k){var len=cnt[k]/tot*C,s='<circle r="42" cx="60" cy="60" fill="none" stroke="'+(cols[k]||'#9AA1AD')+'" stroke-width="18" stroke-dasharray="'+len+' '+(C-len)+'" stroke-dashoffset="'+(-acc)+'" transform="rotate(-90 60 60)"></circle>';acc+=len;return s;}).join('');
+  e3.innerHTML='<div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap"><svg viewBox="0 0 120 120" width="130" height="130">'+segs+'<text x="60" y="58" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="20" font-weight="700" fill="#0B1F4D">'+tot+'</text><text x="60" y="74" text-anchor="middle" font-size="9" fill="#6B7280">obras</text></svg><div class="met-leg" style="flex-direction:column;gap:6px">'+ks.map(function(k){return '<span><i style="background:'+(cols[k]||'#9AA1AD')+'"></i>'+(L[k]||k)+' · <b>'+cnt[k]+'</b></span>';}).join('')+'</div></div>';}
+ // 4 km
+ var e4=document.getElementById('m-vias');if(e4){var a=km(window.VIAS_REASF),b=km(window.VIAS_ADQ),t=a+b,mx=Math.max(a,b,1);
+  e4.innerHTML='<div class="met-big">'+t.toFixed(1).replace('.',',')+' km</div><div class="met-sub">de vías intervenidas · como ir de Riobamba a Guano '+Math.round(t/9)+' veces</div><div style="margin-top:16px">'+
+   '<div class="met-row" style="grid-template-columns:110px 1fr 70px"><span class="l">Reasfaltado</span><div class="b"><i style="width:'+Math.round(a/mx*100)+'%;background:'+VERDE+'"></i></div><span class="v">'+a.toFixed(1).replace('.',',')+' km</span></div>'+
+   '<div class="met-row" style="grid-template-columns:110px 1fr 70px"><span class="l">Adoquinado</span><div class="b"><i style="width:'+Math.round(b/mx*100)+'%;background:'+TOM+'"></i></div><span class="v">'+b.toFixed(1).replace('.',',')+' km</span></div></div>';}
+ // 5 pirámide de contratación: base = planificados 2026; niveles suman el total
+ var e5=document.getElementById('m-embudo');if(e5){
+  var AA=window.todasAdq?window.todasAdq():[];
+  var adjN=obras.length+AA.filter(function(a){return a.k==='ok';}).length;
+  var pubN=prep.filter(function(p){return p.etapa==='Publicado en el SERCOP';}).length+AA.filter(function(a){return a.k==='pre'||a.k==='stop';}).length;
+  var estN=prep.filter(function(p){return p.etapa==='En estudios';}).length;
+  var prepN=prep.filter(function(p){return p.etapa!=='Publicado en el SERCOP'&&p.etapa!=='En estudios';}).length+AA.filter(function(a){return a.k==='lis';}).length;
+  var totN=adjN+pubN+prepN+estN;
+  var st=[['Adjudicados',adjN,VERDE,'#fff'],['Publicados en el SERCOP',pubN,ORO,'#0B1F4D'],['Fase preparatoria',prepN,TOM,'#fff'],['En estudios',estN,'#9AA1AD','#0B1F4D'],['Planificados 2026',totN,NAVY,'#fff']];
+  st.sort(function(x,y){return x[1]-y[1];});
+  var W=320,Hh=50,g=4,n=st.length,svg='';
+  st.forEach(function(s,i){var y=i*(Hh+g),w1=W*i/n,w2=W*(i+1)/n,x1=(W-w1)/2,x2=(W-w2)/2;
+   svg+='<polygon points="'+x1+','+y+' '+(x1+w1)+','+y+' '+(x2+w2)+','+(y+Hh)+' '+x2+','+(y+Hh)+'" fill="'+s[2]+'"></polygon>';
+   var ty=i===0?y+Hh*0.6:y+Hh/2-2;
+   svg+='<text x="'+W/2+'" y="'+ty+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="'+(i===0?14:17)+'" font-weight="700" fill="'+s[3]+'">'+s[1]+'</text>';
+   svg+='<text x="'+W/2+'" y="'+(i===0?y+Hh*0.88:y+Hh/2+14)+'" text-anchor="middle" font-size="'+(i===0?8.5:10.5)+'" font-weight="600" fill="'+s[3]+'">'+s[0]+'</text>';});
+  e5.innerHTML='<svg viewBox="0 0 '+W+' '+(n*(Hh+g))+'" width="100%" style="max-width:360px;display:block;margin:0 auto">'+svg+'</svg><div class="met-sub" style="text-align:center;margin-top:10px">'+st.slice(0,-1).map(function(s){return s[1]+' '+s[0].charAt(0).toLowerCase()+s[0].slice(1);}).join(' + ')+' = <b style="color:#0B1F4D">'+totN+'</b> planificados</div>';}
+ // 6 mes a mes
+ var e6=document.getElementById('m-mes');if(e6){var mes=[0,0,0,0,0,0,0,0,0,0,0,0],sin=0;obras.forEach(function(o){if((parseFloat(o.avance)||0)<100)return;var f=fecha(o.fin);if(f&&f[0]===2026)mes[f[1]-1]++;else sin++;});
+  var hoy=new Date(),lim=hoy.getFullYear()===2026?hoy.getMonth()+1:12,acu=[],s=0;for(var i=0;i<lim;i++){s+=mes[i];acu.push(s);}
+  var MM=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],W=300,H=130,mx6=Math.max(1,acu[acu.length-1]||1),st6=W/Math.max(1,lim-1);
+  var pts=acu.map(function(v,i){return [Math.round(i*st6),Math.round(H-10-v/mx6*(H-30))];});
+  var path=pts.map(function(p,i){return (i?'L':'M')+p[0]+' '+p[1];}).join(' ');
+  e6.innerHTML='<div class="met-big">'+s+'</div><div class="met-sub">obras terminadas en 2026'+(sin?' · '+sin+' sin fecha de cierre':'')+'</div><svg viewBox="-6 0 '+(W+12)+' '+(H+18)+'" width="100%" style="margin-top:8px"><path d="'+path+' L'+pts[pts.length-1][0]+' '+(H-10)+' L0 '+(H-10)+' Z" fill="'+TOM+'" opacity=".14"></path><path d="'+path+'" fill="none" stroke="'+TOM+'" stroke-width="2.5"></path>'+pts.map(function(p,i){return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3" fill="'+NAVY+'"></circle><text x="'+p[0]+'" y="'+(H+12)+'" text-anchor="middle" font-size="9" fill="#6B7280">'+MM[i]+'</text>';}).join('')+'</svg>';}
+ var f1=document.getElementById('dist-barras');if(f1){var tm=obras.filter(function(o){return (parseFloat(o.avance)||0)>=100;}).length,em=obras.length-tm,pc=prep.length,tot=tm+em+pc||1;
+  var rows=[['Terminadas',tm,NAVY],['En marcha',em,'#3B6BA5'],['Obras que vienen',pc,TOM]];
+  f1.innerHTML='<div class="dist-wrap"><div class="met-big" style="text-align:center">'+tot+'</div><div class="met-sub" style="text-align:center;margin-bottom:16px">proyectos en total</div>'+rows.map(function(r){var p=Math.round(r[1]/tot*100);return '<div class="dist-row"><span class="dl">'+r[0]+'</span><div class="db"><i style="width:'+p+'%;background:'+r[2]+'"></i></div><span class="dv">'+r[1]+' · '+p+'%</span></div>';}).join('')+'</div>';}
+ var f2=document.getElementById('proc-barras');if(f2){var pr={};obras.forEach(function(o){var k=String(o.proc||'').replace(/\s+/g,' ').trim();if(!k)return;var a=pr[k]||(pr[k]={s:0,n:0});a.s+=Math.min(100,parseFloat(o.avance)||0);a.n++;});
+  var rr=Object.keys(pr).map(function(k){return [k,Math.round(pr[k].s/pr[k].n),pr[k].n];}).sort(function(a,b){return b[1]-a[1];}).slice(0,8);
+  f2.style.display='flex';f2.style.alignItems='center';f2.style.justifyContent='center';
+  f2.innerHTML='<div class="dist-wrap">'+rr.map(function(r){return '<div class="dist-row" style="grid-template-columns:190px 1fr 96px"><span class="dl" title="'+r[0]+'">'+r[0]+'</span><div class="db"><i style="width:'+r[1]+'%;background:'+(r[1]>=80?NAVY:TOM)+'"></i></div><span class="dv">'+r[1]+'% · '+r[2]+'</span></div>';}).join('')+'<div class="met-sub" style="text-align:center;margin-top:6px">Avance promedio · número de obras</div></div>';}
+ return true;
+};
+setTimeout(function(){try{window.renderMetricas();}catch(_){}},2500);setTimeout(function(){try{window.renderMetricas();}catch(_){}},6000);
+var tries=0,iv=setInterval(function(){tries++;try{if(window.renderMetricas()||tries>40)clearInterval(iv);}catch(e){if(tries>40)clearInterval(iv);}},800);
+})();
+
+// ── Tarjetas del resumen ──
+window.renderKPIs=function(){
+  var O=window.OBRAS_PUB||[];if(!O.length)return;
+  var A=window.todasAdq?window.todasAdq():[];
+  var P=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0&&p.etapa!=='Adjudicado'&&p.tipo!=='Adquisición'&&!p.duplicado;});
+  var av=function(o){return parseFloat(o.avance)||0;};
+  var oT=O.filter(function(o){return av(o)>=100;}).length,aT=A.filter(function(a){return a.k==='ok'&&/^Adquirido/.test(a.e);}).length;
+  var aE=A.filter(function(a){return a.k==='ok'&&!/^Adquirido/.test(a.e);}).length,aP=A.filter(function(a){return a.k!=='ok';}).length;
+  var set=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
+  set('rs-k-total',O.length+A.length+P.length);
+  set('rs-k-obras',O.length);
+  set('rs-k-adq',A.length);
+  set('rs-k-term',oT+aT); set('rs-k-term-cap',oT+' obras · '+aT+' adquisiciones');
+  set('rs-k-ejec',(O.length-oT)+aE); set('rs-k-ejec-cap',(O.length-oT)+' obras · '+aE+' adquisiciones');
+  set('rs-k-pc',P.length+aP); set('rs-k-pc-cap',P.length+' obras · '+aP+' adquisiciones');
+};
+var _kt=0,_ki=setInterval(function(){_kt++;try{window.renderKPIs();}catch(_){}if(_kt>12)clearInterval(_ki);},1000);
+
 // OBRAS PUBLIC DATA
 let OBRAS_PUB=[];
-const TIPO_CLR={alcantarillado:'#1A5FA0',vial:'#2E6B1A',equipamiento:'#7A4A0A',espacio:'#4A2E8A',edificacion:'#5B3F8A',default:'#0F3460'};
+const TIPO_CLR={alcantarillado:'#0E7490',vial:'#2E6B1A',equipamiento:'#7A4A0A',espacio:'#4A2E8A',edificacion:'#5B3F8A',default:'#0F3460'};
 function fmtM(v){if(!v&&v!==0)return'—';const n=parseFloat(v);if(n>=1e6)return'$'+(n/1e6).toFixed(2)+' M';if(n>=1e3)return'$'+(n/1e3).toFixed(0)+' K';return'$'+n.toLocaleString('es-EC');}
 
 function renderObrasTable(obras){
@@ -2414,11 +2680,11 @@ function renderObrasTable(obras){
     const c=TIPO_CLR[o.tipo]||TIPO_CLR.default;
     const av=Math.min(100,Math.max(0,parseInt(o.avance)||0));
     const finalizada=av>=100;
-    const sc=finalizada?'#0A6E40':o.estado==='retraso'?'#C0392B':o.estado==='alerta'?'#B8690A':'#1B7B4E';
+    const sc=finalizada?'#0A6E40':o.estado==='retraso'?'#F97316':o.estado==='alerta'?'#B8690A':'#1B7B4E';
     const estadoLabel=finalizada?'Finalizada':o.estado==='retraso'?'Retrasado':o.estado==='alerta'?'Con alerta':'En plazo';
     return`<tr style="border-bottom:1px solid var(--line-2)" onmouseover="this.style.background='var(--cream-2)'" onmouseout="this.style.background=''">
       <td style="padding:10px 12px;max-width:300px"><div style="font-weight:600;color:var(--ink);font-size:12.5px;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${o.nombre}</div><div style="font-size:10px;color:var(--ink-4);margin-top:2px">${o.proc||''}</div></td>
-      <td style="padding:10px 12px"><span style="font-size:10px;padding:2px 7px;background:${c}22;color:${c};font-weight:600;border-radius:4px;text-transform:uppercase;letter-spacing:.04em">${(o.tipo||'otro').toUpperCase()}</span></td>
+      <td style="padding:10px 12px"><span style="font-size:10px;padding:2px 7px;background:${c}22;color:${c};font-weight:600;border-radius:4px;text-transform:uppercase;letter-spacing:.04em">${((window.TIPO_LBL||{})[o.tipo]||'Otro').toUpperCase()}</span></td>
       <td style="padding:10px 12px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ink)">${fmtM(o.presupuesto)}</td>
       <td style="padding:10px 12px;text-align:center"><div style="display:flex;align-items:center;gap:7px;justify-content:center"><div style="width:52px;height:5px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:${av}%;background:${finalizada?'#0A6E40':c};border-radius:3px"></div></div><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${av}%</span></div></td>
       <td style="padding:10px 12px"><div style="font-size:10px;color:${sc};font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:${sc};display:inline-block;flex-shrink:0"></span>${estadoLabel}</div></td>
@@ -2466,7 +2732,7 @@ function initObrasMap(){
   const el=document.getElementById('obras-leaflet-map');
   if(!el)return;
   obrasLeafletMap=L.map('obras-leaflet-map',{center:[-1.6720,-78.6540],zoom:13});
-  obrasMapTile=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(obrasLeafletMap);
+  obrasMapTile=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{attribution:'Mapa base © Esri',maxZoom:19}).addTo(obrasLeafletMap);
 
   buildTemaLayer(OBRAS_TEMA);
   renderObrasMapPins();
@@ -2533,7 +2799,7 @@ function renderPlataformasResumen(obras){
         +'<span style="font-size:11px;color:'+(vacia?'#5B6472':'#6B7280')+';overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+it.n+' obra'+(it.n===1?'':'s')+'</span>'
         +'</div>'
         +'<div style="font-family:'+mono+';font-size:16px;font-weight:700;color:'+((vacia||soloVias)?'#5B6472':'#1A1F2C')+';line-height:1;margin-bottom:7px">'+(vacia?'Sin inversión':(soloVias?'Solo obra vial':fmtP(it.inv)))+'</div>'
-        +(vacia?'<div style="height:5px;margin-bottom:6px"></div>':'<div style="height:5px;background:#E8ECF3;border-radius:3px;overflow:hidden;margin-bottom:6px"><div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:3px"></div></div>')
+        +(vacia?'<div style="height:5px;margin-bottom:6px"></div>':'<div style="height:5px;background:#E8ECF3;border-radius:3px;overflow:hidden;margin-bottom:6px"><div style="height:100%;width:'+pct+'%;background:#EA580C;border-radius:3px"></div></div>')
         +'<div style="font-size:11px;color:'+(vacia?'#5B6472':'#6B7280')+';letter-spacing:.04em">'+(vacia?'Sin obra registrada':(it.n===0?'':'Avance prom. '+it.av+'%'))+'</div>'
         +((it.adq||it.reasf)?'<div style="display:flex;gap:10px;margin-top:6px;font-size:10.5px;color:#4A5568">'
           +(it.adq?'<span style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:3px;background:#f59e0b;border-radius:2px"></span>'+it.adq+' adoq.</span>':'')
@@ -2560,7 +2826,7 @@ window.setResumenTerr=function(vista,el){
 function drillHTML(titulo, filas){
   if(!filas.length) return '<div class="drill"><div class="drill-hd"><span class="t">'+titulo+'</span><button class="x" onclick="resetMiniMapa()">×</button></div><div class="drill-empty">Sin obras registradas.</div></div>';
   var rows=filas.map(function(f){
-    return '<div class="drill-row"><div class="nm">'+f.nombre+(f.prep?'<span class="tag">Por ejecutarse</span>':"")+'</div>'
+    return '<div class="drill-row"><div class="nm">'+f.nombre+(f.prep?'<span class="tag">Por contratar</span>':"")+'</div>'
       +'<div class="mn">'+f.monto+'</div>'
       +'<div class="av">'+f.avance+'</div></div>';
   }).join("");
@@ -2579,7 +2845,7 @@ window.verObrasPlataforma=function(nombre,el){
   if(el) el.classList.add("sel");
   var obras=(window.OBRAS_PUB||[]).filter(function(o){return o.plataforma===nombre;})
     .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", _v:parseFloat(o.presupuesto)||0, prep:false};});
-  var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;})
+  var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;})
     .filter(function(p){ return (p.sitios||[]).some(function(s){ var f=window.geoFind&&window.geoFind(window.PLATAFORMAS_GEO,s.lat,s.lng); return f&&f.name===nombre; }); })
     .map(function(p){return {nombre:p.proyecto, monto:montoTxt(p.monto), avance:p.avance+"%", _v:p.monto, prep:true};});
   var todas=obras.concat(prep).sort(function(a,b){return b._v-a._v;});
@@ -2595,43 +2861,44 @@ window.verObrasParroquia=function(nombre,el){
   var norm=function(s){return String(s||"").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();};
   var obras=(window.OBRAS_PUB||[]).filter(function(o){return o.parroquia_geo===nombre;})
     .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", _v:parseFloat(o.presupuesto)||0, prep:false};});
-  var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && norm(p.parroquia)===norm(nombre);})
+  var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado && norm(p.parroquia)===norm(nombre);})
     .map(function(p){return {nombre:p.proyecto, monto:montoTxt(p.monto), avance:p.avance+"%", _v:p.monto, prep:true};});
   var todas=obras.concat(prep).sort(function(a,b){return b._v-a._v;});
   box.innerHTML=drillHTML("Parroquia "+nombre, todas);
   if(typeof enfocarMiniMapa==='function') enfocarMiniMapa('parroquia', nombre);
 };
 
-// ── Obras por ejecutarse (matriz de proyectos) ──
+// ── Obras por contratar (matriz de proyectos) ──
 var PREP_FILTRO='';
 function fmtPrep(n){ return n>=1e6?("$"+(n/1e6).toFixed(2)+"M"):n>=1000?("$"+Math.round(n/1000)+"K"):("$"+Math.round(n)); }
 document.addEventListener('DOMContentLoaded',function(){ setTimeout(function(){ try{ renderPreparatoria(); }catch(_){} },400); });
 function renderPreparatoria(){
   var box=document.getElementById("prep-lista"); if(!box) return;
-  var todos=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
-  var lista=PREP_FILTRO?todos.filter(function(p){return p.estado===PREP_FILTRO;}):todos;
+  var todos=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;});
+  var lista=PREP_FILTRO?todos.filter(function(p){return p.etapa===PREP_FILTRO;}):todos;
   lista=lista.slice().sort(function(a,b){return b.monto-a.monto;});
   var k=document.getElementById("prep-kpis");
   if(k){
     var inv=todos.reduce(function(s,p){return s+p.monto;},0);
-    var ent=todos.filter(function(p){return /Entregado/i.test(p.estado);}).length;
-    var des=todos.length-ent;
+    var est=todos.filter(function(p){return p.etapa==="En estudios";}).length;
+    var lis=todos.filter(function(p){return p.etapa==="Listo para contratar";}).length;
+    var pub=todos.filter(function(p){return p.etapa==="Publicado en el SERCOP";}).length;
     var pac=todos.filter(function(p){return p.categoria==="PAC";}).length;
-    k.innerHTML=[
-      ["Proyectos",todos.length,"por ejecutarse"],
-      ["Inversión prevista",fmtPrep(inv),"presupuesto referencial"],
-      ["Entregados",ent,"a contratación"],
-      ["En desarrollo",des,"estudios en curso"],
-      ["Dentro del PAC",pac+" de "+todos.length,"plan anual de contratación"]
-    ].map(function(r){return '<div class="prep-kpi"><div class="lbl">'+r[0]+'</div><div class="val">'+r[1]+'</div><div class="cap">'+r[2]+'</div></div>';}).join("");
+    var ET=[['Publicado en el SERCOP','Publicados en el SERCOP','ya en el portal de compras','#C9A227','#0B1F4D'],['Listo para contratar','Fase preparatoria','proyecto entregado','#EA580C','#fff'],['En estudios','En estudios','diseños en preparación','#0F3460','#fff']];
+    var tot=todos.length;
+    k.innerHTML='<div class="prep-kpi prep-tot"><div class="lbl">Proyectos 2026</div><div class="val">'+tot+'</div><div class="cap">'+fmtPrep(inv)+' de inversión prevista</div></div>'+ET.map(function(e){
+      var L=todos.filter(function(p){return p.etapa===e[0];}),m=L.reduce(function(s,p){return s+p.monto;},0),pc=inv?Math.round(m/inv*100):0,act=PREP_FILTRO===e[0];
+      return '<button class="prep-kpi prep-et'+(act?' on':'')+'" onclick="filtrarPrep(\''+(act?'':e[0])+'\',document.querySelector(\'#prep-filtros button[onclick*=&quot;'+(act?'\'\'':e[0])+'&quot;]\'))" style="--c:'+e[3]+'"><div class="lbl">'+e[1]+'</div><div class="val">'+fmtPrep(m)+'</div><div class="cap">'+L.length+' proyecto'+(L.length!==1?'s':'')+' · '+e[2]+'</div><div class="pe-bar"><i style="width:'+pc+'%"></i></div><div class="pe-pc">'+pc+'% de la inversión</div></button>';
+    }).join("");
   }
   var c=document.getElementById("prep-count");
-  if(c) c.textContent=lista.length+" proyecto"+(lista.length!==1?"s":"")+(PREP_FILTRO?" · "+PREP_FILTRO:"");
+  if(c) c.textContent=lista.length+" proyecto"+(lista.length!==1?"s":"")+(PREP_FILTRO?" · "+({"Listo para contratar":"Fase preparatoria","Publicado en el SERCOP":"Publicados en el SERCOP"}[PREP_FILTRO]||PREP_FILTRO):"");
   if(!lista.length){ box.innerHTML='<div style="font-size:12px;color:#6B7280;padding:12px">Sin proyectos en este estado.</div>'; return; }
   box.innerHTML=lista.map(function(p){
-    var ent=/Entregado/i.test(p.estado);
+    var et=p.etapa==="Publicado en el SERCOP"?"Publicado en el SERCOP":(p.etapa==="En estudios"?"En estudios":"Fase preparatoria"), cls=et==="En estudios"?"estudios":(et==="Fase preparatoria"?"desarrollo":"sercop");
     var meta=[];
     meta.push("<span><b>"+p.parroquia+"</b></span>");
+    if(p.sercop) meta.push('<span style="font-family:JetBrains Mono,monospace;font-weight:700;color:#0F3460">'+p.sercop.codigo+'</span>');
     if(p.tramite) meta.push("<span>"+(p.tramiteTipo==="Trámite"?"Trámite N.º "+p.tramite:"Memorando interno")+"</span>");
     if(p.fechaEntrega) meta.push("<span>Entrega: "+p.fechaEntrega+"</span>");
     if(p.cronograma) meta.push("<span>Plazo: "+p.cronograma+"</span>");
@@ -2641,10 +2908,10 @@ function renderPreparatoria(){
       +'<span class="prep-num">'+(p.item||"")+'</span>'
       +'<div><div class="prep-name">'+p.proyecto+'</div>'
       +'<div class="prep-meta">'+meta.join("")+'</div>'
-      +(p.estadoDetalle?'<div class="prep-det">'+p.estadoDetalle+'</div>':"")
+      +(p.sercop?'<div class="prep-det"><b style="color:#0F3460">SERCOP:</b> '+p.sercop.estado+' · '+p.sercop.fase+' · publicado el '+p.sercop.fecha+'</div>':(p.estadoDetalle?'<div class="prep-det">'+p.estadoDetalle+'</div>':""))
       +'</div>'
       +'<div class="prep-right"><div class="prep-monto">'+fmtPrep(p.monto)+'</div>'
-      +'<span class="prep-badge '+(ent?"entregado":"desarrollo")+'">'+(ent?"Entregado":"En desarrollo")+'</span>'
+      +'<span class="prep-badge '+cls+'">'+et+'</span>'
       +'<div class="prep-bar"><i style="width:'+p.avance+'%"></i></div>'
       +'<div style="font-size:10px;color:#9AA1AD;margin-top:4px">'+p.avance+'% preparación</div>'
       +'</div></div>';
@@ -2663,20 +2930,20 @@ function renderPrepPins(){
   if(!obrasLeafletMap) return;
   if(prepPinLayer){ obrasLeafletMap.removeLayer(prepPinLayer); prepPinLayer=null; }
   if(!PREP_EN_MAPA) return;
-  var ps=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+  var ps=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;});
   var lg=L.layerGroup().addTo(obrasLeafletMap);
   prepPinLayer=lg;
   ps.forEach(function(p){
     (p.sitios||[]).forEach(function(s){
       L.circleMarker([s.lat,s.lng],{radius:6,fillColor:"#C9A227",color:"#7A4A0A",weight:2,fillOpacity:.85,dashArray:"3 2"})
-       .bindPopup('<div style="font-family:Inter,sans-serif;min-width:190px"><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A4A0A;font-weight:700;margin-bottom:4px">Por ejecutarse</div><div style="font-weight:600;font-size:12.5px;color:#1A1F2C;margin-bottom:3px">'+p.proyecto+(s.sitio?" — "+s.sitio:"")+'</div><div style="font-size:11px;color:#6B7280">'+fmtPrep(p.monto)+" · "+p.avance+'% preparación</div><div style="font-size:10.5px;color:#7A4A0A;margin-top:4px;font-weight:600">'+p.estado+'</div></div>')
+       .bindPopup('<div style="font-family:Inter,sans-serif;min-width:190px"><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A4A0A;font-weight:700;margin-bottom:4px">Por contratar</div><div style="font-weight:600;font-size:12.5px;color:#1A1F2C;margin-bottom:3px">'+p.proyecto+(s.sitio?" — "+s.sitio:"")+'</div><div style="font-size:11px;color:#6B7280">'+fmtPrep(p.monto)+" · "+p.avance+'% preparación</div><div style="font-size:10.5px;color:#7A4A0A;margin-top:4px;font-weight:600">'+(p.etapa||p.estado)+'</div></div>')
        .addTo(lg);
     });
   });
 }
 window.togglePrepMapa=function(el){
   PREP_EN_MAPA=!PREP_EN_MAPA;
-  if(el){ el.style.opacity=PREP_EN_MAPA?'1':'.45'; el.textContent=(PREP_EN_MAPA?'● ':'○ ')+'Por ejecutarse'; }
+  if(el){ el.style.opacity=PREP_EN_MAPA?'1':'.45'; el.textContent=(PREP_EN_MAPA?'● ':'○ ')+'Por contratar'; }
   renderPrepPins();
 };
 
@@ -2803,7 +3070,7 @@ window.setObrasBasemap=function(k,el){
   if(el)el.classList.add('active');
   if(!obrasLeafletMap)return;
   if(obrasMapTile)obrasLeafletMap.removeLayer(obrasMapTile);
-  const urls={voyager:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',esquematico:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',satelite:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'};
+  const urls={voyager:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',esquematico:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',satelite:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'};
   obrasMapTile=L.tileLayer(urls[k],{maxZoom:19}).addTo(obrasLeafletMap);
 };
 
@@ -2975,12 +3242,7 @@ function parseSheetsCSV(csv){
     var obsVal=get(row,fOb);
     var estadoVal=get(row,fSt)||'normal';
     // Derive tipo from proc for color coding
-    var tipo='default';
-    if(/alcant|sanitari|pluvial|colector/i.test(nombre+proc))tipo='alcantarillado';
-    else if(/vial|camin|carre|asf|pavi|acera|borde|calle/i.test(nombre+proc))tipo='vial';
-    else if(/equip|maquinar/i.test(nombre+proc))tipo='equipamiento';
-    else if(/espaci|plaza|parqu|jardín|verde/i.test(nombre))tipo='espacio';
-    else if(/mercado|cementerio|edific|construcci/i.test(nombre))tipo='edificacion';
+    var tipo=window.clasificarTipo(nombre,proc);
     return{id:i+1,nombre,codigo:get(row,fC),entidad:get(row,fE)||'GADM Riobamba',
       proc,presupuesto:num(get(row,fPr)),fase,
       inicio:get(row,fIni),fin:get(row,fFin),director:get(row,fD),
@@ -3018,9 +3280,9 @@ function updateKPIsFromSheets(obras){
   var inv=obras.reduce(function(s,o){return s+(parseFloat(o.presupuesto)||0);},0);
   var fmt=function(n){return n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+n.toFixed(0);};
   var s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
-  var _pr=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
-  var _invPr=_pr.reduce(function(s,p){return s+(parseFloat(p.monto)||0);},0);
-  s('rs-kpi-total',obras.length+_pr.length);
+  var _pr=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;});
+  var _invPr=_pr.reduce(function(s,p){return s+((p.sercop&&/Suspend|Desiert/i.test(p.sercop.estado))?0:(parseFloat(p.monto)||0));},0) + (window.todasAdq?window.todasAdq():[]).reduce(function(s,a){return s+(a.k==='stop'?0:(a.m||0));},0);
+  s('rs-kpi-total',obras.length+_pr.length+((window.todasAdq?window.todasAdq():[]).length));
   s('rs-kpi-concl',concl);
   s('rs-kpi-ejec',ejec);
   s('rs-kpi-ini',_pr.length);
@@ -3029,9 +3291,9 @@ function updateKPIsFromSheets(obras){
   s('pub-inversion',fmt(inv));
   s('pub-obras-count',obras.length+' obras registradas');
   s('tab-count-obras',obras.length);
-  var _prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+  var _prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;});
   s('tab-count-prep',_prep.length);
-  s('tab-count-resumen',obras.length+_prep.length);
+  s('tab-count-resumen',obras.length+_prep.length+((window.todasAdq?window.todasAdq():[]).length));
   s('rs-obras',obras.length);
   s('rs-inv',fmt(inv));
 }
@@ -3059,6 +3321,7 @@ function applyObrasPublicas(){
       if(!o.comunidad&&window.findComunidad){var c=window.findComunidad(o.lat,o.lng); if(c)o.comunidad=c;}
     }catch(_){}
   });
+  agregarAdjudicados(OBRAS_PUB);
   updateKPIsFromSheets(OBRAS_PUB);
   const t=document.getElementById('pub-total-obras'),inv=document.getElementById('pub-inversion'),
         cnt=document.getElementById('pub-obras-count'),tc=document.getElementById('tab-count-obras');
@@ -3088,7 +3351,7 @@ function applyObrasPublicas(){
     // Donut
     var d1=document.getElementById('css-chart-fases');
     if(d1){
-      var _pe=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;}).length;
+      var _pe=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;}).length;
       var _enEj=ejec.length+ini.length;
       var tot=obras.length+_pe,p1=Math.round(concl.length/tot*100),p2=Math.round(_enEj/tot*100);
       var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #C9A227 '+(p1+p2)+'% 100%)';
@@ -3098,7 +3361,7 @@ function applyObrasPublicas(){
         +'</div><div style="font-size:12px;display:flex;flex-direction:column;gap:8px">'
         +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0A6E40;margin-right:6px"></span>Ejecutadas <b>'+concl.length+'</b></div>'
         +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1B7B4E;margin-right:6px"></span>En ejecución <b>'+_enEj+'</b></div>'
-        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#C9A227;margin-right:6px"></span>Por ejecutarse <b>'+_pe+'</b></div>'
+        +'<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#C9A227;margin-right:6px"></span>Por contratar <b>'+_pe+'</b></div>'
         +'</div></div>';
     }
 
@@ -3116,13 +3379,14 @@ function applyObrasPublicas(){
           return '<div style="display:grid;grid-template-columns:1fr 120px 64px;align-items:center;gap:8px;font-size:11px">'
             +'<span style="color:#4A5568;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
             +'<div style="height:12px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
-            +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:3px"></div></div>'
+            +'<div style="height:100%;width:'+pct+'%;background:#EA580C;border-radius:3px"></div></div>'
             +'<span style="font-weight:600;font-size:10px;text-align:right">'+fmtC(e[1])+'</span></div>';
         }).join('')+'</div>';
     }
 
     renderPlataformasResumen(obras);
     if(typeof refrescarMiniMapa==='function') try{ refrescarMiniMapa(); }catch(_){}
+    if(typeof renderMetricas==='function') try{ renderMetricas(); }catch(_){}
 
     // Avance por procedimiento
     var d3=document.getElementById('css-chart-proc');
@@ -3132,7 +3396,7 @@ function applyObrasPublicas(){
       var avS=Object.entries(avMap).map(function(e){return[e[0],Math.round(e[1].s/e[1].n)];}).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
       d3.innerHTML='<div style="padding:10px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center;height:100%">'
         +avS.map(function(e){
-          var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#C0392B';
+          var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#F97316';
           return '<div style="display:grid;grid-template-columns:1fr 120px 40px;align-items:center;gap:8px;font-size:11px">'
             +'<span style="color:#4A5568;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
             +'<div style="height:12px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
@@ -3144,7 +3408,7 @@ function applyObrasPublicas(){
     // Top 3 obras
     var tl=document.getElementById('top-obras-list');
     if(tl){
-      var top=obras.slice().sort(function(a,b){return(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,3);
+      var top=window.obrasDestacadas(obras);
       tl.innerHTML=top.map(function(o){
         var avp=av(o);
         return '<div class="top-obra">'
@@ -3179,19 +3443,36 @@ function showToast(msg, dur){
 }
 window.showToast=showToast;
 function loadObrasPublicas(){
-  var csvUrl='https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv&t='+Date.now();
-  fetch(csvUrl)
-    .then(function(r){if(r.ok)return r.text();throw new Error('HTTP '+r.status);})
+  // Fuente única: matriz "OBRAS PUBLICAS" (Google Sheets). Respaldo: hoja publicada anterior.
+  var urls=['https://docs.google.com/spreadsheets/d/16GQpyB2XkH74mHwodCg2_qYkeqedjWXWKQie1TU5exU/gviz/tq?tqx=out:csv&gid=0&t='+Date.now(),
+            'https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv&t='+Date.now()];
+  function extras(csv,list){
+    try{
+      if(!window.Papa) return;
+      var rows=Papa.parse(csv,{skipEmptyLines:true}).data; if(!rows.length) return;
+      var H=rows[0].map(function(x){return String(x||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();});
+      var iN=H.indexOf('nombre'),iE=H.findIndex(function(x){return /egob/.test(x);}),iC=H.indexOf('contratista'),iA=H.indexOf('administrador');
+      var N=function(s){return String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();};
+      var mp={};rows.slice(1).forEach(function(r){var k=N(r[iN]);if(k)mp[k]=r;});
+      list.forEach(function(o){var r=mp[N(o.nombre)];if(!r)return;if(iE>=0)o.egob=String(r[iE]||'').trim();if(iC>=0)o.contratista=String(r[iC]||'').trim();if(iA>=0)o.administrador=String(r[iA]||'').trim();});
+    }catch(_){}
+  }
+  function intentar(i){
+    if(i>=urls.length){var c=document.getElementById('pub-obras-count');if(c)c.textContent='⚠ Error al cargar datos';return;}
+    fetch(urls[i]).then(function(r){if(r.ok)return r.text();throw new Error('HTTP '+r.status);})
     .then(function(csv){
-      if(!csv.trim()||csv.trim().startsWith('<'))throw new Error('Sheet no publicado correctamente');
+      if(!csv.trim()||csv.trim().startsWith('<'))throw new Error('no publicado');
       var list=parseSheetsCSV(csv);
-      if(!list.length)throw new Error('Sin filas — revisa nombres de columnas');
+      if(!list.length)throw new Error('sin filas');
+      extras(csv,list);
+      // quitar filas repetidas dentro de la misma matriz (mismo código o mismo nombre)
+      var vistos={};list=list.filter(function(o){var k=(o.codigo||'').trim().toUpperCase()||String(o.nombre||'').toUpperCase().replace(/\s+/g,' ').trim();if(!k)return true;if(vistos[k])return false;vistos[k]=1;return true;});
+      window.FUENTE_OBRAS=i===0?'matriz':'respaldo';
       OBRAS_PUB=list;applyObrasPublicas();showToast(OBRAS_PUB.length+' obras cargadas');
     })
-    .catch(function(e){
-      var c=document.getElementById('pub-obras-count');
-      if(c)c.textContent='⚠ '+(e&&e.message||'Error al cargar datos');
-    });
+    .catch(function(){intentar(i+1);});
+  }
+  intentar(0);
 }
 
 loadObrasPublicas();
@@ -3211,7 +3492,7 @@ document.querySelector('[data-tab="mapa-obras"]').addEventListener('click',funct
 
 
 const PHASES = {
-  1:{ name:'Preparatoria', desc:'PAC → resolución de inicio', color:'#1A5FA0', bg:'#E6F0FA', isNew:false,
+  1:{ name:'Preparatoria', desc:'PAC → resolución de inicio', color:'#0E7490', bg:'#E6F0FA', isNew:false,
     steps:[
       {done:true,  t:'Plan Anual de Contratación (PAC)', s:'Aprobado y publicado en portal · art. 64 Reglamento'},
       {done:true,  t:'Informe de necesidad + mejor valor por dinero', s:'Unidad requirente · art. 65 Reglamento'},
@@ -3266,9 +3547,9 @@ const PROCEDIMIENTOS = [
   { name:'Ínfima cuantía', monto:'Obras ≤ USD $10.000', color:'#1B7B4E', pct:10,
     nota:'Sin pliego ni PAC obligatorio. Aviso público + proformas. Art. 50 LOSNCP / art. 269 Reglamento.',
     tipo:'Régimen Común', tipoBg:'#E8F5EF', tipoText:'#1B7B4E' },
-  { name:'Licitación', monto:'Obras > USD $10.000', color:'#1A5FA0', pct:100,
+  { name:'Licitación', monto:'Obras > USD $10.000', color:'#0E7490', pct:100,
     nota:'Procedimiento único para obras sobre $10.000. Evaluación "Cumple/No Cumple" + "Por Puntaje". Art. 48 LOSNCP / art. 264 Reglamento.',
-    tipo:'Régimen Común', tipoBg:'#E6F0FA', tipoText:'#1A5FA0' },
+    tipo:'Régimen Común', tipoBg:'#E6F0FA', tipoText:'#0E7490' },
   { name:'IPC — Ingeniería, Procura y Construcción', monto:'Proyectos complejos · sin límite fijo', color:'#7A4A0A', pct:70,
     nota:'Contratista asume todos los riesgos. Prohíbe contratos complementarios y reajustes. Estudios básicos suficientes. Art. 57 LOSNCP / art. 85 Reglamento.',
     tipo:'Modalidad especial', tipoBg:'#FDF3E3', tipoText:'#7A4A0A' },
@@ -3595,7 +3876,7 @@ function renderFotoPreview(previewId, src) {
   if (!src) { el.innerHTML=''; return; }
   el.innerHTML = `<div style="position:relative;display:inline-block;margin-top:6px">
     <img src="${src}" style="max-height:90px;max-width:320px;border-radius:8px;border:2px solid var(--line);object-fit:cover" onerror="this.parentElement.innerHTML='<span style=font-size:.72rem;color:var(--red)>URL no válida o imagen no accesible</span>'">
-    <button type="button" onclick="clearFoto('${previewId}')" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#C8102E;color:#fff;border:none;cursor:pointer;font-size:12px;line-height:1">×</button>
+    <button type="button" onclick="clearFoto('${previewId}')" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#EA580C;color:#fff;border:none;cursor:pointer;font-size:12px;line-height:1">×</button>
   </div>`;
 }
 function clearFoto(previewId) {
@@ -3931,10 +4212,10 @@ function renderMapaGeneral() {
   // Try multiple tile providers
   // Try OSM first, then CartoDB
   function addTiles(map) {
-    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap', maxZoom: 19
+    const osm = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Mapa base © Esri', maxZoom: 19
     });
-    const carto = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const carto = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
       attribution: '© CartoDB © OpenStreetMap', maxZoom: 19, subdomains: 'abcd'
     });
     osm.addTo(map);
@@ -4098,9 +4379,9 @@ function mostrarDetalle(i) {
       const [lat,lng] = utmToLatLng(parseFloat(o.utm_e),parseFloat(o.utm_n),o.utm_zona);
       setTimeout(()=>{
         if (mapaDetalle) { mapaDetalle.remove(); mapaDetalle=null; }
-        mapaDetalle = L.map('map-detalle').setOaView([lat,lng],15);
-        const osmD = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:19});
-        const cartoD = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© CartoDB',maxZoom:19,subdomains:'abcd'});
+        mapaDetalle = L.map('map-detalle').setView([lat,lng],15);
+        const osmD = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{attribution:'Mapa base © Esri',maxZoom:19});
+        const cartoD = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{attribution:'© CartoDB',maxZoom:19,subdomains:'abcd'});
         osmD.addTo(mapaDetalle);
         osmD.on('tileerror',()=>{ mapaDetalle.removeLayer(osmD); cartoD.addTo(mapaDetalle); });
         const ph2 = PHASES[o.fase]||PHASES[1];
@@ -4213,7 +4494,7 @@ async function publicarGitHub() {
     const obrasLimpias = obras.map(o => {
       var limpio = Object.assign({}, o);
       if (!limpio.parroquia || limpio.parroquia === 'undefined' || limpio.parroquia === '') limpio.parroquia = getParroquia(limpio.nombre);
-      if (!limpio.tipo || limpio.tipo === 'undefined' || limpio.tipo === '') limpio.tipo = getTipo(limpio.nombre);
+      if (!limpio.tipo || limpio.tipo === 'undefined' || limpio.tipo === '') limpio.tipo = window.clasificarTipo ? window.clasificarTipo(limpio.nombre) : getTipo(limpio.nombre);
       // Convert UTM to lat/lng if missing
       if ((!limpio.lat || !limpio.lng) && limpio.utm_zona && limpio.utm_e && limpio.utm_n) {
         var e = parseFloat(String(limpio.utm_e).replace(',','.'));
@@ -4364,7 +4645,7 @@ function renderChartsCSS(obras){
   // 1. Donut estado (conic-gradient)
   var cF=document.getElementById('css-chart-fases');
   if(cF){
-    var pe=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;}).length;
+    var pe=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;}).length;
     var cl=concl.length,ej=ejec.length+ini.length,tot=obras.length+pe;
     var p1=Math.round(cl/tot*100),p2=Math.round(ej/tot*100);
     var grad='conic-gradient(#0A6E40 0% '+p1+'%, #1B7B4E '+p1+'% '+(p1+p2)+'%, #C9A227 '+(p1+p2)+'% 100%)';
@@ -4374,7 +4655,7 @@ function renderChartsCSS(obras){
       +'</div><div style="display:flex;flex-direction:column;gap:10px;font-size:12px">'
       +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#0A6E40;flex-shrink:0"></span>Ejecutadas <b>'+cl+'</b></div>'
       +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#1B7B4E;flex-shrink:0"></span>En ejecución <b>'+ej+'</b></div>'
-      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#C9A227;flex-shrink:0"></span>Por ejecutarse <b>'+pe+'</b></div>'
+      +'<div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#C9A227;flex-shrink:0"></span>Por contratar <b>'+pe+'</b></div>'
       +'</div></div>';
   }
 
@@ -4392,7 +4673,7 @@ function renderChartsCSS(obras){
         return '<div class="parr-bar clickable" onclick="verObrasParroquia(\''+e[0].replace(/'/g,"\\'")+'\',this)" style="display:grid;grid-template-columns:140px 1fr 64px;align-items:center;gap:8px;font-size:11px;border-radius:4px;padding:1px 3px">'
           +'<span style="color:#4A5568;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
           +'<div style="height:13px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
-          +'<div style="height:100%;width:'+pct+'%;background:#1A4080;border-radius:3px"></div></div>'
+          +'<div style="height:100%;width:'+pct+'%;background:#EA580C;border-radius:3px"></div></div>'
           +'<span style="font-weight:600;color:#1A1F2C;font-size:10px">'+fmt2(e[1])+'</span></div>';
       }).join('')+'</div>';
   }
@@ -4407,7 +4688,7 @@ function renderChartsCSS(obras){
     var avS=Object.entries(avMap).map(function(e){return[e[0],Math.round(e[1].s/e[1].n)];}).sort(function(a,b){return b[1]-a[1];}).slice(0,6);
     cPr.innerHTML='<div style="padding:12px 18px;display:flex;flex-direction:column;gap:9px;justify-content:center">'
       +avS.map(function(e){
-        var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#C0392B';
+        var color=e[1]>=70?'#1B7B4E':e[1]>=40?'#C9A227':'#F97316';
         return '<div style="display:grid;grid-template-columns:140px 1fr 44px;align-items:center;gap:8px;font-size:11px">'
           +'<span style="color:#4A5568;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e[0]+'</span>'
           +'<div style="height:13px;background:#E8ECF3;border-radius:3px;overflow:hidden">'
@@ -4427,12 +4708,12 @@ function renderChartsCSS(obras){
       });
     }
     var _meta=document.getElementById('top-obras-meta');
-    if(_meta) _meta.textContent=_sel?('Mayor inversión · '+_sel.nombre):'Mayor inversión + avance';
+    if(_meta) _meta.textContent=_sel?('Mayor inversión · '+_sel.nombre):'Obras emblemáticas';
     if(!_base.length){
       list.innerHTML='<div style="padding:18px 4px;font-size:12px;color:#6B7280">Sin obras en '+(_sel?_sel.nombre:'esta zona')+'.</div>';
       return;
     }
-    var top=_base.slice().sort(function(a,b){return (parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,3);
+    var top=_sel?_base.slice().sort(function(a,b){return (parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0);}).slice(0,5):window.obrasDestacadas(_base);
     var TIPO_IC={vial:'🛣️',alcantarillado:'💧',equipamiento:'🏛️',edificacion:'🏛️',espacio:'🌳',default:'🏗️'};
     list.innerHTML=top.map(function(o){
       var ic=TIPO_IC[o.tipo]||TIPO_IC.default;
@@ -4488,13 +4769,14 @@ window.renderChartsCSS = renderChartsCSS;
     miniMapInit = true;
     miniMapLeaflet = L.map(el, { zoomControl:true, attributionControl:false })
       .setView([-1.6745, -78.6480], 13);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    window.miniMapLeaflet = miniMapLeaflet;
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
       maxZoom:19, subdomains:'abcd'
     }).addTo(miniMapLeaflet);
 
     const obraIco = L.divIcon({
       className:'mini-pin obra',
-      html:'<div style="width:14px;height:14px;border-radius:50%;background:#0F2D6E;border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>',
+      html:'<div style="width:14px;height:14px;border-radius:50%;background:#0F3460;border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>',
       iconSize:[14,14], iconAnchor:[7,7]
     });
     const prepIco = L.divIcon({
@@ -4538,7 +4820,7 @@ window.renderChartsCSS = renderChartsCSS;
           .bindPopup('<strong>'+(o.nombre||'Obra')+'</strong><br><span style="font-size:11px;color:#666">'+(o.parroquia_geo||o.parroquia||'')+'</span>');
       });
 
-      ((window.PROYECTOS_CONTRATACION)||[]).filter(p=>(parseFloat(p.monto)||0)>0).forEach(p=>{
+      ((window.PROYECTOS_CONTRATACION)||[]).filter(p=>(parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado).forEach(p=>{
         (p.sitios||[]).forEach(s=>{
           if(sel){
             if(sel.tipo==='plataforma'){
@@ -4548,7 +4830,7 @@ window.renderChartsCSS = renderChartsCSS;
           }
           pts.push([s.lat,s.lng]);
           L.marker([s.lat,s.lng],{icon:prepIco}).addTo(lg)
-            .bindPopup('<div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A4A0A;font-weight:700;margin-bottom:3px">Por ejecutarse</div><strong>'+p.proyecto+(s.sitio?' — '+s.sitio:'')+'</strong>');
+            .bindPopup('<div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A4A0A;font-weight:700;margin-bottom:3px">Por contratar</div><strong>'+p.proyecto+(s.sitio?' — '+s.sitio:'')+'</strong>');
         });
       });
 
@@ -4662,9 +4944,9 @@ window.renderChartsCSS = renderChartsCSS;
     const enEjec     = obras.filter(o => av(o) < 100);
     const conInicio  = obras.filter(o => av(o) === 0);
 
-    const prep = ((window.PROYECTOS_CONTRATACION)||[]).filter(p=>(parseFloat(p.monto)||0)>0);
-    const invPrep = prep.reduce((s,p)=>s+(parseFloat(p.monto)||0),0);
-    const total = obras.length + prep.length;
+    const prep = ((window.PROYECTOS_CONTRATACION)||[]).filter(p=>(parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado);
+    const invPrep = prep.reduce((s,p)=>s+((p.sercop&&/Suspend|Desiert/i.test(p.sercop.estado))?0:(parseFloat(p.monto)||0)),0) + (window.todasAdq?window.todasAdq():[]).reduce(function(s,a){return s+(a.k==='stop'?0:(a.m||0));},0);
+    const total = obras.length + prep.length + ((window.todasAdq?window.todasAdq():[]).length);
     const inv = obras.reduce((s,o)=>s+(parseFloat(o.presupuesto)||0),0) + invPrep;
     const benef = Math.round(inv / 800);
 
@@ -4687,9 +4969,9 @@ window.renderChartsCSS = renderChartsCSS;
     // Tab counts
     set('tab-count-resumen', total);
     set('tab-count-obras', obras.length);
-    var _prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0;});
+    var _prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;});
     set('tab-count-prep', _prep.length);
-    set('tab-count-resumen', obras.length + _prep.length);
+    set('tab-count-resumen', obras.length + _prep.length + ((window.todasAdq?window.todasAdq():[]).length));
 
     // ─── Force refresh KPIs a 2nd time after potential chart errors ───
     try {
@@ -4703,7 +4985,7 @@ window.renderChartsCSS = renderChartsCSS;
     renderChartsCSS(obras);
 
     // Top 3 obras: mayor presupuesto
-    const top = obras.slice().sort((a,b)=>(parseFloat(b.presupuesto)||0)-(parseFloat(a.presupuesto)||0)).slice(0,3);
+    const top = window.obrasDestacadas(obras);
     const TIPO_IC = { vial:'🛣️', alcantarillado:'💧', equipamiento:'🏛️', edificacion:'🏛️', espacio:'🌳', movilidad:'🚦', agua:'🚰' };
     const list = document.getElementById('top-obras-list');
     if (list) {
