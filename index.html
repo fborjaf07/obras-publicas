@@ -1590,6 +1590,16 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
 @media(max-width:640px){nav.tabnav{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 8px!important}nav.tabnav .tab{font-size:.62rem!important;letter-spacing:.04em!important;padding:10px 6px 8px!important}}
 @media(max-width:640px){.ds-hdr-title h1.hdr-big{font-size:.95rem}}
 </style>
+<style>
+.soc-wip{max-width:640px;margin:32px auto 60px;background:#fff;border:1px solid #E5E9F2;border-radius:20px;padding:48px 32px;text-align:center;box-shadow:0 10px 30px rgba(11,31,77,.08);font-family:Montserrat,sans-serif}
+.soc-ic{width:96px;height:96px;margin:0 auto 18px;border-radius:50%;background:#FFF1E7;display:grid;place-items:center}
+.soc-tag{display:inline-block;background:#EA580C;color:#fff;font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+.soc-h{margin:16px 0 10px;color:#0B1F4D;font-weight:800;font-size:clamp(20px,3vw,28px);line-height:1.2}
+.soc-p{color:#4B5563;font-size:15px;line-height:1.55;max-width:460px;margin:0 auto;text-wrap:pretty}
+.soc-bar{height:10px;max-width:320px;margin:26px auto 8px;border-radius:6px;overflow:hidden;background:repeating-linear-gradient(45deg,#0B1F4D 0 12px,#EA580C 12px 24px);background-size:34px 34px;animation:socmv 1.2s linear infinite}
+@keyframes socmv{to{background-position:34px 0}}
+.soc-s{color:#0B1F4D;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+</style>
 </head>
 <body>
 
@@ -1631,6 +1641,9 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
   <button class="tab" data-tab="maquinaria" onclick="setPortalTab('maquinaria');loadMaquinariaData()" role="tab">
     <span class="tn">06</span>Nuestras máquinas<span class="tcount" id="tab-count-maq">&mdash;</span>
   </button>
+  <button class="tab" data-tab="socializaciones" onclick="setPortalTab('socializaciones')" role="tab">
+    <span class="tn">07</span>Socializaciones de tus proyectos
+  </button>
 </nav>
 
 <main>
@@ -1659,7 +1672,7 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
 
   <!-- KPIs · 1 fila de 5 (ciclo de vida del proyecto) -->
   <section class="kpi-row-rs kpi-row-5">
-    <div class="kpi-card-rs total"><div class="kc-label">Total de proyectos</div><div class="kc-num" id="rs-k-total">—</div><div class="kc-cap" id="rs-k-total-cap">obras + adquisiciones + por contratar</div></div>
+    <div class="kpi-card-rs total"><div class="kc-label">Total de proyectos</div><div class="kc-num" id="rs-k-total">—</div><div class="kc-cap" id="rs-k-total-cap">obras + adquisiciones</div></div>
     <div class="kpi-card-rs "><div class="kc-label">Obras</div><div class="kc-num" id="rs-k-obras">—</div><div class="kc-cap" id="rs-k-obras-cap">construcción y mantenimiento</div></div>
     <div class="kpi-card-rs "><div class="kc-label">Adquisiciones</div><div class="kc-num" id="rs-k-adq">—</div><div class="kc-cap" id="rs-k-adq-cap">maquinaria y materiales</div></div>
     <div class="kpi-card-rs ph-concl"><div class="kc-label">Proyectos terminados</div><div class="kc-num" id="rs-k-term">—</div><div class="kc-cap" id="rs-k-term-cap">al 100%</div></div>
@@ -1886,6 +1899,19 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
   <div class="section-ey">Adquisiciones · Dirección de Obras Públicas</div>
   <div class="adq-kpis" id="adq-kpis"></div>
   <div id="adq-lista"></div>
+</div>
+
+<!-- TAB 7: SOCIALIZACIONES -->
+<div class="tab-panel" id="panel-socializaciones" role="tabpanel">
+  <div class="section-ey">Socializaciones · Tu voz en cada proyecto</div>
+  <div class="soc-wip">
+    <div class="soc-ic"><svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#EA580C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 40h36"></path><path d="M10 40V24l14-10 14 10v16"></path><path d="M20 40V30h8v10"></path><path d="M30 8l4-4 4 4"></path></svg></div>
+    <div class="soc-tag">En construcción</div>
+    <h2 class="soc-h">Socializaciones de tus proyectos</h2>
+    <p class="soc-p">Aquí vas a ver las fotos de las reuniones donde contamos a la gente cada proyecto antes de empezar la obra.</p>
+    <div class="soc-bar"><i></i></div>
+    <p class="soc-s">Muy pronto</p>
+  </div>
 </div>
 
 <!-- TAB 4: MAQUINARIA -->
@@ -2689,8 +2715,8 @@ window.renderKPIs=function(){
   var aE=A.filter(function(a){return a.k==='ok'&&!/^Adquirido/.test(a.e);}).length,aP=A.filter(function(a){return a.k!=='ok';}).length;
   var set=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
   set('rs-k-total',O.length+A.length+P.length);
-  set('rs-k-obras',O.length);
-  set('rs-k-adq',A.length);
+  set('rs-k-obras',O.length+P.length); set('rs-k-obras-cap',(O.length)+' contratadas · '+P.length+' por contratar');
+  set('rs-k-adq',A.length); set('rs-k-adq-cap',(A.length-aP)+' contratadas · '+aP+' por contratar');
   set('rs-k-term',oT+aT); set('rs-k-term-cap',oT+' obras · '+aT+' adquisiciones');
   set('rs-k-ejec',(O.length-oT)+aE); set('rs-k-ejec-cap',(O.length-oT)+' obras · '+aE+' adquisiciones');
   set('rs-k-pc',P.length+aP); set('rs-k-pc-cap',P.length+' obras · '+aP+' adquisiciones');
@@ -5131,6 +5157,40 @@ window.renderChartsCSS = renderChartsCSS;
 .fm-info{padding:14px 18px 18px}.fm-t{font-weight:800;color:#0B1F4D;font-size:15px;line-height:1.3}.fm-l{font-size:12px;color:#6B7280;margin:4px 0 12px}
 .fm-k{display:flex;gap:28px;margin-bottom:6px}.fm-k span{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6B7280;font-weight:700}.fm-k b{font-size:18px;color:#0B1F4D}
 @media(max-width:640px){.fm-main{height:46vh}.fm-k b{font-size:15px}}
+</style>
+
+<script>
+(function(){
+ var dest=['obras','obras','adquisiciones','obras','obras','preparatoria'];
+ document.querySelectorAll('.kpi-row-5 .kpi-card-rs').forEach(function(c,i){
+  if(!dest[i])return;c.style.cursor='pointer';c.setAttribute('role','button');c.title='Ver detalle';
+  c.addEventListener('click',function(){setPortalTab(dest[i]);if(dest[i]==='adquisiciones'&&window.renderAdq)try{renderAdq();}catch(_){}
+   var n=document.querySelector('nav.tabnav');window.scrollTo({top:n?n.getBoundingClientRect().top+window.scrollY-8:0,behavior:'smooth'});});
+ });
+})();
+</script>
+<style>.kpi-row-5 .kpi-card-rs{transition:transform .15s,box-shadow .15s}.kpi-row-5 .kpi-card-rs:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(11,31,77,.12)}.kpi-row-5 .kpi-card-rs::after{content:'Ver →';display:block;margin-top:8px;font:700 11px Montserrat,sans-serif;color:#EA580C;letter-spacing:.04em}</style>
+
+<script>
+(function(){
+ var nav=document.querySelector('nav.tabnav');if(!nav)return;
+ var b=document.createElement('div');b.id='volver-bar';
+ b.innerHTML='<button type="button" onclick="volverInicio()"><span class="vb-ar">←</span> Volver a Todo de un vistazo</button>';
+ nav.parentNode.insertBefore(b,nav.nextSibling);
+ window.volverInicio=function(){setPortalTab('resumen');window.scrollTo({top:0,behavior:'smooth'});};
+ var orig=window.setPortalTab;
+ window.setPortalTab=function(n){var r=orig.apply(this,arguments);b.classList.toggle('on',n!=='resumen');return r;};
+ var logo=document.querySelector('.ds-hdr img, .ds-hdr .logo, .ds-hdr-logo');if(logo){logo.style.cursor='pointer';logo.title='Ir al inicio';logo.addEventListener('click',volverInicio);}
+ var t=document.querySelector('.ds-hdr-title h1');if(t){t.style.cursor='pointer';t.addEventListener('click',volverInicio);}
+})();
+</script>
+<style>
+#volver-bar{display:none;max-width:1400px;margin:0 auto;padding:14px clamp(14px,2.5vw,38px) 0}
+#volver-bar.on{display:block}
+#volver-bar button{display:inline-flex;align-items:center;gap:10px;background:#0B1F4D;color:#fff;border:none;border-radius:999px;padding:10px 20px 10px 14px;font:700 12.5px Montserrat,sans-serif;letter-spacing:.04em;cursor:pointer;box-shadow:0 4px 14px rgba(11,31,77,.18);transition:background .15s,transform .15s}
+#volver-bar button:hover{background:#EA580C;transform:translateX(-2px)}
+.vb-ar{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#EA580C;font-size:15px;line-height:1}
+#volver-bar button:hover .vb-ar{background:#0B1F4D}
 </style>
 </body>
 </html>
