@@ -1600,6 +1600,7 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
 @keyframes socmv{to{background-position:34px 0}}
 .soc-s{color:#0B1F4D;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 </style>
+<style>.av2{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-top:4px}.av2 span{font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400)}.av2 i{width:50px;height:4px;border-radius:2px;background:var(--gray-100);overflow:hidden;display:block}.av2 b{display:block;height:100%;background:#0B1F4D;border-radius:2px}.av2 em{font-style:normal;font-size:.7rem;color:var(--gray-600);min-width:26px;text-align:right}.drill-row .av .avl{font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:#6B7280;font-weight:600}</style>
 </head>
 <body>
 
@@ -1806,7 +1807,8 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
           <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Obra</th>
           <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Tipo</th>
           <th style="padding:8px 12px;text-align:right;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Presupuesto</th>
-          <th style="padding:8px 12px;text-align:center;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Avance ↑</th>
+          <th style="padding:8px 12px;text-align:center;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Avance físico ↑</th>
+          <th style="padding:8px 12px;text-align:center;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Avance económico</th>
           <th style="padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-weight:600">Estado</th>
         </tr></thead>
         <tbody id="pub-obras-tbody">
@@ -2737,7 +2739,7 @@ function renderObrasTable(obras){
   const tb=document.getElementById('pub-obras-tbody');
   if(!tb)return;
   const sorted=obras.slice().sort((a,b)=>(parseInt(a.avance)||0)-(parseInt(b.avance)||0));
-  if(!sorted.length){tb.innerHTML='<tr><td colspan="5" style="padding:40px;text-align:center;color:var(--ink-3);font-style:italic">Sin datos.</td></tr>';return;}
+  if(!sorted.length){tb.innerHTML='<tr><td colspan="6" style="padding:40px;text-align:center;color:var(--ink-3);font-style:italic">Sin datos.</td></tr>';return;}
   tb.innerHTML=sorted.map(o=>{
     const c=TIPO_CLR[o.tipo]||TIPO_CLR.default;
     const av=Math.min(100,Math.max(0,parseInt(o.avance)||0));
@@ -2749,6 +2751,7 @@ function renderObrasTable(obras){
       <td style="padding:10px 12px"><span style="font-size:10px;padding:2px 7px;background:${c}22;color:${c};font-weight:600;border-radius:4px;text-transform:uppercase;letter-spacing:.04em">${((window.TIPO_LBL||{})[o.tipo]||'Otro').toUpperCase()}</span></td>
       <td style="padding:10px 12px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ink)">${fmtM(o.presupuesto)}</td>
       <td style="padding:10px 12px;text-align:center"><div style="display:flex;align-items:center;gap:7px;justify-content:center"><div style="width:52px;height:5px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:${av}%;background:${finalizada?'#0A6E40':c};border-radius:3px"></div></div><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${av}%</span></div></td>
+      <td style="padding:10px 12px;text-align:center">${o.avance_eco!=null?`<div style="display:flex;align-items:center;gap:7px;justify-content:center"><div style="width:52px;height:5px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:${o.avance_eco}%;background:#0B1F4D;border-radius:3px"></div></div><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${o.avance_eco}%</span></div>`:'<span style="color:var(--ink-4)">—</span>'}</td>
       <td style="padding:10px 12px"><div style="font-size:10px;color:${sc};font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:${sc};display:inline-block;flex-shrink:0"></span>${estadoLabel}</div></td>
     </tr>`;
   }).join('');
@@ -2891,7 +2894,7 @@ function drillHTML(titulo, filas){
   var rows=filas.map(function(f){
     return '<div class="drill-row"><div class="nm">'+f.nombre+(f.prep?'<span class="tag">Por contratar</span>':"")+'</div>'
       +'<div class="mn">'+f.monto+'</div>'
-      +'<div class="av">'+f.avance+'</div></div>';
+      +'<div class="av">'+(f.prep?f.avance:'<span class="avl">Físico</span> '+f.avance+(f.eco?'<br><span class="avl">Económico</span> '+f.eco:''))+'</div></div>';
   }).join("");
   return '<div class="drill"><div class="drill-hd"><span class="t">'+titulo+'</span><span class="n">'+filas.length+' obra'+(filas.length!==1?"s":"")+'</span><button class="x" onclick="resetMiniMapa()" title="Cerrar">×</button></div><div class="drill-body">'+rows+'</div></div>';
 }
@@ -2907,7 +2910,7 @@ window.verObrasPlataforma=function(nombre,el){
   if(yaAbierto) return;
   if(el) el.classList.add("sel");
   var obras=(window.OBRAS_PUB||[]).filter(function(o){return o.plataforma===nombre;})
-    .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", _v:parseFloat(o.presupuesto)||0, prep:false};});
+    .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", eco:(o.avance_eco!=null?o.avance_eco+"%":""), _v:parseFloat(o.presupuesto)||0, prep:false};});
   var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado;})
     .filter(function(p){ return (p.sitios||[]).some(function(s){ var f=window.geoFind&&window.geoFind(window.PLATAFORMAS_GEO,s.lat,s.lng); return f&&f.name===nombre; }); })
     .map(function(p){return {nombre:p.proyecto, monto:montoTxt(p.monto), avance:p.avance+"%", _v:p.monto, prep:true};});
@@ -2923,7 +2926,7 @@ window.verObrasParroquia=function(nombre,el){
   if(el) el.classList.add("sel");
   var norm=function(s){return String(s||"").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();};
   var obras=(window.OBRAS_PUB||[]).filter(function(o){return o.parroquia_geo===nombre;})
-    .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", _v:parseFloat(o.presupuesto)||0, prep:false};});
+    .map(function(o){return {nombre:o.nombre, monto:montoTxt(parseFloat(o.presupuesto)||0), avance:(parseFloat(o.avance)||0)+"%", eco:(o.avance_eco!=null?o.avance_eco+"%":""), _v:parseFloat(o.presupuesto)||0, prep:false};});
   var prep=((window.PROYECTOS_CONTRATACION)||[]).filter(function(p){return (parseFloat(p.monto)||0)>0 && p.etapa!=='Adjudicado' && p.tipo!=='Adquisición' && !p.duplicado && norm(p.parroquia)===norm(nombre);})
     .map(function(p){return {nombre:p.proyecto, monto:montoTxt(p.monto), avance:p.avance+"%", _v:p.monto, prep:true};});
   var todas=obras.concat(prep).sort(function(a,b){return b._v-a._v;});
@@ -3266,7 +3269,8 @@ function parseSheetsCSV(csv){
   const fFin=col('fin','end','fecha_fin');
   const fD=col('director','director_obra');
   const fFi=col('fiscalizador','fiscal');
-  const fAv=col('avance','progress','avance_pct','porcentaje');
+  const fAv=col('avance_fisico','avance','progress','avance_pct','porcentaje');
+  const fAe=col('avance_economico','avance_financiero');
   const fOb=col('observaciones','obs','notas','notes');
   const fSt=col('estado','status');
   const fZo=col('utm_zona','zona');
@@ -3298,7 +3302,8 @@ function parseSheetsCSV(csv){
   }
   return res.data.map((row,i)=>{
     const nombre=get(row,fN);if(!nombre)return null;
-    const av=Math.min(100,Math.max(0,parseInt(get(row,fAv))||0));
+    const pc=s=>Math.min(100,Math.max(0,Math.round(parseFloat(String(s||'').replace(',','.'))||0)));
+    const av=pc(get(row,fAv));const ave=fAe?pc(get(row,fAe)):null;
     const fr=parseInt(get(row,fF))||0;
     const fase=fr>=1&&fr<=5?fr:(av>=100?5:av>0?4:3);
     var proc=get(row,fP)||'Licitación';
@@ -3309,7 +3314,7 @@ function parseSheetsCSV(csv){
     return{id:i+1,nombre,codigo:get(row,fC),entidad:get(row,fE)||'GADM Riobamba',
       proc,presupuesto:num(get(row,fPr)),fase,
       inicio:get(row,fIni),fin:get(row,fFin),director:get(row,fD),
-      fiscalizador:get(row,fFi),avance:av,
+      fiscalizador:get(row,fFi),avance:av,avance_eco:ave,
       observaciones:obsVal,obs:obsVal,
       estado:estadoVal,tipo,
       utm_zona:get(row,fZo),utm_e:get(row,fEst),
@@ -3756,6 +3761,7 @@ function renderLista() {
             <div style="width:50px;height:4px;border-radius:2px;background:var(--gray-100);overflow:hidden;flex-shrink:0"><div style="height:100%;width:${av}%;background:${ph.color};border-radius:2px"></div></div>
             <span style="font-size:0.7rem;color:var(--gray-600);min-width:26px;text-align:right">${av}%</span>
           </div>
+          ${o.avance_eco!=null?`<div class="av2"><span>Económico</span><i><b style="width:${o.avance_eco}%"></b></i><em>${o.avance_eco}%</em></div>`:''}
         </td>
         <td style="text-align:right;white-space:nowrap"><span style="font-size:0.68rem;font-weight:500;color:${ESTADO_COLOR[est]}">${ESTADO_LABEL[est]}</span></td>
       </tr>
@@ -3790,7 +3796,7 @@ function renderLista() {
       <th style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-400);font-weight:500;padding:0 10px 8px;text-align:left">Nombre / Código</th>
       <th style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-400);font-weight:500;padding:0 10px 8px;text-align:left">Fase</th>
       <th style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-400);font-weight:500;padding:0 10px 8px;text-align:right">Presupuesto</th>
-      <th style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-400);font-weight:500;padding:0 10px 8px;text-align:right">Avance</th>
+      <th style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-400);font-weight:500;padding:0 10px 8px;text-align:right">Avance físico / económico</th>
       <th style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-400);font-weight:500;padding:0 10px 8px;text-align:right">Estado</th>
     </tr></thead>
     <tbody>${rows}</tbody>
@@ -5117,6 +5123,7 @@ window.renderChartsCSS = renderChartsCSS;
 
 <script src="bacheo-data.js"></script>
 <script src="bacheo2025-data.js"></script>
+<script src="alcantarillado-data.js"></script>
 <script>
 window.capaBacheo=function(map){
  if(!window.BACHEO||!map||map._bacheo)return;
@@ -5135,6 +5142,9 @@ window.capaBacheo=function(map){
   var lp=L.control({position:'bottomleft'});lp.onAdd=function(){var d=L.DomUtil.create('div','bach-lg');d.innerHTML='<label><input type="checkbox" checked> <span style="display:inline-block;width:18px;border-top:4px dashed #EA580C"></span><b>Adoquinado en ejecución</b></label><div class="bl-s">'+window.VIAS_PROX.features.length+' tramos · '+kp.toFixed(2).replace('.',',')+' km</div>';L.DomEvent.disableClickPropagation(d);d.querySelector('input').addEventListener('change',function(e){if(e.target.checked)gp.addTo(map);else map.removeLayer(gp);});return d;};lp.addTo(map);}
  if(window.BACHEO_2025){var g5=L.layerGroup();BACHEO_2025.forEach(function(b){L.polyline(b.c,{renderer:rnd,color:'#0E7490',weight:5,opacity:.9,lineCap:'round',lineJoin:'round'}).bindTooltip('<b>'+b.n+'</b><br>'+b.m.toLocaleString('es-EC')+' m<br><span style="color:#6B7280">Bacheo 2025'+(b.plan?' · planificación marzo 2025':'')+'</span>',{sticky:true}).addTo(g5);});
   var l5=L.control({position:'bottomleft'});l5.onAdd=function(){var d=L.DomUtil.create('div','bach-lg');d.innerHTML='<label><input type="checkbox" checked> <span style="display:inline-block;width:18px;height:5px;border-radius:3px;background:#0E7490"></span><b>Bacheo 2025</b></label><div class="bl-s">'+BACHEO_2025.length+' tramos · '+(BACHEO_2025.reduce(function(s,b){return s+b.m;},0)/1000).toFixed(2).replace('.',',')+' km</div>';L.DomEvent.disableClickPropagation(d);g5.addTo(map);d.querySelector('input').addEventListener('change',function(e){if(e.target.checked)g5.addTo(map);else map.removeLayer(g5);});return d;};l5.addTo(map);}
+ if(window.ALCANT){var ga=L.layerGroup();ALCANT.features.forEach(function(f){L.polyline(f.geometry.coordinates.map(function(c){return [c[1],c[0]];}),{renderer:rnd,color:'#7C3AED',weight:4,opacity:.9,lineCap:'round',lineJoin:'round'}).bindTooltip('<b>Alcantarillado realizado</b><br>'+f.properties.parroquia,{sticky:true}).addTo(ga);});
+  var ka=ALCANT.features.reduce(function(s,f){return s+f.properties.longitud;},0);
+  var la=L.control({position:'bottomleft'});la.onAdd=function(){var d=L.DomUtil.create('div','bach-lg');d.innerHTML='<label><input type="checkbox" checked> <span style="display:inline-block;width:18px;height:5px;border-radius:3px;background:#7C3AED"></span><b>Alcantarillado realizado</b></label><div class="bl-s">'+Object.keys(ALCANT.resumen).length+' parroquias · '+ka.toFixed(2).replace('.',',')+' km</div>';L.DomEvent.disableClickPropagation(d);ga.addTo(map);d.querySelector('input').addEventListener('change',function(e){if(e.target.checked)ga.addTo(map);else map.removeLayer(ga);});return d;};la.addTo(map);}
 };
 </script>
 <style>.bach-lg+.bach-lg{margin-bottom:6px}@media(max-width:640px){.bach-lg{font-size:10.5px;padding:6px 9px;max-width:170px}.bach-lg .bl-k{display:none!important}}.bach-lg{background:#fff;border-radius:10px;padding:8px 12px;box-shadow:0 4px 14px rgba(11,31,77,.18);font:12px Montserrat,sans-serif;color:#0B1F4D;max-width:220px}.bach-lg label{cursor:pointer;display:flex;gap:6px;align-items:center}.bach-lg input{accent-color:#EA580C;width:16px;height:16px}.bl-s{color:#6B7280;font-size:11px;margin-top:2px}.bl-k{display:none;flex-wrap:wrap;gap:4px 10px;margin-top:6px;font-size:10.5px}.bach-lg.on .bl-k{display:flex}.bl-k span{display:flex;align-items:center;gap:4px}.bl-k i{width:9px;height:9px;border-radius:50%;display:inline-block}</style>
@@ -5152,7 +5162,8 @@ window.capaBacheo=function(map){
   return '<div class="po">'+(F.length?'<div class="po-img" onclick="abrirFotos('+i+',0)"><img src="'+F[0]+'" alt="" loading="lazy">'+(F.length>1?'<span class="po-n">📷 '+F.length+'</span>':'')+'</div>':'')+
    '<div class="po-b"><div class="po-t">'+(o.nombre||'Obra')+'</div>'+(lugar?'<div class="po-l">'+lugar+'</div>':'')+
    '<div class="po-r"><span>Presupuesto</span><b>'+(p?'$'+p.toLocaleString('es-EC',{maximumFractionDigits:0}):'—')+'</b></div>'+
-   '<div class="po-r"><span>Avance</span><b style="color:'+col+'">'+av+'%</b></div><div class="po-bar"><i style="width:'+av+'%;background:'+col+'"></i></div>'+
+   '<div class="po-r"><span>Avance físico</span><b style="color:'+col+'">'+av+'%</b></div><div class="po-bar"><i style="width:'+av+'%;background:'+col+'"></i></div>'+
+   (o.avance_eco!=null?'<div class="po-r"><span>Avance económico</span><b style="color:#0B1F4D">'+o.avance_eco+'%</b></div><div class="po-bar"><i style="width:'+o.avance_eco+'%;background:#0B1F4D"></i></div>':'')+
    (F.length?'<button class="po-btn" onclick="abrirFotos('+i+',0)">Ver ficha y fotos →</button>':'')+'</div></div>';};
  var cur={o:null,k:0};
  window.abrirFotos=function(i,k){var o=REG[i];if(!o)return;cur={o:o,k:k||0};var m=document.getElementById('foto-modal');if(!m){m=document.createElement('div');m.id='foto-modal';m.innerHTML='<div class="fm-bg" onclick="cerrarFotos()"></div><div class="fm-box"><button class="fm-x" onclick="cerrarFotos()">×</button><div class="fm-main"><button class="fm-nav l" onclick="pasarFoto(-1)">‹</button><img id="fm-img" alt=""><button class="fm-nav r" onclick="pasarFoto(1)">›</button></div><div class="fm-th" id="fm-th"></div><div class="fm-info" id="fm-info"></div></div>';document.body.appendChild(m);}
@@ -5160,7 +5171,7 @@ window.capaBacheo=function(map){
  function pintar(){var o=cur.o,F=o.fotos||[o.foto_url];document.getElementById('fm-img').src=F[cur.k];
   document.getElementById('fm-th').innerHTML=F.length>1?F.map(function(f,j){return '<img src="'+f+'" class="'+(j===cur.k?'on':'')+'" onclick="irFoto('+j+')">';}).join(''):'';
   var av=Math.min(100,Math.round(parseFloat(o.avance)||0)),p=parseFloat(o.presupuesto)||0,col=av>=100?'#15803D':'#EA580C';
-  document.getElementById('fm-info').innerHTML='<div class="fm-t">'+o.nombre+'</div><div class="fm-l">'+(o.parroquia_geo||o.parroquia||'Riobamba')+(o.contratista?' · '+o.contratista:'')+'</div><div class="fm-k"><div><span>Presupuesto</span><b>'+(p?'$'+p.toLocaleString('es-EC',{maximumFractionDigits:0}):'—')+'</b></div><div><span>Avance</span><b style="color:'+col+'">'+av+'%</b></div></div><div class="po-bar" style="height:8px"><i style="width:'+av+'%;background:'+col+'"></i></div>';
+  document.getElementById('fm-info').innerHTML='<div class="fm-t">'+o.nombre+'</div><div class="fm-l">'+(o.parroquia_geo||o.parroquia||'Riobamba')+(o.contratista?' · '+o.contratista:'')+'</div><div class="fm-k"><div><span>Presupuesto</span><b>'+(p?'$'+p.toLocaleString('es-EC',{maximumFractionDigits:0}):'—')+'</b></div><div><span>Avance físico</span><b style="color:'+col+'">'+av+'%</b></div>'+(o.avance_eco!=null?'<div><span>Avance económico</span><b>'+o.avance_eco+'%</b></div>':'')+'</div><div class="po-bar" style="height:8px"><i style="width:'+av+'%;background:'+col+'"></i></div>';
   document.querySelectorAll('#foto-modal .fm-nav').forEach(function(b){b.style.display=F.length>1?'':'none';});}
  window.irFoto=function(j){cur.k=j;pintar();};
  window.pasarFoto=function(d){var F=cur.o.fotos||[cur.o.foto_url];cur.k=(cur.k+d+F.length)%F.length;pintar();};

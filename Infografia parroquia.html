@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Juntos Vamos · Infografía parroquia rural</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFD21F;--o:#E8731A;--k:#111;--g:#6B6B6B;--cr:#FFF8E1}
+*{box-sizing:border-box;margin:0;padding:0}
+a{color:var(--o)}a:hover{color:var(--k)}
+body{background:#ECEAE4;font-family:Montserrat,sans-serif;display:flex;justify-content:center;padding:24px 12px}
+#sel{position:fixed;top:12px;right:12px;z-index:10;font:700 14px Montserrat;padding:8px 12px;border-radius:10px;border:2px solid var(--k);background:var(--y)}
+#cargando{position:fixed;inset:0;display:grid;place-items:center;background:#fff;font:400 34px 'Lilita One';color:var(--o);z-index:5}
+#wrap{width:1080px;transform-origin:top center}
+.info{width:1080px;height:1350px;background:#fff;position:relative;overflow:hidden;padding:52px 64px 34px;display:flex;flex-direction:column;color:var(--k)}
+.info>*{flex-shrink:0}
+.band{position:absolute;left:0;top:0;bottom:0;width:22px;background:var(--y)}
+.band::after{content:'';position:absolute;left:0;bottom:0;width:22px;height:38%;background:var(--o)}
+.ey{font:800 22px Montserrat;letter-spacing:.28em;text-transform:uppercase;color:var(--o)}
+.nm{font:400 132px 'Lilita One';line-height:.95;margin-top:6px;color:var(--k);transform:rotate(-2deg);transform-origin:left;text-shadow:5px 6px 0 var(--y)}
+.lead{font:600 27px/1.35 Montserrat;color:#333;margin-top:18px;max-width:900px;text-wrap:pretty}
+.lead b{color:var(--o);font-weight:800}
+.kp{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:14px;margin-top:26px}
+.kp div{border:3px solid var(--k);border-radius:18px;padding:14px 18px;background:#fff;box-shadow:5px 5px 0 var(--k)}
+.kp div:first-child{background:var(--y)}
+.kp b{display:block;font:400 54px 'Lilita One';line-height:1}
+.kp span{display:block;font:700 18px Montserrat;margin-top:6px;color:#333}
+.sec{margin-top:26px}
+.st{display:flex;align-items:center;gap:14px;font:400 36px 'Lilita One';line-height:1}
+.st i{font-style:normal;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--o);color:#fff;font-size:26px;border:3px solid var(--k)}
+.st small{font:700 20px Montserrat;color:var(--g);margin-left:auto}
+.ph{display:grid;gap:14px;margin-top:14px;height:250px}
+.fc{position:relative;border-radius:18px;overflow:hidden;border:3px solid var(--k);background:#ddd center/cover no-repeat}
+.fc div{position:absolute;left:0;right:0;bottom:0;padding:44px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.88));color:#fff}
+.fc p{font:700 14.5px/1.22 Montserrat}
+.fc b{display:block;color:var(--y);font:400 26px 'Lilita One';margin-top:4px}
+.ls{margin-top:12px;display:flex;flex-direction:column;gap:9px}
+.it{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;border-bottom:2px dashed #D8D2C2;padding-bottom:9px}
+.it p{font:700 var(--f,19px)/1.22 Montserrat}.ls{gap:var(--g,9px)!important}.it{padding-bottom:var(--g,9px)!important}
+.it b{font:800 var(--f,19px) Montserrat;color:var(--o);white-space:nowrap}
+.bar{grid-column:1/-1;height:12px;background:#F1ECDD;border-radius:8px;overflow:hidden;border:2px solid var(--k);margin-top:-2px}.bar i{display:block;height:100%;background:var(--o)}
+.mas{font:700 19px Montserrat;color:var(--g)}
+.vacio{margin-top:14px;background:var(--k);color:#fff;border-radius:20px;padding:24px 28px;font:600 24px/1.4 Montserrat;text-wrap:pretty}
+.vacio b{color:var(--y);font-weight:800}
+.km{margin-top:18px;display:flex;align-items:center;gap:16px;background:var(--cr);border:3px solid var(--k);border-radius:16px;padding:12px 20px}
+.km b{font:400 44px 'Lilita One';color:var(--o)}.km span{font:700 20px/1.3 Montserrat}
+.ft{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:6px;padding-top:6px}
+.ft svg{width:520px;height:250px;display:block;flex-shrink:0}
+.ft p{font:800 32px/1.15 Montserrat;max-width:420px;margin-left:-10px}
+.ft p b{display:block;font:400 66px 'Lilita One';color:var(--o);margin-top:4px;line-height:1}
+
+.info{background:#0B1F4D;color:#fff}
+.nm{color:#fff;max-width:640px}
+.lead{color:#E6EBF5}.lead b{color:var(--y)}
+.ey{color:var(--y)}
+.st{color:#fff}.st small{color:#C9D3E6}
+.it{border-bottom-color:#2E4A80}.it p{color:#fff}.it b{color:var(--y)}
+.bar{background:#1A3366;border-color:#fff}
+.mas{color:#C9D3E6}
+.vacio{background:#fff;color:var(--k)}.vacio b{color:var(--o)}
+.kp div{box-shadow:5px 5px 0 var(--o);color:var(--k)}.kp b{color:var(--k)}
+.fc{border:0;border-radius:6px;background-color:#fff;background-origin:content-box;background-clip:content-box;padding:9px 9px 74px;box-shadow:0 6px 0 var(--o),0 10px 18px rgba(0,0,0,.35);filter:contrast(1.06) saturate(1.12)}
+.fc:nth-child(odd){transform:rotate(-1.6deg)}.fc:nth-child(even){transform:rotate(1.4deg)}
+.ph{max-width:860px;margin-left:auto;margin-right:auto;gap:26px;padding:6px 4px 10px}
+.fc div{background:#fff;padding:8px 10px 9px;color:var(--k);filter:none}.fc p{color:var(--k);-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}.fc b{color:var(--o)}
+.km span{color:var(--k)}.ft p{color:#fff}.ft p b{color:var(--y)}
+.jvq{position:absolute;top:30px;right:40px;width:300px;height:auto;z-index:2}
+</style></head>
+<body>
+<div id="cargando">Cargando obras…</div>
+<select id="sel" aria-label="Parroquia"></select>
+<div id="wrap"><div class="info" id="info" data-screen-label="Infografía parroquia"></div></div>
+<script src="territorio-data.js"></script>
+<script src="jv-logo.js"></script>
+<script src="materiales-data.js"></script>
+<script>
+(function(){
+var esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');};
+var q=new URLSearchParams(location.search).get('t')||localStorage.getItem('jv-pq')||'san-juan';
+function fit(){var w=document.getElementById('wrap');var s=Math.min(1,(innerWidth-24)/1080);w.style.transform='scale('+s+')';w.style.height=(1350*s)+'px';}
+addEventListener('resize',fit);fit();
+function lista(a,campo,monto,n,avance){var h=a.map(function(x){var av=Math.round(parseFloat(x.avance)||0);return '<div class="it"><p>'+esc(tCase(x[campo]))+'</p><b>'+money(x[monto])+'</b>'+'</div>';}).join('');return h;}
+function html(t,lv){lv=lv||0;
+ var AQ=(t.adq||[]).filter(function(o){return (parseFloat(o.avance)||0)<100;});var NN=function(s){return String(s||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();};var MT=(window.MATERIALES||[]).find(function(m){return NN(m.parroquia)===NN(t.nombre);});var nf=function(v){return Math.round(v).toLocaleString('es-EC');};if(MT&&MT.adoq>0){var cs=MT.comunidades.map(function(c){return tCase(c.n);});AQ=AQ.concat([{nombre:'Entrega de '+nf(MT.adoq)+' adoquines y '+nf(MT.cemento)+' sacos de cemento en '+cs.length+' comunidad'+(cs.length>1?'es':''),presupuesto:MT.valor,avance:Math.round(MT.entregado/MT.adoq*100),mat:1}]);}var T=t.terminadas,E=t.ejecucion.concat(AQ),V=t.vienen,F=t.conFoto.slice(0,3),n=t.nombre;
+ var lead=T.length?'Estas son las obras que <b>ya terminamos</b> en '+esc(n)+', las que <b>estamos haciendo</b> y las que <b>vienen</b>.'
+  :'En '+esc(n)+' <b>todavía no tenemos obras terminadas</b>. Te contamos lo que estamos haciendo y lo que viene.';
+ var h='<div class="band"></div><img class="jvq" src="jv/logo-jv.png" alt="JohnVi vas a quedarte"><div class="ey">Parroquia rural · Riobamba</div><div class="nm">'+esc(n)+'</div>'+(lv>=4?'':'<p class="lead">'+lead+'</p>')+
+  '<div class="kp"><div><b>'+money(t.inv+AQ.reduce(function(s,o){return s+(+o.presupuesto||0);},0))+'</b><span>de inversión</span></div><div><b>'+T.length+'</b><span>terminadas</span></div><div><b>'+E.length+'</b><span>en marcha</span></div><div><b>'+V.length+'</b><span>por contratar</span></div></div>';
+ // 1 · lo hecho primero
+ h+='<div class="sec"><div class="st"><i>1</i>Ya lo hicimos<small>'+money(t.invTerm)+'</small></div>';
+ if(!T.length){h+='<div class="vacio">Aquí todavía <b>no hay obras terminadas</b>. '+(E.length?'Ya estamos trabajando en <b>'+E.length+' obra'+(E.length>1?'s':'')+'</b> por '+money(t.invEjec)+'. ':'')+(V.length?'Y vienen <b>'+V.length+' proyecto'+(V.length>1?'s':'')+'</b> más por '+money(t.invVienen)+'.':(!E.length?'Estamos preparando los primeros proyectos para la parroquia.':''))+'</div>';}
+ else if(F.length){var rest=T.filter(function(o){return F.indexOf(o)<0;});h+='<div class="ph" style="grid-template-columns:repeat('+F.length+',1fr)'+(lv>2?';height:'+(lv>4?180:210)+'px':'')+'">'+F.map(function(o){return '<div class="fc" style="background-image:url(\''+o.fotos[0]+'\')"><div><p>'+esc(tCase(o.nombre))+'</p><b>'+money(o.presupuesto)+'</b></div></div>';}).join('')+'</div>'+(rest.length?'<div class="ls">'+lista(rest,'nombre','presupuesto')+'</div>':'');}
+ else h+='<div class="ls">'+lista(T,'nombre','presupuesto',4)+'</div>';
+ h+='</div>';
+ var cupo=Math.max(1,(T.length&&F.length?2:3)-lv);
+ if(E.length)h+='<div class="sec"><div class="st"><i>2</i>Lo estamos haciendo<small>'+money(t.invEjec+AQ.reduce(function(s,o){return s+(+o.presupuesto||0);},0))+'</small></div><div class="ls">'+lista(E,'nombre','presupuesto',cupo,true)+'</div></div>';
+ if(V.length)h+='<div class="sec"><div class="st"><i>'+(E.length?3:2)+'</i>Lo que viene<small>'+money(t.invVienen)+'</small></div><div class="ls">'+lista(V,'proyecto','monto',cupo)+'</div></div>';
+ if(t.kmTotal>0.005&&lv<5)h+='<div class="km"><b>'+kmf(t.kmTotal)+' km</b><span>de vías atendidas en '+esc(n)+'</span></div>';
+ h+='<div class="ft"><svg id="jv"></svg><p>por más obras para la parroquia<b>'+esc(n)+'</b></p></div>';
+ return h;}
+cargarTerritorios().then(function(T){
+ var R=T.filter(function(t){return t.tipo==='parroquia';});window.PQ=R;
+ var sel=document.getElementById('sel');sel.innerHTML=R.map(function(t){return '<option value="'+t.id+'">'+esc(t.nombre)+'</option>';}).join('');
+ function mostrar(id){var t=R.find(function(x){return x.id===id;})||R[0];sel.value=t.id;[].forEach.call(sel.options,function(o){o.selected=o.value===t.id;});try{localStorage.setItem('jv-pq',t.id);history.replaceState(null,'',location.pathname+'?t='+t.id);}catch(e){}
+  document.title='Juntos Vamos · '+t.nombre;var el=document.getElementById('info');for(var lv=0;lv<13;lv++){var k=Math.max(0,lv-5);el.style.setProperty('--f',Math.max(12,19-k)+'px');el.style.setProperty('--g',Math.max(3,9-k)+'px');el.innerHTML=html(t,Math.min(lv,5));var f=el.querySelector('.ft'),pv=f.previousElementSibling;if(pv.offsetTop+pv.offsetHeight+20+f.offsetHeight<=1350-34)break;}var im=el.querySelector('.jvq');return Promise.all([jvLogo(document.getElementById('jv')),im&&im.decode?im.decode().catch(function(){}):0]);}
+ sel.onchange=function(){mostrar(sel.value);};window.mostrarParroquia=mostrar;window.__html=html;
+ (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){return mostrar(q);}).then(function(){document.getElementById('cargando').remove();window.__listo=true;});
+}).catch(function(e){document.getElementById('cargando').textContent='Error: '+e.message;});
+})();
+</script>
+</body></html>
