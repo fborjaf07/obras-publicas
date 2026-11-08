@@ -14,6 +14,23 @@
 <script src="geo-riobamba.js"></script>
 <script src="proyectos-contratacion.js"></script>
 <script src="adquisiciones.js"></script>
+<script src="parques-data.js"></script>
+<style>
+#panel-parques .pk-h{font-family:'Montserrat',var(--sans);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);color:#0B1F4D;margin:6px 0 6px;text-align:center}#panel-parques .pk-h em{font-style:normal;color:#EA580C}
+.pk-sub{text-align:center;color:#334155;max-width:640px;margin:0 auto 22px;text-wrap:pretty}
+.pk-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:960px;margin:0 auto 22px}
+.pk-k{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}.pk-k b{display:block;font-family:'Montserrat',var(--sans);font-size:2.2rem;font-weight:800;color:#0B1F4D;line-height:1}.pk-k span{display:block;margin-top:6px;font-size:.82rem;color:#475569}.pk-k.or{background:#EA580C;border-color:#EA580C}.pk-k.or b,.pk-k.or span{color:#fff}
+.pk-card{background:#0B1F4D;color:#fff;border-radius:16px;padding:22px;max-width:960px;margin:0 auto 22px}.pk-card h3{margin:0 0 14px;font-size:1.05rem;color:#FDBA74;text-transform:uppercase;letter-spacing:.06em}
+.pk-acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.pk-act{background:rgba(255,255,255,.08);border-radius:10px;padding:12px}.pk-act b{display:block;color:#fff;margin-bottom:4px}.pk-act span{font-size:.85rem;color:#E2E8F0}
+.pk-note{margin:14px 0 0;font-size:.85rem;color:#E2E8F0;text-wrap:pretty}
+.pk-fil{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:960px;margin:0 auto 14px}.pk-fil button{border:1px solid #CBD5E1;background:#fff;color:#0B1F4D;border-radius:999px;padding:8px 14px;font-weight:700;font-size:.85rem;cursor:pointer}.pk-fil button.on{background:#0B1F4D;color:#fff;border-color:#0B1F4D}
+.pk-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;max-width:960px;margin:0 auto}
+.pk-it{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}.pk-it h4{margin:0;font-size:.92rem;color:#0B1F4D;line-height:1.25}
+.pk-tags{display:flex;flex-wrap:wrap;gap:6px}.pk-t{font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px;background:#F1F5F9;color:#0B1F4D}.pk-t.ok{background:#DCFCE7;color:#166534}.pk-t.go{background:#FFEDD5;color:#9A3412}.pk-t.mi{background:#DBEAFE;color:#1E3A8A}
+.pk-map{font-size:.8rem;font-weight:700;color:#EA580C;text-decoration:none}.pk-map:hover{text-decoration:underline}
+.pk-src{text-align:center;font-size:.75rem;color:#64748B;margin:18px auto 0;max-width:640px}
+@media(max-width:720px){.pk-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.pk-acts{grid-template-columns:minmax(0,1fr)}}
+</style>
 <style>
 /* PUBLIC PORTAL CSS */
 :root{
@@ -1642,8 +1659,11 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
   <button class="tab" data-tab="maquinaria" onclick="setPortalTab('maquinaria');loadMaquinariaData()" role="tab">
     <span class="tn">06</span>Nuestras máquinas<span class="tcount" id="tab-count-maq">&mdash;</span>
   </button>
+  <button class="tab" data-tab="parques" onclick="setPortalTab('parques')" role="tab">
+    <span class="tn">07</span>Parques arreglados<span class="tcount" id="tab-count-parques">&mdash;</span>
+  </button>
   <button class="tab" data-tab="socializaciones" onclick="setPortalTab('socializaciones')" role="tab">
-    <span class="tn">07</span>Socializaciones de tus proyectos
+    <span class="tn">08</span>Socializaciones de tus proyectos
   </button>
 </nav>
 
@@ -1903,7 +1923,26 @@ nav.tabnav .tab{justify-content:center;min-width:0;white-space:normal;text-align
   <div id="adq-lista"></div>
 </div>
 
-<!-- TAB 7: SOCIALIZACIONES -->
+<!-- TAB 7: PARQUES -->
+<div class="tab-panel" id="panel-parques" role="tabpanel">
+<div class="section-ey">Mantenimiento de parques · Espacios para tu familia</div>
+<h2 class="pk-h">Parques <em>arreglados</em></h2>
+<p class="pk-sub">Parques y espacios públicos de Riobamba que el municipio ha reparado y puesto en buen estado desde 2023.</p>
+<div class="pk-kpis" id="pk-kpis"></div>
+<div class="pk-card"><h3>Lo que hacemos en cada parque</h3><div class="pk-acts">
+<div class="pk-act"><b>Luces</b><span>Cambio de lámparas LED, postes y cables nuevos</span></div>
+<div class="pk-act"><b>Juegos infantiles</b><span>Columpios, resbaladeras y sube y baja reparados y pintados</span></div>
+<div class="pk-act"><b>Canchas</b><span>Arreglo de grietas y pintura de líneas</span></div>
+<div class="pk-act"><b>Arcos y tableros</b><span>Arcos de fútbol, tableros y aros de básquet</span></div>
+<div class="pk-act"><b>Cerramientos</b><span>Malla, postes y puertas para más seguridad</span></div>
+<div class="pk-act"><b>Piletas</b><span>Limpieza, arreglo de fisuras y tuberías</span></div>
+</div><p class="pk-note">Con estos trabajos se recuperó la iluminación de senderos y zonas de uso común. Se usaron, entre otros, 4.200 m de cable, 875 lámparas LED para poste y 805 postes metálicos nuevos.</p></div>
+<div class="pk-fil" id="pk-fil"></div>
+<div class="pk-list" id="pk-list"></div>
+<p class="pk-src">Fuente: Planificación de actividades de intervención de parques y espacios públicos · Dirección de Gestión de Obras Públicas, GADM Riobamba.</p>
+</div>
+
+<!-- TAB 8: SOCIALIZACIONES -->
 <div class="tab-panel" id="panel-socializaciones" role="tabpanel">
   <div class="section-ey">Socializaciones · Tu voz en cada proyecto</div>
   <div class="soc-wip">
@@ -3329,7 +3368,7 @@ async function fetchSheetCSV(url){
   const gviz  ='https://docs.google.com/spreadsheets/d/'+id+'/gviz/tq?tqx=out:csv';
   const direct='https://docs.google.com/spreadsheets/d/'+id+'/export?format=csv';
   const proxy ='https://corsproxy.io/?'+encodeURIComponent(direct);
-  for(const ep of [gviz,direct,proxy]){
+  for(const ep of [direct,gviz,proxy]){
     try{
       const r=await fetch(ep);
       if(r.ok){const t=await r.text();if(t.trim().length>10&&!t.trim().startsWith('<'))return t;}
@@ -3512,7 +3551,8 @@ function showToast(msg, dur){
 window.showToast=showToast;
 function loadObrasPublicas(){
   // Fuente única: matriz "OBRAS PUBLICAS" (Google Sheets). Respaldo: hoja publicada anterior.
-  var urls=['https://docs.google.com/spreadsheets/d/16GQpyB2XkH74mHwodCg2_qYkeqedjWXWKQie1TU5exU/gviz/tq?tqx=out:csv&gid=0&t='+Date.now(),
+  var urls=['https://docs.google.com/spreadsheets/d/16GQpyB2XkH74mHwodCg2_qYkeqedjWXWKQie1TU5exU/export?format=csv&gid=0&t='+Date.now(),
+            'https://docs.google.com/spreadsheets/d/16GQpyB2XkH74mHwodCg2_qYkeqedjWXWKQie1TU5exU/gviz/tq?tqx=out:csv&headers=1&gid=0&t='+Date.now(),
             'https://docs.google.com/spreadsheets/d/e/2PACX-1vTV83-UsGHPOwArKNJu2TOsjLKmg1m5hlWc_iaADtw1wqRwetBSebeRCBa1HNrdVeDqh5B_8XcksQdB/pub?output=csv&t='+Date.now()];
   function extras(csv,list){
     try{
@@ -3531,12 +3571,12 @@ function loadObrasPublicas(){
     .then(function(csv){
       if(!csv.trim()||csv.trim().startsWith('<'))throw new Error('no publicado');
       var list=parseSheetsCSV(csv);
-      if(!list.length)throw new Error('sin filas');
+      if(!list.length||(i<2&&list.length<40))throw new Error('sin filas');
       extras(csv,list);
       try{window.asignarFotos(list);}catch(_){}
       // quitar filas repetidas dentro de la misma matriz (mismo código o mismo nombre)
       var vistos={};list=list.filter(function(o){var k=(o.codigo||'').trim().toUpperCase()||String(o.nombre||'').toUpperCase().replace(/\s+/g,' ').trim();if(!k)return true;if(vistos[k])return false;vistos[k]=1;return true;});
-      window.FUENTE_OBRAS=i===0?'matriz':'respaldo';
+      window.FUENTE_OBRAS=i<2?'matriz':'respaldo';
       OBRAS_PUB=list;applyObrasPublicas();showToast(OBRAS_PUB.length+' obras cargadas');
     })
     .catch(function(){intentar(i+1);});
@@ -5032,7 +5072,7 @@ window.renderChartsCSS = renderChartsCSS;
     set('rs-hero-inv', inv?fmt(inv):'—');
     (function(){var rur=new Set(((window.PARROQUIAS_GEO)||[]).filter(function(p){return /RURAL/i.test(p.tipo||'');}).map(function(p){return p.name;}));var top=function(key,soloRur){var m={};obras.forEach(function(o){var k=o[key];if(!k||(soloRur&&!rur.has(k)))return;m[k]=(m[k]||0)+(parseFloat(o.presupuesto)||0);});var e=Object.entries(m).sort(function(a,b){return b[1]-a[1];})[0];return e||null;};
       var pl=top('plataforma'),pq=top('parroquia_geo',true);
-      var nm=function(s){return String(s).toLowerCase().replace(/(^|\s)\S/g,function(c){return c.toUpperCase();});};
+      var nm=function(s){return String(s).normalize('NFC').toLocaleLowerCase('es').replace(/(^|\s)\S/g,function(c){return c.toUpperCase();});};
       set('rs-hero-plat',pl?nm(pl[0]):'—');set('rs-hero-plat-cap',pl?fmt(pl[1])+' invertidos':'—');
       set('rs-hero-parr',pq?nm(pq[0]):'—');set('rs-hero-parr-cap',pq?fmt(pq[1])+' invertidos':'—');})();
 
@@ -5148,6 +5188,19 @@ window.capaBacheo=function(map){
 };
 </script>
 <style>.bach-lg+.bach-lg{margin-bottom:6px}@media(max-width:640px){.bach-lg{font-size:10.5px;padding:6px 9px;max-width:170px}.bach-lg .bl-k{display:none!important}}.bach-lg{background:#fff;border-radius:10px;padding:8px 12px;box-shadow:0 4px 14px rgba(11,31,77,.18);font:12px Montserrat,sans-serif;color:#0B1F4D;max-width:220px}.bach-lg label{cursor:pointer;display:flex;gap:6px;align-items:center}.bach-lg input{accent-color:#EA580C;width:16px;height:16px}.bl-s{color:#6B7280;font-size:11px;margin-top:2px}.bl-k{display:none;flex-wrap:wrap;gap:4px 10px;margin-top:6px;font-size:10.5px}.bach-lg.on .bl-k{display:flex}.bl-k span{display:flex;align-items:center;gap:4px}.bl-k i{width:9px;height:9px;border-radius:50%;display:inline-block}</style>
+<script>
+(function(){var P=window.PARQUES||[];var f={e:'Todos',a:'Todos'};
+function k(){var at=P.filter(function(x){return x.e==='Atendido';}).length,em=P.length-at,a26=P.filter(function(x){return /2026/.test(x.a);}).length,ji=P.filter(function(x){return x.j;}).length;
+document.getElementById('pk-kpis').innerHTML='<div class="pk-k or"><b>'+P.length+'</b><span>parques y espacios intervenidos</span></div><div class="pk-k"><b>'+at+'</b><span>ya arreglados</span></div><div class="pk-k"><b>'+em+'</b><span>en arreglo ahora</span></div><div class="pk-k"><b>'+a26+'</b><span>atendidos en 2026</span></div>';
+var tc=document.getElementById('tab-count-parques');if(tc)tc.textContent=P.length;}
+function fil(){var E=['Todos','Atendido','En marcha'],A=['Todos','2026','2025','2024','2023'];
+document.getElementById('pk-fil').innerHTML=E.map(function(x){return '<button data-k="e" data-v="'+x+'" class="'+(f.e===x?'on':'')+'">'+(x==='Atendido'?'Ya arreglados':x==='En marcha'?'En arreglo':'Todos')+'</button>';}).join('')+'<span style="width:12px"></span>'+A.map(function(x){return '<button data-k="a" data-v="'+x+'" class="'+(f.a===x?'on':'')+'">'+(x==='Todos'?'Todos los años':x)+'</button>';}).join('');
+document.querySelectorAll('#pk-fil button').forEach(function(b){b.onclick=function(){f[b.dataset.k]=b.dataset.v;fil();lst();};});}
+function lst(){var L=P.filter(function(x){return (f.e==='Todos'||x.e===f.e)&&(f.a==='Todos'||x.a.indexOf(f.a)>=0);}).sort(function(a,b){return b.a.localeCompare(a.a)||a.p.localeCompare(b.p);});
+document.getElementById('pk-list').innerHTML=L.map(function(x){return '<div class="pk-it"><h4>'+x.p+'</h4><div class="pk-tags"><span class="pk-t '+(x.e==='Atendido'?'ok':'go')+'">'+(x.e==='Atendido'?'Arreglado':'En arreglo')+'</span><span class="pk-t">'+x.a+'</span>'+(x.j?'<span class="pk-t">Juegos inclusivos</span>':'')+(x.m?'<span class="pk-t mi">Minga · El Alcalde en mi barrio</span>':'')+'</div>'+(x.lat?'<a class="pk-map" target="_blank" rel="noopener" href="https://www.google.com/maps?q='+x.lat+','+x.lng+'">Ver ubicación →</a>':'')+'</div>';}).join('')||'<p style="text-align:center;color:#64748B">No hay parques con ese filtro.</p>';}
+function go(){if(!document.getElementById('pk-list'))return;k();fil();lst();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();
+</script>
 <script src="fotos-obras.js"></script>
 <script>
 (function(){
